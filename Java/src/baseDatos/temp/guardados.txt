@@ -1,0 +1,3 @@
+Guardar en archivo(s) mediante la serialización de objetos, el estado de todos los objetos del modelo cuando el sistema se va a cerrar.
+Cargar en memoria RAM desde los archivos anteriores, el estado de todos los objetos del sistema para con ellos realizar las
+funciones programadas.
