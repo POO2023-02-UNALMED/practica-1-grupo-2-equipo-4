@@ -7,6 +7,11 @@ public class Menu {
     private int precioAcompañantes;
 
     public Menu(String tipoHamburguesa, int precioHamburguesa, String acompañantes, int precioAcompañantes) {
-
+        this.tipoHamburguesa = tipoHamburguesa;
+        this.precioHamburguesa = precioHamburguesa;
+        this.acompañantes = acompañantes;
+        this.precioAcompañantes = precioAcompañantes;
     }
+
 }
+
