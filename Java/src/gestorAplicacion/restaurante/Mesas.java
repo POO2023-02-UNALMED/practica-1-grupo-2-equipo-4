@@ -6,4 +6,5 @@ public class Mesas {
     public boolean estadoMesa;
     public int idCliente;
 
+
 }

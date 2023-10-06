@@ -6,4 +6,14 @@ public class Empleado {
     private float salario;
     private Calificacion calificacion;
     private int cantidadEmpleados;
+
+    public Empleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+
+    public int getCantidadEmpleados() {
+        return cantidadEmpleados;
+    }
+}
 }

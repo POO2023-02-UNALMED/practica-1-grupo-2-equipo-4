@@ -6,6 +6,20 @@ public class TomarPedido {
     private boolean estadoInventario;
     private float totalPedido;
 
+    public Menu getMenu() {
+        return menu;
+    }
 
+    public void setEstadoInventario(boolean estadoInventario) {
+        this.estadoInventario = estadoInventario;
+    }
 
+    public boolean isEstadoInventario() {
+        return estadoInventario;
+    }
+
+    public void setIdReserva(int idReserva) {
+        this.idReserva = idReserva;
+    }
+}
 }

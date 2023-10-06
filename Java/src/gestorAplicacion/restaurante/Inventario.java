@@ -9,5 +9,13 @@ public class Inventario {
     public boolean disponibilidadInventario;
     public Array[] listaIngredientes;
 
+    public Inventario() {
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+
 
 }
