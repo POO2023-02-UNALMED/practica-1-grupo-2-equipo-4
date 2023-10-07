@@ -1,8 +1,9 @@
 package gestorAplicacion.administracion;
+import java.util.ArrayList;
 
 public class Contabilidad {
     public float saldo;
-    public Array[] Facturas;
+    public ArrayList<Factura> Facturas;
 
 
 

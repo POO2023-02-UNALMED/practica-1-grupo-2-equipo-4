@@ -1,13 +1,14 @@
 package gestorAplicacion.restaurante;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Inventario {
     public String nombreIngrediente;
     public int precio;
     public int cantidad;
     public boolean disponibilidadInventario;
-    public Array[] listaIngredientes;
+    public ArrayList<String> listaIngredientes;
 
     public Inventario() {
     }
