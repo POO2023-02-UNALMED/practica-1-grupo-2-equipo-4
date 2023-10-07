@@ -1,11 +1,11 @@
 package gestorAplicacion.administracion;
 
-import gestorAplicacion.restaurante.TomarPedido;
+import gestorAplicacion.restaurante.Pedido;
 
 public class Factura {
     public int idEmpleado;
     public int idMesa;
-    public TomarPedido tomarPedido;
+    public Pedido tomarPedido;
     public int fecha;
     public int idFactura;
 
