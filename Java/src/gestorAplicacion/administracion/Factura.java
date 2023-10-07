@@ -9,4 +9,12 @@ public class Factura {
     public int fecha;
     public int idFactura;
 
+    public Factura(int idEmpleado, idMesa, Pedido tomarPedido, int fecha, idFactura) {
+    	this.idEmpleado = idEmpleado;
+    	this.idMesa = idMesa;
+    	this.Pedido = tomarPedido;
+    	this.fecha = fecha;
+    	this.idFactura = idFactura;
+    }
+    
 }
