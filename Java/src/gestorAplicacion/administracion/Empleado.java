@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Empleado {
     private String nombre;
+    public java.util.ArrayList<Calificacion> calificaciones;
     public int idEmpleado;
     private float salario;
     private Calificacion calificacion;
