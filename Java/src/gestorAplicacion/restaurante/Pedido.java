@@ -1,6 +1,6 @@
 package gestorAplicacion.restaurante;
 
-public class TomarPedido {
+public class Pedido {
     public int idReserva;
     public Menu menu;
     private boolean estadoInventario;
