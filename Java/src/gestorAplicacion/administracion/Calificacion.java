@@ -1,3 +1,4 @@
+import java.io.Serializable;
 package gestorAplicacion.administracion;
 
 public class Calificacion {
