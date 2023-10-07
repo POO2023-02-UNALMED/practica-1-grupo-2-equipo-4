@@ -3,7 +3,9 @@ package gestorAplicacion.administracion;
 import gestorAplicacion.restaurante.Mesas;
 import gestorAplicacion.restaurante.Pedido;
 
-public class Factura {
+import java.io.Serializable;
+
+public class Factura implements Serializable {
     public int idEmpleado;
     public Mesas mesa;
     public Pedido pedido;

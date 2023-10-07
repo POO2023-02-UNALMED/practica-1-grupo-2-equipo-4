@@ -1,6 +1,8 @@
 package gestorAplicacion.restaurante;
 
-public class Pedido {
+import java.io.Serializable;
+
+public class Pedido implements Serializable {
     public int idReserva;
     public Menu menu;
     private boolean estadoInventario;

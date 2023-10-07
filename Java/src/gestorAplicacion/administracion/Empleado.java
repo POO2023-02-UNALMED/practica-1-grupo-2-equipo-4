@@ -1,8 +1,9 @@
-import java.io.Serializable;
 package gestorAplicacion.administracion;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empleado {
+public class Empleado implements Serializable{
     private String nombre;
     public java.util.ArrayList<Calificacion> calificaciones;
     public int idEmpleado;

@@ -1,7 +1,9 @@
-import java.io.Serializable;
 package gestorAplicacion.administracion;
 
-public class Calificacion {
+import java.io.Serializable;
+
+
+public class Calificacion implements Serializable{
     private int idFactura;
     private int idEmpleado;
     private int calificacion;

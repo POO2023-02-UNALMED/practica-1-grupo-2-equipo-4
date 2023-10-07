@@ -1,6 +1,8 @@
 package gestorAplicacion.restaurante;
 
-public class Mesas{
+import java.io.Serializable;
+
+public class Mesas implements Serializable {
     public int idMesa;
     public int numeroDeSillas;
     public boolean estadoMesa;

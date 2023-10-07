@@ -1,6 +1,8 @@
 package gestorAplicacion.restaurante;
 
-public class Menu {
+import java.io.Serializable;
+
+public class Menu implements Serializable {
     private String tipoHamburguesa;
     private int precioHamburguesa;
     private String acompañantes;
