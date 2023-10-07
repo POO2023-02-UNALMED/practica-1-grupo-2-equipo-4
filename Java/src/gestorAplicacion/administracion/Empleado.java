@@ -1,14 +1,21 @@
 package gestorAplicacion.administracion;
+import java.util.ArrayList;
 
 public class Empleado {
     private String nombre;
     public int idEmpleado;
     private float salario;
     private Calificacion calificacion;
-    private int cantidadEmpleados;
+    private static int  cantidadEmpleados = 0;
 
-    public Empleado(int idEmpleado) {
+
+    public Empleado(String nombre,int idEmpleado,float salario,Calificacion calificacion) {
+        cantidadEmpleados++;
+        this.nombre = nombre;
         this.idEmpleado = idEmpleado;
+        this.salario = salario;
+        this.calificacion = calificacion;
+
     }
 
 
