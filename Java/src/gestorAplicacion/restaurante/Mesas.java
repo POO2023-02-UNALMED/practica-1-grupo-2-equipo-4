@@ -8,15 +8,17 @@ public class Mesas implements Serializable {
     public boolean estadoMesa;
     public int idCliente;
 
-    public Mesas(int idMesa, int numeroDeSillas, boolean estadoMesa, int idCliente) {
+    public Mesas(int idMesa, int numeroDeSillas, boolean estadoMesa) {
         this.idMesa = idMesa;
         this.numeroDeSillas = numeroDeSillas;
         this.estadoMesa = estadoMesa;
-        this.idCliente = idCliente;
+        this.idCliente = 0;
         mesas.add(this);
     }
 
-    public void crearReserva() {
+    public void crearReserva(int idCliente) {
+        this.idCliente = idCliente;
+        this.estadoMesa = false;
 
     }
 
