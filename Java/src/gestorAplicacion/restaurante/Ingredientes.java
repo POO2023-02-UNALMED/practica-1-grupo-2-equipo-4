@@ -11,12 +11,21 @@ public class Ingredientes implements Serializable {
     public float precio;
     public int cantidad;
     public boolean disponibilidad;
-    public Ingredientes (String nombreIngrediente, float precio, int cantidad, boolean disponibilidad) {
+    public Ingredientes (String nombreIngrediente, float precio, int cantidad) {
         this.nombreIngrediente = nombreIngrediente;
         this.precio = precio;
         this.cantidad = cantidad;
-        this.disponibilidad = disponibilidad;
+        this.disponibilidad = false;// La disponibilidad se inicia como false
         listaIngredientes.add(this);
+        this.conocerDisponibilidad();// Se usa el método conocer disponibilidad para saber si hay ingredientes disponibles y cambiar la disponibilidad
+    }
+    public void conocerDisponibilidad (){ //Método que dependiendo de la cantidad de ingredientes dice si hay disponibilidad o no
+        if (this.cantidad >= 1){
+            this.disponibilidad = true;
+        }
+        else {
+            this.disponibilidad = false;
+        }
     }
 
     public int getCantidad() {
@@ -46,5 +55,6 @@ public class Ingredientes implements Serializable {
     public void comprarIngredientes (int cantidad){ //Método para comprar ingredientes
         this.cantidad += cantidad; // se agregan los ingredientes comprados
         Contabilidad.agregarGasto(cantidad * this.precio); // se suma a los gastos la cantidad comprada por el precio del ingrediente
+
     }
 }
