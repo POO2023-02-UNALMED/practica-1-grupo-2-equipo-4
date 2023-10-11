@@ -2,9 +2,10 @@ package gestorAplicacion.restaurante;
 
 import gestorAplicacion.administracion.Contabilidad;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Gaseosas extends Inventario{
+public class Gaseosas extends Inventario implements Serializable {
     public static ArrayList<Gaseosas> listaGaseosas = new ArrayList<>();
 
     public Gaseosas(String nombre, float precio, int cantidad) {

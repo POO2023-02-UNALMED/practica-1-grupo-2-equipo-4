@@ -1,3 +1,5 @@
+package uiMain;
+
 import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.restaurante.Gaseosas;
 import gestorAplicacion.restaurante.Ingredientes;
