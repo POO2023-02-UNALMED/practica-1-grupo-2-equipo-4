@@ -23,6 +23,8 @@ public class Mesas implements Serializable {
     }
 
     public void cancelarReserva() {
+        this.idCliente = 0;
+        this.estadoMesa = true;
 
     }
 
