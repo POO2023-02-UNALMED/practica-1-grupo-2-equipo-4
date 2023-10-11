@@ -17,6 +17,7 @@ public class Factura implements Serializable {
     	this.mesa = mesa;
     	this.pedido = tomarPedido;
     	this.idFactura = idFactura;
+        /** En este constructor se asignan las características del momento después a que el cliente comió */
     }
     
 }

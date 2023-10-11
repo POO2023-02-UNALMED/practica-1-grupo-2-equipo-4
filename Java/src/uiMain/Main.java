@@ -4,10 +4,17 @@ import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.restaurante.Gaseosas;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Inventario;
+import gestorAplicacion.restaurante.Mesas;
 
 public class Main {
     public static void main(String[] args) {
         // Test Comprar gaseosas
+        Mesas mesa1 =new Mesas(01,4,false);
+        Mesas mesa2 =new Mesas(02,4,false);
+        Mesas mesa3 =new Mesas(03,4,false);
+        Mesas mesa4 =new Mesas(04,2,false);
+        Mesas mesa5 =new Mesas(05,2,false);
+
         Gaseosas coca_cola = new Gaseosas("Coca cola",2000,9);
         Gaseosas Sprite = new Gaseosas("Sprite",2000,9);
         System.out.println(Gaseosas.listaGaseosas.toString());
