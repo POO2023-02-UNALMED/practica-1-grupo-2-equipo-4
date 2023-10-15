@@ -5,30 +5,29 @@ public class Mesas implements Serializable {
     public static java.util.ArrayList<Mesas> mesas;
     public int idMesa;
     public int numeroDeSillas;
-    public boolean estadoMesa;
+    public boolean ocupado;
     public int idCliente;
 
-    public Mesas(int idMesa, int numeroDeSillas, boolean estadoMesa) {
+    public Mesas(int idMesa, int numeroDeSillas, boolean ocupado) {
         this.idMesa = idMesa;
         this.numeroDeSillas = numeroDeSillas;
-        this.estadoMesa = estadoMesa;
+        this.ocupado = ocupado;
         this.idCliente = 0;
         mesas.add(this);
     }
 
-    public void crearReserva(int idCliente) {
+    public void crearReserva(int idCliente) {/** Este método asigna un cliente a cada mesa*/
         this.idCliente = idCliente;
-        this.estadoMesa = false;
+        this.ocupado = false;
 
     }
 
-    public void cancelarReserva() {
+    public void cancelarReserva() {/** Este método libera la mesa dejandola sin ningún cliente*/
+        this.idCliente = 0;
+        this.ocupado = true;
 
     }
 
-    public void liberarMesa() {
-
-    }
 
     public static ArrayList<Mesas> getMesas() {
         return mesas;
@@ -47,11 +46,11 @@ public class Mesas implements Serializable {
     }
 
     public boolean isEstadoMesa() {
-        return estadoMesa;
+        return ocupado;
     }
 
     public void setEstadoMesa(boolean estadoMesa) {
-        this.estadoMesa = estadoMesa;
+        this.ocupado = estadoMesa;
     }
 
     public int getIdCliente() {
