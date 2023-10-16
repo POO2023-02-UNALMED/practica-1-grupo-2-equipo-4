@@ -2,7 +2,7 @@ package gestorAplicacion.restaurante;
 import java.util.ArrayList;
 import java.io.Serializable;
 public class Mesas implements Serializable {
-    public static java.util.ArrayList<Mesas> mesas;
+    public static Restaurante restaurante;
     public int idMesa;
     public int numeroDeSillas;
     public boolean ocupado;
@@ -13,7 +13,7 @@ public class Mesas implements Serializable {
         this.numeroDeSillas = numeroDeSillas;
         this.ocupado = ocupado;
         this.idCliente = 0;
-        mesas.add(this);
+        Restaurante.mesas.add(this);
     }
 
     public void crearReserva(int idCliente) {/** Este método asigna un cliente a cada mesa*/
@@ -29,8 +29,8 @@ public class Mesas implements Serializable {
     }
 
 
-    public static ArrayList<Mesas> getMesas() {
-        return mesas;
+    public static Restaurante getRestaurante() {
+        return restaurante;
     }
 
     public void setIdMesa(int idMesa) {

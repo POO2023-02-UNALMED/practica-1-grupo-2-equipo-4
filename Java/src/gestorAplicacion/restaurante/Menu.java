@@ -5,14 +5,66 @@ import java.io.Serializable;
 public class Menu implements Serializable {
     private String tipoHamburguesa;
     private int precioHamburguesa;
-    private String acompañantes;
-    private int precioAcompañantes;
+    private String acompanantes;
+    private int precioAcompanantes;
 
-    public Menu(String tipoHamburguesa, int precioHamburguesa, String acompañantes, int precioAcompañantes) {
+    public Menu(String tipoHamburguesa, int precioHamburguesa, String acompanantes, int precioAcompanantes) {
         this.tipoHamburguesa = tipoHamburguesa;
         this.precioHamburguesa = precioHamburguesa;
-        this.acompañantes = acompañantes;
-        this.precioAcompañantes = precioAcompañantes;
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+    }
+    public Menu hamCarne (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDeCarne = new Menu("Clasica de Carne", 18500, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDeCarne;
+    }
+    public Menu hamPollo (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDePollo = new Menu("Clasica de Pollo", 19000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDePollo;
+    }
+    public Menu hamDoble (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDobleDeCarne = new Menu("Doble de Carne", 22000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDobleDeCarne;
+    }public Menu hamQuesoTocineta (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDeCarneQyT = new Menu("Carne con Queso y Tocineta", 23000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDeCarneQyT;
+    }public Menu hamPolloQueso (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDePolloyQ = new Menu("Pollo con Queso", 22000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDePolloyQ;
+    }public Menu hamVegetariana (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaVegetariana = new Menu("Vegetariana", 21000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaVegetariana;
+    }public Menu hamDobleQyT (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDobleQyT = new Menu("Doble con Queso y Tocineta", 27000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDobleQyT;
+    }
+    public Menu hamDobleSinVegetales (String acompanantes, int precioAcompanantes){
+        Menu hamburguesaDobleSInVegetales = new Menu("Doble sin Vegetales", 25000, acompanantes, precioAcompanantes);
+        this.acompanantes = acompanantes;
+        this.precioAcompanantes = precioAcompanantes;
+        ; //aqui faltan los metodos necesarios para restar los ingredientes usados
+        return hamburguesaDobleSInVegetales;
     }
 
     public String getTipoHamburguesa() {
@@ -31,20 +83,20 @@ public class Menu implements Serializable {
     	this.precioHamburguesa = precioHamburguesa;
     }
     
-    public String getAcompañantes() {   //Hay que defininír si los acompañantes quedan como string o pasan a ser solo un boolean.
-    	return acompañantes;
+    public String getAcompanantes() {   //Hay que defininír si los acompañantes quedan como string o pasan a ser solo un boolean.
+    	return acompanantes;
     }
     
-    public void setAcompañantes(String acompañantes) {
-    	this.acompañantes = acompañantes;
+    public void setAcompanantes(String acompanantes) {
+    	this.acompanantes = acompanantes;
     }
     
     public int getPrecioAcompañantes() {
-    	return precioAcompañantes;
+    	return precioAcompanantes;
     }
     
-    public void setPrecioAcompañantes(int precioAcompañantes) {
-    	this.precioAcompañantes = precioAcompañantes;
+    public void setPrecioAcompanantes(int precioAcompanantes) {
+    	this.precioAcompanantes = precioAcompanantes;
     }
 }
 
