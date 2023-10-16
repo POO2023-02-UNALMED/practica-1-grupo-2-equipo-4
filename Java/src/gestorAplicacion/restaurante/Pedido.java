@@ -11,6 +11,10 @@ public class Pedido implements Serializable {
     public Menu getMenu() {
         return menu;
     }
+    
+    public void setMenu(Menu menu) {
+    	this.menu = menu;
+    }
 
     public void setEstadoInventario(boolean estadoInventario) {
         this.estadoInventario = estadoInventario;
@@ -22,6 +26,10 @@ public class Pedido implements Serializable {
 
     public void setIdReserva(int idReserva) {
         this.idReserva = idReserva;
+    }
+    
+    public int getIdReserva(int idReserva) {
+    	return idReserva;
     }
 }
 
