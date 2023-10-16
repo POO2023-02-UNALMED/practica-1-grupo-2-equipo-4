@@ -6,11 +6,11 @@ import gestorAplicacion.restaurante.Pedido;
 import java.io.Serializable;
 
 public class Factura implements Serializable {
-    public int idEmpleado;
-    public Mesas mesa;
-    public Pedido pedido;
-    public int fecha;
-    public int idFactura;
+    private int idEmpleado;
+    private Mesas mesa;
+    private Pedido pedido;
+    private int fecha;
+    private int idFactura;
 
     public Factura(int idEmpleado, Mesas mesa, Pedido tomarPedido, int idFactura) {
     	this.idEmpleado = idEmpleado;
@@ -20,4 +20,35 @@ public class Factura implements Serializable {
         /** En este constructor se asignan las características del momento después a que el cliente comió */
     }
     
+    public int getIdEmpleado() {
+    	return idEmpleado;
+    }
+    
+    public void setIdEmpleado(int idEmpleado) {
+    	this.idEmpleado = idEmpleado;
+    }
+    
+    public Mesas getMesa() {
+    	return mesa;
+    }
+    
+    public void setMesa(Mesas mesa) {
+    	this.mesa = mesa;
+    }
+    
+    public Pedido getPedido() {
+    	return pedido;
+    }
+    
+    public void setPedido(Pedido pedido) {
+    	this.pedido = pedido;
+    }
+    
+    public int getFecha() {
+    	return fecha;
+    }
+    
+    public void setFecha(int fecha) {
+    	this.fecha = fecha;
+    }
 }
