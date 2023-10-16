@@ -7,7 +7,9 @@ public class Calificacion implements Serializable{
     private int idFactura;
     private int idEmpleado;
     private int calificacion;
-
+public Calificacion() {
+        // Constructor sin argumentos necesario para deserialización
+    }
     
     public Calificacion(int idFactura, int idEmpleado, int calificacion) {
     	this.idFactura = idFactura;
