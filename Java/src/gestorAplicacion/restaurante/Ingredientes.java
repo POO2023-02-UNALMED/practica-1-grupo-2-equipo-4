@@ -23,9 +23,11 @@ public class Ingredientes extends Inventario implements Serializable {
             }
         }
     }
+
     @Override
     public String toString() {
         return " Nombre: " + nombre + " Precio: " + precio + " Cantidad: " + cantidad + " Disponibilidad: " + disponibilidad;
+
     }
 
 

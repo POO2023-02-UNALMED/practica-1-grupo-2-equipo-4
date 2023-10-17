@@ -21,6 +21,38 @@ public abstract class Inventario {
         this.cantidad= cantidad;
         listaInventario.add(this); // Lista de gaseosas + ingredientes
     }
+    
+    public String getNombre() {
+    	return nombre;
+    }
+    
+    public void setNombre(String nombre) {
+    	this.nombre = nombre;
+    }
+    
+    public float getPrecio() {
+    	return precio;
+    }
+    
+    public void setPrecio(float precio) {
+    	this.precio = precio;
+    }
+    
+    public int getCantidad() {
+    	return cantidad;
+    }
+    
+    public void setCantidad(int cantidad) {
+    	this.cantidad = cantidad;
+    }
+    
+    public boolean isDisponibilidad() {
+    	return disponibilidad;
+    }
+    
+    public void setDisponibilidad(boolean disponibilidad) {
+    	this.disponibilidad = disponibilidad;
+    }
 
     public abstract void comprar(int cantidad, Inventario elemento);
     public void disponibilidadInventario(){ //el void hay que cambiarlo por boolean, lo puse así pa que compile xd

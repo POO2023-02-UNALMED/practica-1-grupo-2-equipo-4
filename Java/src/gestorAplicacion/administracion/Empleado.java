@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Empleado implements Serializable {
     private String nombre;
     public java.util.ArrayList<Calificacion> calificaciones;
-    public int idEmpleado;
+    private int idEmpleado;
     private float salario;
     private Calificacion calificacion;
     private static int cantidadEmpleados = 0;
@@ -26,5 +26,38 @@ public class Empleado implements Serializable {
     public int getCantidadEmpleados() {
         return cantidadEmpleados;
     }
+    
+    public String getNombre() {
+    	return nombre;
+    }
+    
+    public void setNombre(String Nombre) {
+    	this.nombre = nombre;
+    }
+    
+    public int getIdEmpleado() {
+    	return idEmpleado;
+    }
+    
+    public void setIdEmpleado(int idEmpleado) {
+    	this.idEmpleado = idEmpleado;
+    }
+    
+    public float getSalario() {
+    	return salario;
+    }
+    
+    public void setSalario(float salario) {
+    	this.salario = salario;
+    }
+    
+    public Calificacion getCalificacion() {
+    	return calificacion;
+    }
+    
+    public void setCalificacion(Calificacion calificacion) {
+    	this.calificacion = calificacion;
+    }
 }
+
 
