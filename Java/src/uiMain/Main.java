@@ -18,7 +18,7 @@ public class Main {
         Ingredientes carneDeCerdo = new Ingredientes("carne de cerdo", 15000, 6);
         Ingredientes huevo = new Ingredientes("huevo", 800, 10);
 
-        // test comida
+        // test recetas
         Comida carneALosHuevos = new Comida("Carne a los huevos");
         carneALosHuevos.agregarIngrediente(huevo,6);
         carneALosHuevos.agregarIngrediente(carneDeCerdo,3);
@@ -27,7 +27,8 @@ public class Main {
         carneALosHuevos.agregarIngrediente(carneDeCerdo, 1);
         System.out.println(carneALosHuevos);
         System.out.println(carneALosHuevos.calcularPrecio());
-
+        carneALosHuevos.removerIngrediente(huevo,4);
+        System.out.println(carneALosHuevos);
     }
 
 }
