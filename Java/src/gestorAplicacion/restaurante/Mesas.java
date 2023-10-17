@@ -17,11 +17,10 @@
          mesas.add(this);
      }
 
-     public void crearReserva(int idCliente) { // Este método asigna un cliente a cada mesa
-         this.idCliente = idCliente;
-         this.ocupado = false;
-
-     }
+     public void crearReserva(int idCliente, int cantidadAsientos) { // Este método asigna un cliente a cada mesa
+             this.idCliente = idCliente;
+             this.ocupado = false;
+         }
 
      public void cancelarReserva() { // Este método libera la mesa dejandola sin ningún cliente
          this.idCliente = 0;
