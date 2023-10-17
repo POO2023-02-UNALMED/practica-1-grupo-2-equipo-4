@@ -11,7 +11,8 @@ public class Comida {
         this.nombre = nombre;
     }
 
-    public void agregarIngrediente(Ingredientes ingrediente, int cantidad) {
+    public void agregarIngrediente(Ingredientes ingrediente, int cantidad) {  /* agrega un ingrediente a la receta, si esté ya estaba en la receta, suma la cantidad
+                                                                                especificada */
         if (ingredientesDeComida.containsKey(ingrediente)) {
             int cantidadActual = ingredientesDeComida.get(ingrediente);
             ingredientesDeComida.put(ingrediente, cantidadActual + cantidad);
@@ -19,7 +20,7 @@ public class Comida {
             ingredientesDeComida.put(ingrediente, cantidad);
         }
     }
-    public void removerIngrediente(Ingredientes ingrediente, int cantidad) {
+    public void removerIngrediente(Ingredientes ingrediente, int cantidad) {  /* remueve un ingrediente a la receta */
         if (ingredientesDeComida.containsKey(ingrediente)) {
             int cantidadActual = ingredientesDeComida.get(ingrediente);
             if (cantidadActual <= cantidad) {
