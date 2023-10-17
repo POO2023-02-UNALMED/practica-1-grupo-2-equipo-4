@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 import uiMain.Hamburgueseria;
 import gestorAplicacion.administracion.*;
-import gestorAplicacion.restaurante.*;
+import gestorAplicacion.restaurante.*; //
 
-public class Deserializar {
+public class Deserializador {
     static File archivo = new File("");
 
     public static ArrayList<Hamburgueseria> deserializarHamburgueseria() {
