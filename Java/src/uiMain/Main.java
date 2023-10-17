@@ -8,8 +8,8 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-
-
+        Gaseosas coca_cola = new Gaseosas("Coca cola",2000,9);
+        Gaseosas Sprite = new Gaseosas("Sprite",2000,9);
 
 
         // Test Comprar Ingredientes
@@ -29,6 +29,15 @@ public class Main {
         System.out.println(carneALosHuevos.calcularPrecio());
         carneALosHuevos.removerIngrediente(huevo,4);
         System.out.println(carneALosHuevos);
+
+
+        Menu menu = new Menu();
+        menu.agregarGaseosa(coca_cola);
+        menu.agregarComida(carneALosHuevos);
+        menu.mostrarMenu();
+        menu.removerComida(carneALosHuevos);
+        menu.removerGaseosa(coca_cola);
+        menu.mostrarMenu();
     }
 
 }
