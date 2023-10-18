@@ -2,6 +2,7 @@
  package gestorAplicacion.restaurante ;
  import java.util.*;
  import java.io.Serializable;
+ import java.util.stream.Stream;
 
  public class Mesas implements Serializable {
      public static java.util.ArrayList<Mesas> mesas = new ArrayList<>();
@@ -16,13 +17,33 @@
          mesas.add(this);
      }
 
-     public boolean crearReserva(int idCliente, int numeroDeSillas, String fecha) {
-         if (reservaPorCliente.containsValue(fecha) ){
-
+     public void crearReserva(int idCliente, int idMesa, String fecha) {
+         for (Mesas mesa:mesas){
+             if (mesa.getIdMesa()== idMesa && !mesa.reservaPorCliente.containsValue(fecha)){
+                 mesa.reservaPorCliente.put(idCliente,fecha);
+                 mesa.setOcupado(true);
+             }
          }
 
      }
-
+     public String stringMesasDisponibles (int numeroDeSillas, String fecha){
+         java.util.ArrayList<Mesas> mesasDisponibles = new ArrayList<>();
+         for (Mesas mesa: mesas) {
+             if (!mesa.reservaPorCliente.containsValue(fecha) && mesa.numeroDeSillas == numeroDeSillas ) {
+                 mesasDisponibles.add(mesa);
+                 if (mesasDisponibles.isEmpty()) {
+                     return "No hay mesas con "+numeroDeSillas+" en la fecha "+fecha;
+                 }
+             }
+         }
+         StringBuilder cadena = null;
+         for (Mesas mesa: mesasDisponibles){
+             cadena.append("La mesa ");
+             cadena.append(mesa.getIdMesa());
+             cadena.append(" esta disponible\n");
+         }
+         return "Mesas Disponibles:\n" + cadena;
+     }
      public void efectuarReserva(int idCliente, int idMesa,String fechaReserva ){
             for(Mesas mesa : mesas){
                 if(mesa.getIdCliente() == idCliente && mesa.getIdMesa()==idMesa && Objects.equals(mesa.fechaReserva, fechaReserva)){
@@ -78,7 +99,6 @@
      public int getIdMesa() {
          return idMesa;
      }
-
      public String toString(){
          return  "mesa número:" + idMesa + "con número de sillas: " + numeroDeSillas + " está ocupada: " + ocupado + "en la fecha: "+ fechaReserva + "por el cliente : " + idCliente;
      }
