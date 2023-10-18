@@ -3,13 +3,19 @@ package gestorAplicacion.restaurante;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.ArrayList;
 public class Pedido implements Serializable {
 
     private int IdPedido;
     private Mesas mesa;
-    private List<Comida> pedidoComidas;
-    private List<Gaseosas> pedidoGaseosas;
+    private ArrayList<Comida> pedidoComidas;
+    private ArrayList<Gaseosas> pedidoGaseosas;
+    public Pedido(int IdPedido,Mesas mesa,ArrayList<Comida> pedidoComidas,ArrayList<Gaseosas> pedidoGaseosas){
+        this.IdPedido = IdPedido;
+        this.mesa = mesa;
+        this.pedidoComidas = pedidoComidas;
+        this.pedidoGaseosas = pedidoGaseosas;
+    }
 
 
 
