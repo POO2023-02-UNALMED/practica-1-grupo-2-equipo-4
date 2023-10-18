@@ -102,7 +102,7 @@ public class Hamburgueseria {
 
                             case 4: // Volver al menú principal
                         }
-                        while (opcion2 != 4) ;
+                    }while (opcion2 != 4) ;
                         break;
                 case 4:
                     do {// Funcionalidad Tomar Pedidos
