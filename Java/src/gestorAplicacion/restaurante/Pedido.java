@@ -21,6 +21,7 @@ public class Pedido implements Serializable {
         this.tieneReserva = tieneReserva;
         if(tieneReserva){
             Mesas.efectuarReserva(this.mesa.getIdCliente(),this.mesa.getIdMesa(),this.mesa.getFechaReserva());
+            System.out.println("Su reserva fue efectuada correctamente");
 
         }
         else {
