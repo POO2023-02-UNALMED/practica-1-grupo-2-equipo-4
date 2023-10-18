@@ -14,6 +14,7 @@ public abstract class Inventario {
     protected int cantidad;
     protected boolean disponibilidad;
 
+    protected Inventario(){}
     protected Inventario(String nombre, float precio, int cantidad){
 
         this.nombre=nombre;

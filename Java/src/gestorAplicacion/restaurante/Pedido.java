@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Pedido implements Serializable {
 
     private int IdPedido;
-    private int
+    // private int
     private Mesas mesa;
     private ArrayList<Comida> pedidoComidas;
     private ArrayList<Gaseosas> pedidoGaseosas;
@@ -20,12 +20,12 @@ public class Pedido implements Serializable {
         this.pedidoGaseosas = pedidoGaseosas;
         this.tieneReserva = tieneReserva;
         if(tieneReserva){
-            Mesas.efectuarReserva(mesa.getIdCliente(),mesa.getIdMesa(),mesa.getFechaReserva());
+            mesa.efectuarReserva(mesa.getIdCliente(),mesa.getIdMesa(),mesa.getFechaReserva());
             System.out.println("Su reserva fue efectuada correctamente");
 
         }
         else {
-            Mesas.crearReserva()
+            //Mesas.crearReserva()
         }
     }
 
@@ -40,19 +40,19 @@ public class Pedido implements Serializable {
     }
 
     public Mesas getMesa() {
-
+        return  mesa;
     }
 
     public void setMesa(Mesas mesa) {
         this.mesa = mesa;
     }
 
-    public ArrayList getPedido() {
+  /*  public ArrayList getPedido() {
         return pedido;
     }
 
     public void setPedido(ArrayList pedido) {
         this.pedido = pedido;
-    }
+    } */
 }
 

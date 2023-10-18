@@ -40,14 +40,17 @@ public class Main {
         menu.mostrarMenu();
 
  */
-        Mesas mesa1 = new Mesas(2);
-        Mesas mesa2 = new Mesas(4);
-        Mesas mesa3 = new Mesas(10);
-        Mesas mesa4 = new Mesas(8);
-        Mesas mesa5 = new Mesas(8);
-        Mesas mesa6 = new Mesas(4);
+        Mesas mesa1 = new Mesas(1,4);
+        Mesas mesa2 = new Mesas(2,4);
+        Mesas mesa3 = new Mesas(3,7);
+        Mesas mesa4 = new Mesas(4,8);
+        Mesas mesa5 = new Mesas(5,10);
+        Mesas mesa6 = new Mesas(6,10);
 
-
+        mesa1.crearReserva(789, 4, "11-12-2023 14:00:00");
+        mesa2.crearReserva(576, 8,"aaa");
+        System.out.println(mesa1.toString());
+        System.out.println(mesa2.toString());
 
     }
 
