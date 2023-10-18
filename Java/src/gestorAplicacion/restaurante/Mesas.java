@@ -3,6 +3,7 @@
  import java.util.ArrayList;
  import java.io.Serializable;
  import java.util.Date;
+ import java.util.Objects;
 
  public class Mesas implements Serializable {
      public static java.util.ArrayList<Mesas> mesas;
@@ -51,8 +52,12 @@
          return mesaDisponible;
      }
 
-     public static boolean efectuarReserva(int idCliente, int idMesa,String fechaReserva ){
-
+     public static void efectuarReserva(int idCliente, int idMesa,String fechaReserva ){
+            for(Mesas mesa : mesas){
+                if(mesa.getIdCliente() == idCliente && mesa.getIdMesa()==idMesa && Objects.equals(mesa.fechaReserva, fechaReserva)){
+                    mesa.setOcupado(true);
+                }
+            }
      }
 
      public void cancelarReserva() { // Este método libera la mesa dejandola sin ningún cliente
