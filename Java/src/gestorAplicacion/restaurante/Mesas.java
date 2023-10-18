@@ -19,7 +19,7 @@
          mesas.add(this);
      }
 
-     public static boolean crearReserva(int idCliente, int numeroDeSillas, String fecha) {
+     public boolean crearReserva(int idCliente, int numeroDeSillas, String fecha) {
          boolean mesaDisponible = false;
          Mesas mesaCercana = null;
          int diferenciaMinima = Integer.MAX_VALUE;

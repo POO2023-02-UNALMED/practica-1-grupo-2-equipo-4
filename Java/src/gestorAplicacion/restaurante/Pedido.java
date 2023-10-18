@@ -20,7 +20,7 @@ public class Pedido implements Serializable {
         this.pedidoGaseosas = pedidoGaseosas;
         this.tieneReserva = tieneReserva;
         if(tieneReserva){
-            Mesas.efectuarReserva(this.mesa.getIdCliente(),this.mesa.getIdMesa(),this.mesa.getFechaReserva());
+            Mesas.efectuarReserva(mesa.getIdCliente(),mesa.getIdMesa(),mesa.getFechaReserva());
             System.out.println("Su reserva fue efectuada correctamente");
 
         }
