@@ -19,7 +19,8 @@ public class Factura implements Serializable {
     	this.idFactura = idFactura;
         /** En este constructor se asignan las características del momento después a que el cliente comió */
     }
-    
+    public Factura(){ //Constructor sin argumentos necesario para deserialización
+    }
     public int getIdEmpleado() {
     	return idEmpleado;
     }

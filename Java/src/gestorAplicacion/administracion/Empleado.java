@@ -21,6 +21,8 @@ public class Empleado implements Serializable {
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
 
     }
+    public Empleado(){ // Constructor sin argumentos necesario para deserialización
+    }
 
 
     public int getCantidadEmpleados() {
