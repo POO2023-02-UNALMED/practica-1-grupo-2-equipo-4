@@ -13,6 +13,28 @@ public class Pedido implements Serializable {
 
 
 
+    public int getIdPedido() {
+        return IdPedido;
+    }
 
+    public void setIdPedido(int idPedido) {
+        IdPedido = idPedido;
+    }
+
+    public Mesas getMesa() {
+
+    }
+
+    public void setMesa(Mesas mesa) {
+        this.mesa = mesa;
+    }
+
+    public ArrayList getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(ArrayList pedido) {
+        this.pedido = pedido;
+    }
 }
 

@@ -16,8 +16,23 @@ public class Contabilidad implements Serializable{
 
     }
 
+    public static float getSaldo() {
+        return saldo;
+    }
 
+    public static void setSaldo(float saldo) {
+        Contabilidad.saldo = saldo;
+    }
 
+    public static Restaurante getRestaurante() {
+        return restaurante;
+    }
 
+    public static void setRestaurante(Restaurante restaurante) {
+        Contabilidad.restaurante = restaurante;
+    }
 
+    public ArrayList<Factura> getFacturas() {
+        return Facturas;
+    }
 }
