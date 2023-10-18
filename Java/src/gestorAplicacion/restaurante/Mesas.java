@@ -1,6 +1,5 @@
 
  package gestorAplicacion.restaurante ;
- import java.text.SimpleDateFormat;
  import java.util.ArrayList;
  import java.io.Serializable;
  import java.util.Date;
@@ -11,7 +10,7 @@
      private int numeroDeSillas;
      private boolean ocupado = false;
      private int idCliente;
-     private Date fechaReserva;
+     private String fechaReserva;
 
      public Mesas( int numeroDeSillas) {
          this.idMesa ++ ;
@@ -19,7 +18,7 @@
          mesas.add(this);
      }
 
-     public static void crearReserva(int idCliente, int numeroDeSillas, Date fecha) {
+     public static boolean crearReserva(int idCliente, int numeroDeSillas, String fecha) {
          boolean mesaDisponible = false;
          Mesas mesaCercana = null;
          int diferenciaMinima = Integer.MAX_VALUE;
@@ -50,6 +49,10 @@
          }
 
          return mesaDisponible;
+     }
+
+     public static boolean efectuarReserva(int idCliente, int idMesa,   ){
+
      }
 
      public void cancelarReserva() { // Este método libera la mesa dejandola sin ningún cliente
@@ -91,7 +94,7 @@
          this.idCliente = idCliente;
      }
 
-     public void setFechaReserva(Date fechaReserva){
+     public void setFechaReserva(String fechaReserva){
          this.fechaReserva = fechaReserva;
      }
      public Date getFechaReserva(){
