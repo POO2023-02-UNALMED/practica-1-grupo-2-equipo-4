@@ -47,7 +47,7 @@ public class Main {
         Mesas mesa5 = new Mesas(8);
         Mesas mesa6 = new Mesas(4);
 
-        Mesas.crearReserva(2576,4,"01-11-2023");
+        Mesas.crearReserva(2576,4,"01-11-2023 16:21");
     }
 
 }
