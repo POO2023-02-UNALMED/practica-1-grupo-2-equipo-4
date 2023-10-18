@@ -51,7 +51,7 @@
          return mesaDisponible;
      }
 
-     public static boolean efectuarReserva(int idCliente, int idMesa,   ){
+     public static boolean efectuarReserva(int idCliente, int idMesa,String fechaReserva ){
 
      }
 
@@ -97,10 +97,13 @@
      public void setFechaReserva(String fechaReserva){
          this.fechaReserva = fechaReserva;
      }
-     public Date getFechaReserva(){
+     public String getFechaReserva(){
          return this.fechaReserva;
      }
 
+     public int getIdMesa() {
+         return idMesa;
+     }
  }
 
 

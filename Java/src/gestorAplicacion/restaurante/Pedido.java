@@ -7,14 +7,25 @@ import java.util.ArrayList;
 public class Pedido implements Serializable {
 
     private int IdPedido;
+    private int
     private Mesas mesa;
     private ArrayList<Comida> pedidoComidas;
     private ArrayList<Gaseosas> pedidoGaseosas;
-    public Pedido(int IdPedido,Mesas mesa,ArrayList<Comida> pedidoComidas,ArrayList<Gaseosas> pedidoGaseosas){
+    private boolean tieneReserva;
+    private String fecha;
+    public Pedido(int IdPedido,Mesas mesa,ArrayList<Comida> pedidoComidas,ArrayList<Gaseosas> pedidoGaseosas,boolean tieneReserva){
         this.IdPedido = IdPedido;
         this.mesa = mesa;
         this.pedidoComidas = pedidoComidas;
         this.pedidoGaseosas = pedidoGaseosas;
+        this.tieneReserva = tieneReserva;
+        if(tieneReserva){
+            Mesas.efectuarReserva(this.mesa.getIdCliente(),this.mesa.getIdMesa(),this.mesa.getFechaReserva());
+
+        }
+        else {
+            Mesas.crearReserva()
+        }
     }
 
 
