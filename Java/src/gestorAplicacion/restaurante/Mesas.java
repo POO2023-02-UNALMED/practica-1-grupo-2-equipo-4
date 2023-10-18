@@ -7,14 +7,14 @@
 
  public class Mesas implements Serializable {
      public static java.util.ArrayList<Mesas> mesas;
-     private int idMesa = 0;
+     private int idMesa;
      private int numeroDeSillas;
      private boolean ocupado = false;
      private int idCliente;
      private String fechaReserva;
 
-     public Mesas( int numeroDeSillas) {
-         this.idMesa ++ ;
+     public Mesas( int numeroDeSillas, int idMesa) {
+         this.idMesa = idMesa;
          this.numeroDeSillas = numeroDeSillas;
          mesas.add(this);
      }
