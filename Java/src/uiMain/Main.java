@@ -8,7 +8,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        Gaseosas coca_cola = new Gaseosas("Coca cola",2000,9);
+       /* Gaseosas coca_cola = new Gaseosas("Coca cola",2000,9);
         Gaseosas Sprite = new Gaseosas("Sprite",2000,9);
 
 
@@ -38,6 +38,16 @@ public class Main {
         menu.removerComida(carneALosHuevos);
         menu.removerGaseosa(coca_cola);
         menu.mostrarMenu();
+
+ */
+        Mesas mesa1 = new Mesas(2);
+        Mesas mesa2 = new Mesas(4);
+        Mesas mesa3 = new Mesas(10);
+        Mesas mesa4 = new Mesas(8);
+        Mesas mesa5 = new Mesas(8);
+        Mesas mesa6 = new Mesas(4);
+
+        Mesas.crearReserva(2576,4,"01-11-2023");
     }
 
 }

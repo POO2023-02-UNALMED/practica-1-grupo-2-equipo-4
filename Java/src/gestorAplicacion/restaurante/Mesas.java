@@ -1,26 +1,55 @@
 
  package gestorAplicacion.restaurante ;
+ import java.text.SimpleDateFormat;
  import java.util.ArrayList;
  import java.io.Serializable;
+ import java.util.Date;
+
  public class Mesas implements Serializable {
      public static java.util.ArrayList<Mesas> mesas;
-     public int idMesa;
-     public int numeroDeSillas;
-     public boolean ocupado;
-     public int idCliente;
+     private int idMesa = 0;
+     private int numeroDeSillas;
+     private boolean ocupado = false;
+     private int idCliente;
+     private Date fechaReserva;
 
-     public Mesas(int idMesa, int numeroDeSillas, boolean ocupado) {
-         this.idMesa = idMesa;
+     public Mesas( int numeroDeSillas) {
+         this.idMesa ++ ;
          this.numeroDeSillas = numeroDeSillas;
-         this.ocupado = ocupado;
-         this.idCliente = 0;
          mesas.add(this);
      }
 
-     public void crearReserva(int idCliente) { // Este método asigna un cliente a cada mesa
-         this.idCliente = idCliente;
-         this.ocupado = false;
+     public static void crearReserva(int idCliente, int numeroDeSillas, Date fecha) {
+         boolean mesaDisponible = false;
+         Mesas mesaCercana = null;
+         int diferenciaMinima = Integer.MAX_VALUE;
 
+         for (Mesas mesa : mesas) {
+             if (mesa.getNumeroDeSillas() == numeroDeSillas && mesa.isOcupado()  && mesa.getFechaReserva() == null) {
+                 mesaDisponible = true;
+                 mesa.setIdCliente(idCliente);
+                 mesa.setOcupado(true);
+                 mesa.setFechaReserva(fecha);
+                 break;
+             } else {
+                 int diferencia = Math.abs(numeroDeSillas - mesa.getNumeroDeSillas());
+                 if (diferencia < diferenciaMinima) {
+                     diferenciaMinima = diferencia;
+                     mesaCercana = mesa;
+                 }
+             }
+         }
+
+         if (!mesaDisponible) {
+             System.out.println("No hay mesas disponibles con " + numeroDeSillas + " sillas en la fecha especificada.");
+             if (mesaCercana != null) {
+                 System.out.println("Te recomendamos la mesa con " + mesaCercana.getNumeroDeSillas() + " sillas más cercana.");
+             } else {
+                 System.out.println("No se encontraron mesas cercanas en número de sillas.");
+             }
+         }
+
+         return mesaDisponible;
      }
 
      public void cancelarReserva() { // Este método libera la mesa dejandola sin ningún cliente
@@ -46,11 +75,11 @@
          this.numeroDeSillas = numeroDeSillas;
      }
 
-     public boolean isEstadoMesa() {
+     public boolean isOcupado() {
          return ocupado;
      }
 
-     public void setEstadoMesa(boolean estadoMesa) {
+     public void setOcupado(boolean estadoMesa) {
          this.ocupado = estadoMesa;
      }
 
@@ -61,6 +90,14 @@
      public void setIdCliente(int idCliente) {
          this.idCliente = idCliente;
      }
+
+     public void setFechaReserva(Date fechaReserva){
+         this.fechaReserva = fechaReserva;
+     }
+     public Date getFechaReserva(){
+         return this.fechaReserva;
+     }
+
  }
 
 
