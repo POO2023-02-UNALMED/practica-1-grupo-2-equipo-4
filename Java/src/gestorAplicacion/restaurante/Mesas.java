@@ -83,12 +83,11 @@
          this.ocupado = estadoMesa;
      }
 
-     public int getIdCliente() {
-         return idCliente;
+     public String get(Integer key) {
+         return reservaPorCliente.get(key);
      }
-
-     public void setIdCliente(int idCliente) {
-         this.idCliente = idCliente;
+     public void set(Integer key, String value) {
+         reservaPorCliente.put(key, value);
      }
 
      public void agregarFechaReserva(String fechaReserva){
