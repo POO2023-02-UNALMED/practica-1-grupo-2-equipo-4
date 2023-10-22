@@ -1,5 +1,11 @@
 package gestorAplicacion.administracion;
 
+import gestorAplicacion.restaurante.Comida;
+import gestorAplicacion.restaurante.Gaseosas;
+import gestorAplicacion.restaurante.Pedido;
+
+import java.util.ArrayList;
+
 public class Cocinero extends Empleado {
     private String especialidad;
 
@@ -8,8 +14,8 @@ public class Cocinero extends Empleado {
         this.especialidad = especialidad;
     }
 
-    public void prepararPlato() {
-        // Método para preparar un plato
+    public void prepararPlato(Pedido pedido) {
+        System.out.println("El cocinero " + this.getNombre() + " ha terminado de preparar el pedido de" +pedido.getIdPedido() );
     }
 
     // Getters y setters para especialidad

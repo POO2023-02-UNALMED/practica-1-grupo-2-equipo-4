@@ -7,6 +7,10 @@ import gestorAplicacion.restaurante.Pedido;
 public class Repartidor extends Empleado {
     private String vehiculo;
     public Pedido pedido;
+    public boolean estadoPedido= false;
+    public void entregarPedido(){
+        this.estadoPedido = true;
+    }
 
     public Repartidor(String nombre, int idEmpleado, float salario, Calificacion calificacion, String vehiculo) {
         super(nombre, idEmpleado, salario, calificacion);
