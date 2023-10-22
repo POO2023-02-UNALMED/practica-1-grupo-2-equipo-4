@@ -44,11 +44,11 @@
          }
          return "Mesas Disponibles:\n" + cadena;
      }*/
-    public void efectuarReserva(int idCliente, int idMesa,String fecha ){
+    public void efectuarReserva(int idCliente,int idMesa,String fecha ){ // efectua una reserva, lo que hace que la reserva se borre, pero el estado de la mesa siga ocupada
             for(Mesas mesa : mesas ){
                 if(mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)){
                     mesa.reservaPorCliente.remove(idCliente, fecha);
-                    mesa.setOcupadoEnFecha(false, fecha);
+                    mesa.setOcupadoEnFecha(true, fecha);
                 }
             }
      }
