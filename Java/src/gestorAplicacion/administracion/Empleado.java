@@ -21,6 +21,19 @@ public class Empleado implements Serializable {
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
 
     }
+    // Calcular el promedio de las calificaciones y determinar si califica para el bono
+    public boolean BONO() {
+
+        double suma = 0.0;
+        for (Calificacion calificacion : calificaciones) {
+            suma += calificacion.getCalificacion();
+        }
+
+        double promedio = suma / calificaciones.size();
+
+        return promedio >= 4.5;
+    }
+
     public Empleado(){ // Constructor sin argumentos necesario para deserialización
     }
 
