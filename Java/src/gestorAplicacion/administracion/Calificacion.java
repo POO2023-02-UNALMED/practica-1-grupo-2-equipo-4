@@ -34,8 +34,8 @@ public Calificacion() {
     	return idFactura;
     }
     
-    public int getIdEmpleado() {
-    	return idEmpleado;
+    public Empleado getIdEmpleado() {
+    	return empleado;
     }
     
     public int getCalificacion() {

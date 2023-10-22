@@ -31,7 +31,10 @@ public class Empleado implements Serializable {
 
         double promedio = suma / calificaciones.size();
 
-        return promedio >= 4.5;
+        if(promedio >= 4.5)
+            return true;
+        else
+            return false;
     }
 
     public Empleado(){ // Constructor sin argumentos necesario para deserialización

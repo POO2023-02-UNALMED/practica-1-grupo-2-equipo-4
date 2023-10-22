@@ -45,7 +45,14 @@ public class Pedido implements Serializable {
         this.mesa = mesa;
     }
 
-  /*  public ArrayList getPedido() {
+    public ArrayList<Comida> getPedidoComidas() {
+        return pedidoComidas;
+    }
+
+    public ArrayList<Gaseosas> getPedidoGaseosas() {
+        return pedidoGaseosas;
+    }
+    /*  public ArrayList getPedido() {
         return pedido;
     }
 

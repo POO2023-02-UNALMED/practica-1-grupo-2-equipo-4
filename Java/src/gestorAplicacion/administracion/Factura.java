@@ -1,5 +1,7 @@
 package gestorAplicacion.administracion;
 
+import gestorAplicacion.restaurante.Comida;
+import gestorAplicacion.restaurante.Gaseosas;
 import gestorAplicacion.restaurante.Mesas;
 import gestorAplicacion.restaurante.Pedido;
 
@@ -12,12 +14,26 @@ public class Factura implements Serializable {
     private int fecha;
     private int idFactura;
 
-    public Factura(int idEmpleado, Mesas mesa, Pedido tomarPedido, int idFactura) {
+
+    public Factura(int idEmpleado, Mesas mesa, Pedido pedido, int idFactura) {
     	this.idEmpleado = idEmpleado;
     	this.mesa = mesa;
-    	this.pedido = tomarPedido;
+    	this.pedido = pedido;
     	this.idFactura = idFactura;
         /** En este constructor se asignan las características del momento después a que el cliente comió */
+    }
+    public float sumarPedidos() {
+        float suma = 0;
+
+        for (Comida comida : this.pedido.getPedidoComidas()) {
+            suma += comida.calcularPrecio();
+        }
+
+        for (Gaseosas gaseosa : this.pedido.getPedidoGaseosas()) {
+            suma += gaseosa.getPrecio();
+        }
+
+        return suma;
     }
     public Factura(){ //Constructor sin argumentos necesario para deserialización
     }

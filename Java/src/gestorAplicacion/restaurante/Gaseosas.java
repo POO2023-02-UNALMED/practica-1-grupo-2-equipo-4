@@ -16,6 +16,7 @@ public class Gaseosas extends Inventario implements Serializable {
     }
 
 
+
     public void comprar(int cantidad, Inventario gaseosa) { //Método para comprar gaseosas
         // se agrega la cantidad de la gaseosa comprada
         for (Gaseosas i : listaGaseosas) {
@@ -28,6 +29,25 @@ public class Gaseosas extends Inventario implements Serializable {
     @Override
     public String toString() {
         return "Nombre: " + nombre + "Precio: " + precio + "Cantidad: " + cantidad + "Disponibilidad: " + disponibilidad;
+    }
+
+    @Override
+    public float getPrecio() {
+        return super.getPrecio();
+    }
+
+    @Override
+    public int getCantidad() {
+        return super.getCantidad();
+    }
+
+    @Override
+    public String getNombre() {
+        return super.getNombre();
+    }
+
+    public static ArrayList<Gaseosas> getListaGaseosas() {
+        return listaGaseosas;
     }
 }
 
