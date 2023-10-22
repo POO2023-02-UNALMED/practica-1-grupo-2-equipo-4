@@ -1,4 +1,4 @@
-package baseDatos;
+/* package baseDatos;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 import uiMain.Hamburgueseria;
 import gestorAplicacion.administracion.*;
-import gestorAplicacion.restaurante.*;
+import gestorAplicacion.restaurante.*; */
 
-public class Serializador {
+/* public class Serializador {
     static File archivo = new File("");
 
     public static void serializarCalificaicon(ArrayList<Calificacion> lista) {
@@ -231,4 +231,4 @@ public class Serializador {
             System.out.println("Error de flujo de inicializacion: " + e.getMessage());
         }
     }
-}
+}*/
