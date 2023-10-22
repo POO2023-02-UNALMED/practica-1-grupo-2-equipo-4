@@ -22,7 +22,7 @@ public class Factura implements Serializable {
     	this.idFactura = idFactura;
         /** En este constructor se asignan las características del momento después a que el cliente comió */
     }
-    public float sumarPedidos() {
+    public float precioTotal() {
         float suma = 0;
 
         for (Comida comida : this.pedido.getPedidoComidas()) {
