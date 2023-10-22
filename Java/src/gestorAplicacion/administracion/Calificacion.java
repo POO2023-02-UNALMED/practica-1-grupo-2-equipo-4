@@ -5,15 +5,15 @@ import java.io.Serializable;
 
 public class Calificacion implements Serializable{
     private int idFactura;
-    private int idEmpleado;
+    private Empleado empleado;
     private int calificacion;
 public Calificacion() {
         // Constructor sin argumentos necesario para deserialización
     }
     
-    public Calificacion(int idFactura, int idEmpleado, int calificacion) {
+    public Calificacion(int idFactura, Empleado empleado, int calificacion) {
     	this.idFactura = idFactura;
-    	this.idEmpleado = idEmpleado;
+    	this.empleado = empleado;
     	this.calificacion = calificacion;
     }
     
@@ -21,8 +21,8 @@ public Calificacion() {
     	this.idFactura = idFactura;
     }
     
-    public void setIdEmpleado(int idEmpleado){
-    	this.idEmpleado = idEmpleado;
+    public void setIdEmpleado(Empleado idEmpleado){
+    	this.empleado = idEmpleado;
     }
     
     

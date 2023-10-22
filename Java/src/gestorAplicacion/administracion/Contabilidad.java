@@ -6,10 +6,12 @@ import java.util.ArrayList;
 public class Contabilidad implements Serializable{
     public static float saldo = 1000000;
     public ArrayList<Factura> Facturas;
+    public static final float serviciosPublicos = 0;
     
     public Contabilidad(float saldo,ArrayList<Factura> Facturas){
         Contabilidad.saldo = saldo;
         this.Facturas = Facturas;
+
 
     }
 
