@@ -24,12 +24,9 @@
                  mesa.reservaPorCliente.put(idCliente,fecha);
                  mesa.setOcupadoEnFecha(true, fecha);
              }
-             if (mesa.getIdMesa() == idMesa && mesa.reservaPorCliente.containsValue(fecha)){
-             }
          }
-
      }
-     public String stringMesasDisponibles (int numeroDeSillas, String fecha){
+    /* public String verificarDisponibilidad (int numeroDeSillas, String fecha){
          java.util.ArrayList<Mesas> mesasDisponibles = new ArrayList<>();
          for (Mesas mesa: mesas) {
              if (!mesa.reservaPorCliente.containsValue(fecha) && mesa.numeroDeSillas == numeroDeSillas ) {
@@ -46,16 +43,24 @@
              cadena.append(" esta disponible\n");
          }
          return "Mesas Disponibles:\n" + cadena;
-     }
-    /* public void efectuarReserva(int idCliente, int idMesa,String fecha ){
-            for(Mesas mesa : mesas){
-                if(mesa.getIdCliente() == idCliente && mesa.getIdMesa()==idMesa && Objects.equals(mesa.fechaReserva, fechaReserva)){
-                    mesa.setOcupadoEnFecha(true, fecha);
+     }*/
+    public void efectuarReserva(int idCliente, int idMesa,String fecha ){
+            for(Mesas mesa : mesas ){
+                if(mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)){
+                    mesa.reservaPorCliente.remove(idCliente, fecha);
+                    mesa.setOcupadoEnFecha(false, fecha);
                 }
             }
-     }*/
+     }
 
-     public void cancelarReserva() { // Este método libera la mesa dejandola sin ningún cliente
+     public void cancelarReserva(int idCliente, int idMesa, String fecha) {// Este método libera la mesa dejandola sin ningún cliente
+        for (Mesas mesa : mesas){
+            if (mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)){
+                mesa.reservaPorCliente.remove(idCliente, fecha);
+                mesa.setOcupadoEnFecha(false, fecha);
+            }
+        }
+
      }
 
 

@@ -1,10 +1,10 @@
-package uiMain;
+/* package uiMain;
 import java.util.ArrayList;
 import java.util.Scanner;
-import baseDatos.Serializador;
+import baseDatos.Serializador; */
 
-public class Hamburgueseria {
-    /*static Scanner scan = new Scanner(System.in);
+/* public class Hamburgueseria {
+    static Scanner scan = new Scanner(System.in);
 
     static long readLong() {
         return scan.nextLong();
@@ -143,4 +143,4 @@ public class Hamburgueseria {
                     }
             }
         }
-    */}
+    }*/
