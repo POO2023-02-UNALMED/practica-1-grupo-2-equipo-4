@@ -47,8 +47,10 @@ public class Main {
         Mesas mesa5 = new Mesas(5,10);
         Mesas mesa6 = new Mesas(6,10);
 
-        mesa1.crearReserva(789, 4, "11-12-2023 14:00:00");
-        mesa2.crearReserva(576, 8,"aaa");
+        mesa1.crearReserva(789, 1, "11-12-2023 14:00:00");
+        mesa1.crearReserva(345,1,"11-12-2023 14:00:00");
+        mesa2.crearReserva(576, 2,"22-11-2023 13:00:00");
+        mesa2.crearReserva(578, 2,"22-10-2023 13:00:00");
         System.out.println(mesa1.toString());
         System.out.println(mesa2.toString());
 
