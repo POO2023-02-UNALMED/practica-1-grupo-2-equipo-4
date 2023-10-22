@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Empleado implements Serializable {
     private String nombre;
-    public java.util.ArrayList<Calificacion> calificaciones;
+    public java.util.ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private int idEmpleado;
     private float salario;
     private Calificacion calificacion;

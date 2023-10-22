@@ -29,8 +29,6 @@ public class Pedido implements Serializable {
         }
     }
 
-
-
     public int getIdPedido() {
         return IdPedido;
     }

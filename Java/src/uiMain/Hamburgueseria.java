@@ -136,7 +136,7 @@ public class Hamburgueseria {
 
 
                             private static void salirDelSistema () {
-                            System.out.println("Vuelva pronto y pero la proxima vez ojala un poco mas calvo:)");
+                            System.out.println("Vuelva pronto, pero la proxima vez ojala un poco mas calvo :)");
                             Serializador.serializarHamburgueseria(ArrayList < Hamburgueseria > lista);
                             System.exit(0);
                         }
