@@ -8,8 +8,9 @@
      public static java.util.ArrayList<Mesas> mesas = new ArrayList<>();
      private int idMesa;
      private int numeroDeSillas;
-     private boolean ocupado = false;
      private HashMap<Integer, String>  reservaPorCliente = new HashMap<>();
+     private HashMap<String, Boolean> ocupadoEnFecha = new HashMap<>();
+
 
      public Mesas( int idMesa, int numeroDeSillas) {
          this.idMesa = idMesa ;
@@ -21,7 +22,9 @@
          for (Mesas mesa:mesas){
              if (mesa.getIdMesa()== idMesa && !mesa.reservaPorCliente.containsValue(fecha)){
                  mesa.reservaPorCliente.put(idCliente,fecha);
-                 mesa.setOcupado(true);
+                 mesa.setOcupadoEnFecha(true, fecha);
+             }
+             if (mesa.getIdMesa() == idMesa && mesa.reservaPorCliente.containsValue(fecha)){
              }
          }
 
@@ -44,18 +47,15 @@
          }
          return "Mesas Disponibles:\n" + cadena;
      }
-     public void efectuarReserva(int idCliente, int idMesa,String fechaReserva ){
+    /* public void efectuarReserva(int idCliente, int idMesa,String fecha ){
             for(Mesas mesa : mesas){
                 if(mesa.getIdCliente() == idCliente && mesa.getIdMesa()==idMesa && Objects.equals(mesa.fechaReserva, fechaReserva)){
-                    mesa.setOcupado(true);
+                    mesa.setOcupadoEnFecha(true, fecha);
                 }
             }
-     }
+     }*/
 
      public void cancelarReserva() { // Este método libera la mesa dejandola sin ningún cliente
-         this.idCliente = 0;
-         this.ocupado = true;
-
      }
 
 
@@ -75,32 +75,34 @@
          this.numeroDeSillas = numeroDeSillas;
      }
 
-     public boolean isOcupado() {
-         return ocupado;
+     public boolean isOcupadoEnFecha(String fecha) {
+         return ocupadoEnFecha.getOrDefault(fecha, false);
+     }
+     public void setOcupadoEnFecha(boolean estadoMesa, String fecha) {
+         ocupadoEnFecha.put(fecha, estadoMesa);
      }
 
-     public void setOcupado(boolean estadoMesa) {
-         this.ocupado = estadoMesa;
-     }
-
-     public String get(Integer key) {
-         return reservaPorCliente.get(key);
-     }
      public void set(Integer key, String value) {
          reservaPorCliente.put(key, value);
      }
-
-     public void agregarFechaReserva(String fechaReserva){
-         this.fechaReserva.add(fechaReserva);
-     }
-     public String getFechaReserva() {}
-
      public int getIdMesa() {
          return idMesa;
      }
-     public String toString(){
-         return  "mesa número:" + idMesa + "con número de sillas: " + numeroDeSillas + " está ocupada: " + ocupado + "en la fecha: "+ fechaReserva + "por el cliente : " + idCliente;
+
+     public String toString() {
+         StringBuilder stringBuilder = new StringBuilder();
+         stringBuilder.append("Mesa número: ").append(idMesa).append("\n");
+         stringBuilder.append("Número de sillas: ").append(numeroDeSillas).append("\n");
+         stringBuilder.append("Fechas ocupadas: ").append(ocupadoEnFecha.keySet()).append("\n");
+         stringBuilder.append("Reservas:\n");
+         for (Map.Entry<Integer, String> entry : reservaPorCliente.entrySet()) {
+             Integer idCliente = entry.getKey();
+             String fecha = entry.getValue();
+             stringBuilder.append("ID de cliente: ").append(idCliente).append(", Fecha de reserva: ").append(fecha).append("\n");
+         }
+         return stringBuilder.toString();
      }
+
  }
 
 
