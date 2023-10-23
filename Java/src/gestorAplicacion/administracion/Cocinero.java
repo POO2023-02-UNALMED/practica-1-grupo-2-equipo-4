@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class Cocinero extends Empleado {
     private String especialidad;
 
-    public Cocinero(String nombre, int idEmpleado, float salario, Calificacion calificacion, String especialidad) {
-        super(nombre, idEmpleado, salario, calificacion);
+    public Cocinero(String nombre, int idEmpleado, float salario, String especialidad) {
+        super(nombre, idEmpleado, salario);
         this.especialidad = especialidad;
     }
 

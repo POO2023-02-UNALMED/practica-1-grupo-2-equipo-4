@@ -8,17 +8,14 @@ public class Empleado implements Serializable {
     public java.util.ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private int idEmpleado;
     private float salario;
-    private Calificacion calificacion;
     private static int cantidadEmpleados = 0;
     public java.util.ArrayList<Empleado> empleados = new ArrayList<>();
 
-
-    public Empleado(String nombre, int idEmpleado, float salario, Calificacion calificacion) {
+    public Empleado(String nombre, int idEmpleado, float salario) {
         cantidadEmpleados++;
         this.nombre = nombre;
         this.idEmpleado = idEmpleado;
         this.salario = salario;
-        this.calificacion = calificacion;
         empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
@@ -70,13 +67,5 @@ public class Empleado implements Serializable {
 
     public void setSalario(float salario) {
         this.salario = salario;
-    }
-
-    public Calificacion getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Calificacion calificacion) {
-        this.calificacion = calificacion;
     }
 }

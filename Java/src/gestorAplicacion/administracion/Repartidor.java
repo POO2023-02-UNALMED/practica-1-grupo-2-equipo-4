@@ -13,8 +13,8 @@ public class Repartidor extends Empleado {
         this.estadoPedido = true;
     }
 
-    public Repartidor(String nombre, int idEmpleado, float salario, Calificacion calificacion, String vehiculo) {
-        super(nombre, idEmpleado, salario, calificacion);
+    public Repartidor(String nombre, int idEmpleado, float salario, String vehiculo) {
+        super(nombre, idEmpleado, salario);
         this.vehiculo = vehiculo;
     }
 
