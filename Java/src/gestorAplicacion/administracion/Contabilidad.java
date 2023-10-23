@@ -1,10 +1,11 @@
- package gestorAplicacion.administracion;
+package gestorAplicacion.administracion;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
 import gestorAplicacion.restaurante.*;
 
-public class Contabilidad implements Serializable{
+public class Contabilidad implements Serializable {
     private static final long serialVersionUID = 1L;
     //private Empleado empleado;
     private double calcularUtilidad;
@@ -14,17 +15,19 @@ public class Contabilidad implements Serializable{
     public static float saldo = 1000000;
     //private ArrayList<Factura> facturas;
     private static final float serviciosPublicos = 0;
-    
-   /* public Contabilidad(float saldo,ArrayList<Factura> facturas){
-        Contabilidad.saldo = saldo;
-        this.facturas = facturas;
-    }*/
+
+    /* public Contabilidad(float saldo,ArrayList<Factura> facturas){
+         Contabilidad.saldo = saldo;
+         this.facturas = facturas;
+     }*/
     public static float getSaldo() {
         return saldo;
     }
+
     public static void setSaldo(float saldo) {
         Contabilidad.saldo = saldo;
     }
+
     /* public ArrayList<Factura> getFacturas() {
         return facturas;
     }*/

@@ -1,4 +1,5 @@
 package gestorAplicacion.administracion;
+
 import gestorAplicacion.restaurante.Comida;
 import gestorAplicacion.restaurante.Gaseosas;
 import gestorAplicacion.restaurante.Pedido;
@@ -14,7 +15,7 @@ public class Cocinero extends Empleado {
     }
 
     public void prepararPlato(Pedido pedido) {
-        System.out.println("El cocinero " + this.getNombre() + " ha terminado de preparar el pedido de" +pedido.getIdPedido() );
+        System.out.println("El cocinero " + this.getNombre() + " ha terminado de preparar el pedido de" + pedido.getIdPedido());
     }
 
     // Getters y setters para especialidad

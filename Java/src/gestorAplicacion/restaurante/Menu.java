@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.*;
 
-public class Menu implements  Serializable {
+public class Menu implements Serializable {
 
     private List<Comida> comidas;
     private List<Gaseosas> gaseosas;

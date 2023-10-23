@@ -40,6 +40,14 @@ public class Main {
         int[] cantidadesCarneQuesoYTocineta = {2, 1, 2, 3, 1, 2, 2};
         Comida EspecialQuesoYTocineta = new Comida("Especial con queso y tocineta", ingredientesCarneQuesoYTocineta, cantidadesCarneQuesoYTocineta);
 
+        Ingredientes[] ingredientesClasicaPollo = {pan, carneDeRes, tomate, cebolla, lechuga};
+        int[] cantidadesClasicaPollo = {2, 1, 1, 1, 1};
+        Comida clasicaDePollo = new Comida("Clasica de Pollo", ingredientesClasicaPollo, cantidadesClasicaPollo);
+
+        Ingredientes[] ingredientesPolloqueso = {pan, carneDePollo, queso, tomate, cebolla, lechuga};
+        int[] cantidadespolloconQueso = {2, 1, 1, 1, 1, 1};
+        Comida polloconQueso = new Comida("Clasica de Pollo", ingredientesPolloqueso, cantidadespolloconQueso);
+
         Ingredientes[] ingredientesDobleCarneTocineta = {pan, carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
         int[] cantidadesDobleCarneTocineta = {2,2,3,4,2,2,2};
         Comida DobleCarneTocineta = new Comida("Doble carne tocineta", ingredientesDobleCarneTocineta,cantidadesDobleCarneTocineta);
