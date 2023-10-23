@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Ingredientes extends Inventario implements Serializable {
+    public static double ingredientesComprados;
 
     public static ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
 
@@ -21,7 +22,8 @@ public class Ingredientes extends Inventario implements Serializable {
         for (Ingredientes i : listaIngredientes) {
             if (i.equals(ingrediente)) {
                 ingrediente.cantidad = ingrediente.cantidad + cantidad;
-                Contabilidad.saldo = Contabilidad.saldo - ingrediente.precio * cantidad; //resta del saldo de la tienda el precio*cantidad de ingredientes
+                Contabilidad.saldo -= ingrediente.precio * cantidad; //resta del saldo de la tienda el precio*cantidad de ingredientes
+                ingredientesComprados += ingrediente.precio * cantidad;
             }
         }
     }

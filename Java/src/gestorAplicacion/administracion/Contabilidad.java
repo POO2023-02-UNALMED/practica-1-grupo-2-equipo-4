@@ -55,15 +55,15 @@ public class Contabilidad implements Serializable{
     }
      //Metodo para calular Utilidad
      public double calcularUtilidad() {
-        double totalGastos = calcularGastos() + pagarSueldos();
+        double totalGastos = calcularGastos();
         double ingresoVentas = calcularIngresos();
         this.calcularUtilidad = ingresoVentas - totalGastos;
         return this.calcularUtilidad;
     }
      //Metodo para calcular Los Gastos de La Hamburgueseria
     public double calcularGastos(){
-
-        return calcularGastos;
+        double gastos = pagarSueldos() + Ingredientes.ingredientesComprados;
+        return gastos;
     }
      //Metodo para Pagar los sueldos a los empleados
     public double pagarSueldos() {
