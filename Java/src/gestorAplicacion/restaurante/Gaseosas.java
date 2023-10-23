@@ -12,7 +12,8 @@ public class Gaseosas extends Inventario implements Serializable {
         super(nombre, precio, cantidad);
         listaGaseosas.add(this);
     }
-    public Gaseosas(){ //Constructor sin argumentos necesario para deserialización
+
+    public Gaseosas() { //Constructor sin argumentos necesario para deserialización
     }
 
 
@@ -26,7 +27,15 @@ public class Gaseosas extends Inventario implements Serializable {
         }
     }
 
-    //Getters y Setters
+    public void restarGaseosas(int cantidad) {
+        this.cantidad = this.cantidad - cantidad;
+    }
+    public void restarCantidad() {
+        // Restar la cantidad de gaseosas en el pedido
+        for (Gaseosas gaseosa : listaGaseosas) {
+            gaseosa.restarGaseosas(1);
+        }
+    }
 
     @Override
     public String toString() {

@@ -25,6 +25,9 @@ public class Ingredientes extends Inventario implements Serializable {
             }
         }
     }
+    public void restarIngredientes(int cantidad){
+        this.cantidad = this.cantidad - cantidad;
+    }
 
     @Override
     public String toString() {

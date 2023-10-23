@@ -31,7 +31,7 @@ public class Pedido implements Serializable {
         mesa.efectuarReserva(idCliente, mesa.getIdMesa(), fecha);
     }
 
-    public Pedido( Mesas mesa, String fecha) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
+    public Pedido( Mesas mesa, String fecha, Empleado empleado) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
         idPedido++ ;
         this.mesa = mesa;
         this.fecha = fecha;
@@ -50,7 +50,15 @@ public class Pedido implements Serializable {
     }
     public void confirmarOrden(Pedido pedido) {
         Factura factura = new Factura(pedido.getEmpleado(),pedido.getMesa(),pedido,getIdPedido());
-        
+
+        for (Comida comida : pedidoComidas) {
+            comida.restarCantidad();
+        }
+
+        for (Gaseosas gaseosa : pedidoGaseosas) {
+            gaseosa.restarCantidad();
+        }
+
 
     }
 

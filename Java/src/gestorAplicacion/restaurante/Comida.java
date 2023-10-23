@@ -41,6 +41,14 @@ public class Comida {
     public Map<Ingredientes, Integer> getIngredientesDeComida() {
         return ingredientesDeComida;
     }
+    public void restarCantidad() {
+        // Restar la cantidad de ingredientes en el pedido
+        for (Map.Entry<Ingredientes, Integer> entry : ingredientesDeComida.entrySet()) {
+            Ingredientes ingrediente = entry.getKey();
+            int cantidad = entry.getValue();
+            ingrediente.restarIngredientes(cantidad);
+        }
+    }
     public float calcularPrecio() { //recorre los ingredientes de la comida, obtiene el precio de cada ingrediente y lo multiplica por la cantidad utilizada.
                                     // Luego, suma todos los precios parciales para obtener el precio total de la comida.
 

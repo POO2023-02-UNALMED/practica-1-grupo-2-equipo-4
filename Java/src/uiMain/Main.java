@@ -82,7 +82,7 @@ public class Main {
 
         Cocinero linguini = new Cocinero("linguini",1001,80000,"Calvas");
 
-        Pedido pedido1 = new Pedido( mesa2,"23-10-2023 1:40:00");
+        Pedido pedido1 = new Pedido( mesa2,"23-10-2023 1:40:00", linguini);
         pedido1.agregarComidaAlPedido(vegetariana,carnibora);
         pedido1.agregarGaseosaAlPedido(sprite, coca_cola);
         pedido1.imprimirComidas();
@@ -94,11 +94,13 @@ public class Main {
         Pedido pedido2 = new Pedido( mesa3,"23-10-2023 1:50:00", 456,linguini );
         System.out.println(mesa3.toString());
 
-
-
-
         Factura factura1 = new Factura(linguini,mesa1,pedido1,1,1.1);
         System.out.println(factura1.precioTotal());
+
+        pedido1.confirmarOrden(pedido1);
+        System.out.println(pan.toString());
+        System.out.println(carneDeRes.toString());
+        System.out.println(coca_cola.toString());
 
 
 
