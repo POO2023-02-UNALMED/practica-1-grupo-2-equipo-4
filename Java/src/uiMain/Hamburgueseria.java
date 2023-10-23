@@ -101,12 +101,12 @@ public class Hamburgueseria {
             System.out.println("");
             System.out.println(queHacer);
             System.out.println("");
-            System.out.println("1. Ingresar al apartado de Contabilidad ");
-            System.out.println("2. Ingresar a gestion de Empleados");
-            System.out.println("3. Ingresar a gestion de Reservas");
-            System.out.println("4. Ingresar al apartado de toma de Pedidos");
-            System.out.println("5. Ingresar a nuestro Inventario");
-            System.out.println("6. Finalizar");
+            System.out.println("1. Ingresar al apartado de Contabilidad 📈📈‍🦲");
+            System.out.println("2. Ingresar a gestion de Empleados 👨‍🍳👩‍🍳‍🦲");
+            System.out.println("3. Ingresar a gestion de Reservas 🕓🕒‍🦲");
+            System.out.println("4. Ingresar al apartado de toma de Pedidos 🍔🍟‍🦲");
+            System.out.println("5. Ingresar a nuestro Inventario 💻🖥️‍🦲");
+            System.out.println("6. Finalizar ❌❌👩‍🦲");
             System.out.println("");
             System.out.print("Ingresa el número de la opción que requieras: ");
             opcion2 = (int) readLong();
