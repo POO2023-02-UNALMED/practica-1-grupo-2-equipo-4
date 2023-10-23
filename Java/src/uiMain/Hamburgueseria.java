@@ -177,6 +177,9 @@ public class Hamburgueseria {
                                 break;
                         }
                     } while (opcion2 != 2);
+                case 6:
+                    salirDelSistema();
+                    break;
             }
         } while (opcion2 != 6);
     }
