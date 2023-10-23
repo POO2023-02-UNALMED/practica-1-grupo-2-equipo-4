@@ -1,11 +1,10 @@
-package gestorAplicacion.administracion;
+ package gestorAplicacion.administracion;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
 import gestorAplicacion.restaurante.*;
 
-public class Contabilidad implements Serializable {
+public class Contabilidad implements Serializable{
     private static final long serialVersionUID = 1L;
     //private Empleado empleado;
     private double calcularUtilidad;
@@ -17,24 +16,17 @@ public class Contabilidad implements Serializable {
     //private ArrayList<Factura> facturas;
 
     private static final float serviciosPublicos = 0;
-
-    /* public Contabilidad(float saldo,ArrayList<Factura> facturas, double calcularUtilidad, double calcularGastos, double calcularIngresos, double pagarSueldos){
+    
+   /* public Contabilidad(float saldo,ArrayList<Factura> facturas){
         Contabilidad.saldo = saldo;
         this.facturas = facturas;
-        this.calcularUtilidad= calcularUtilidad;
-        this.calcularIngresos = calcularIngresos;
-        this.calcularGastos = calcularGastos;
-        this.pagarSueldos = pagarSueldos;
-
     }*/
     public static float getSaldo() {
         return saldo;
     }
-
     public static void setSaldo(float saldo) {
         Contabilidad.saldo = saldo;
     }
-
     /* public ArrayList<Factura> getFacturas() {
         return facturas;
     }*/
@@ -71,10 +63,10 @@ public class Contabilidad implements Serializable {
     // Metodo para Pagar los sueldos a los empleados
     /*public double pagarSueldos() {
         double totalPago = 0;
-        for (Empleado empleado : empleado.empleados) { // deberia
+        for (Empleado empleado : getEmpleado()) { // deberia
             totalPago += empleado.getSalario();
-            if (empleado.BONO()) { // Si el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.
-                totalPago += (empleado.getSalario() * 200000); // Necesita multiplicar el Salario por el valor del bono que es .
+            if (empleado.Bono()) { // Si el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.
+                totalPago += (empleado.getSalario() * empleado.getValorBono()); // Necesita multiplicar el Salario por el valor del bono.
             } else {
                 totalPago += empleado.getSalario();
             }
