@@ -40,8 +40,6 @@ public class Pedido implements Serializable {
         this.empleado = empleado;
         mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
     }
-
-
     public void agregarComidaAlPedido(Comida... comidas) { //agrega comidas al pedido
         pedidoComidas.addAll(Arrays.asList(comidas));
 
@@ -50,12 +48,9 @@ public class Pedido implements Serializable {
         pedidoGaseosas.addAll(Arrays.asList(gaseosas));
 
     }
-
-
-
-
     public void confirmarOrden(Pedido pedido) {
-        Factura factura = new Factura(pedido.getEmpleado(),pedido.getMesa(),pe);
+        Factura factura = new Factura(pedido.getEmpleado(),pedido.getMesa(),pedido,getIdPedido());
+        
 
     }
 

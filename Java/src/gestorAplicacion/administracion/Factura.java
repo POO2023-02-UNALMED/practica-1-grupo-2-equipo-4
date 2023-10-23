@@ -15,6 +15,13 @@ public class Factura implements Serializable {
     private Calificacion calificacionFinal;
 
 
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura) {
+        this.empleado = empleado;
+        this.mesa = mesa;
+        this.pedido = pedido;
+        this.idFactura = idFactura;
+
+    }
     public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio) {
         this.empleado = empleado;
         this.mesa = mesa;
