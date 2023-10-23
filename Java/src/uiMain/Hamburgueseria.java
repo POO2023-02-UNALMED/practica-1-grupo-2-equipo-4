@@ -91,6 +91,7 @@ public class Hamburgueseria {
         //Serializador.serializarHamburgueseria(ArrayList < Hamburgueseria > lista);
         //System.exit(0);
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcion, opcion2;
@@ -120,6 +121,7 @@ public class Hamburgueseria {
                         System.out.println("");
                         System.out.println("");
                         System.out.println("6. Volver al menú de funcionalidades");
+                        System.out.println("7. Salir del sistema");
                         System.out.print("Escribe el número de la opción que necesitas: ");
                         opcion = (int) readLong();
                         switch (opcion) {
@@ -129,7 +131,9 @@ public class Hamburgueseria {
                             case 4:
                             case 5:
                             case 6:
-
+                            case 7:
+                                salirDelSistema();
+                                break;
                         }
                     } while (opcion2 != 1);
                     break;
@@ -140,6 +144,7 @@ public class Hamburgueseria {
                         System.out.println("2. Agregar Empleado");
                         System.out.println("3. Eliminar empleado");
                         System.out.println("4. Volver al menú de las calvas");
+                        System.out.println("5. Salir del sistema");
                         System.out.print("Escribe el número de la opción que necesitas: ");
 
                         opcion = (int) readLong();
@@ -153,6 +158,10 @@ public class Hamburgueseria {
                             case 3://Eliminar empleado
 
                             case 4: // Volver al menú principal
+
+                            case 5:
+                                salirDelSistema();
+                                break;
                         }
                     } while (opcion != 4);
                     break;
@@ -163,6 +172,7 @@ public class Hamburgueseria {
                         System.out.println("2. Hacer Recerva");
                         System.out.println("3. Cancelar Recerva");
                         System.out.println("4. Volver al menú de las calvas");
+                        System.out.println("5. Salir del sistema");
                         System.out.print("Escribe el número de la opción que necesitas: ");
 
                         opcion2 = (int) readLong();
@@ -176,6 +186,10 @@ public class Hamburgueseria {
                             case 3://Cancelar Recerva
 
                             case 4: // Volver al menú principal
+
+                            case 5:
+                                salirDelSistema();
+                                break;
                         }
                     } while (opcion2 != 4);
                     break;
@@ -184,6 +198,7 @@ public class Hamburgueseria {
                         System.out.println(queHacer);
                         System.out.println("1. Consultar Reserva");
                         System.out.println("2. Volver al menú de las calvas");
+                        System.out.println("3. Salir del sistema");
                         System.out.print("Escribe el número de la opción que necesitas: ");
                         opcion = (int) readLong();
 
@@ -191,6 +206,9 @@ public class Hamburgueseria {
 
                             case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
                             case 2://Hacer Recerva
+                            case 3:
+                                salirDelSistema();
+                                break;
                         }
                     } while (opcion != 2);
                     break;
@@ -199,6 +217,7 @@ public class Hamburgueseria {
                         System.out.println("¿Que deseas hacer?");
                         System.out.println("1. Consultar Inventario");
                         System.out.println("2. Volver al menú de las calvas");
+                        System.out.println("3. Salir del sistema");
                         System.out.print("Escribe el número de la opción que necesitas: ");
                         opcion2 = (int) readLong();
 
@@ -206,7 +225,7 @@ public class Hamburgueseria {
 
                             case 1:// Mostrar inventario
                             case 2: // Volver al menú principal
-                            case 6:
+                            case 3:
                                 salirDelSistema();
                                 break;
                         }
