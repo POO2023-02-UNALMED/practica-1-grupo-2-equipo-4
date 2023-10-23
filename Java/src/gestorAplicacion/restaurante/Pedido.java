@@ -46,12 +46,12 @@ public class Pedido implements Serializable {
     }
     /*public void mostrarMenuDisponible() {
         System.out.println("Menú disponible:");
-        for (Comida comida : menu.getListaComidas()) {
+        for (Comida comida : menu.getComidas()) {
             if (ingredientes.tieneIngredientes(comida.getIngredientes())) {
                 System.out.println(comida.getNombre());
             }
         }
-    }*/
+    } */
 
     public void confirmarOrden(){
         // resta ingredientes asociados a la orden del inventario, crea una factura, calcula el total del pedido

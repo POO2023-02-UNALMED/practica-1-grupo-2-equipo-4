@@ -1,4 +1,4 @@
-package gestorAplicacion.administracion;
+ package gestorAplicacion.administracion;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,28 +6,28 @@ import gestorAplicacion.restaurante.*;
 
 public class Contabilidad implements Serializable{
     private static final long serialVersionUID = 1L;
-    private Empleado empleado;
+    //private Empleado empleado;
     private double calcularUtilidad;
     private double calcularIngresos;
     private double pagarSueldos;
     private double calcularGastos;
-    private static float saldo = 1000000;
-    private ArrayList<Factura> facturas;
+    public static float saldo = 1000000;
+    //private ArrayList<Factura> facturas;
     private static final float serviciosPublicos = 0;
     
-    public Contabilidad(float saldo,ArrayList<Factura> facturas){
+   /* public Contabilidad(float saldo,ArrayList<Factura> facturas){
         Contabilidad.saldo = saldo;
         this.facturas = facturas;
-    }
+    }*/
     public static float getSaldo() {
         return saldo;
     }
     public static void setSaldo(float saldo) {
         Contabilidad.saldo = saldo;
     }
-    public ArrayList<Factura> getFacturas() {
+    /* public ArrayList<Factura> getFacturas() {
         return facturas;
-    }
+    }*/
     // Método para pagar servicios No terminado
     public void pagarServicios(float serviciosPublicos) {
         if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
@@ -38,16 +38,16 @@ public class Contabilidad implements Serializable{
         }
     }
     // Metodo para calcular Ingresos Totales
-    public double calcularIngresos() {
+    /* public double calcularIngresos() {
         double ingresoVentas = 0;
         for (Factura factura : facturas) {
             ingresoVentas += factura.precioTotal();
         }
         this.calcularIngresos = ingresoVentas;
         return this.calcularIngresos;
-    }
+    }*/
     // Metodo para calular Utilidad
-    public double calcularUtilidad() {
+    /* public double calcularUtilidad() {
         double totalGastos = calcularGastos() + pagarSueldos();
         double ingresoVentas = calcularIngresos();
         this.calcularUtilidad = ingresoVentas - totalGastos;
@@ -57,9 +57,9 @@ public class Contabilidad implements Serializable{
     public double calcularGastos(){
 
         return calcularGastos;
-    }
+    } */
     // Metodo para Pagar los sueldos a los empleados
-    public double pagarSueldos() {
+    /*public double pagarSueldos() {
         double totalPago = 0;
         for (Empleado empleado : getEmpleado()) { // deberia
             totalPago += empleado.getSalario();
@@ -71,5 +71,5 @@ public class Contabilidad implements Serializable{
         }
         this.pagarSueldos = totalPago;
         return this.pagarSueldos;
-    }
+    }*/
 }

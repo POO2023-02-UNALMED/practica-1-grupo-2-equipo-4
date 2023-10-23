@@ -31,6 +31,8 @@ public class Ingredientes extends Inventario implements Serializable {
     }
 
 
+
+
     public  String getNombre(){
         return  nombre;
     }

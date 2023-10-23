@@ -1,15 +1,21 @@
 package gestorAplicacion.restaurante;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Comida {
 
     private String nombre;
-    private Map<Ingredientes, Integer> ingredientesDeComida = new HashMap<>();
 
-    public Comida(String nombre) { // Crea una receta de comida
+    private HashMap<Ingredientes, Integer> ingredientesDeComida;
+
+    public Comida(String nombre, Ingredientes [] ingredientes, int[] cantidades) {
         this.nombre = nombre;
+        this.ingredientesDeComida = new HashMap<>();
+        for (int i = 0; i < ingredientes.length; i++) {
+            this.ingredientesDeComida.put(ingredientes[i], cantidades[i]);
+        }
     }
 
     public void agregarIngrediente(Ingredientes ingrediente, int cantidad) {  /* agrega un ingrediente a la receta, si esté ya estaba en la receta, suma la cantidad
@@ -47,19 +53,29 @@ public class Comida {
         return  precioTotal;
     }
 
-
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Ingredientes necesarios:\n");
+        sb.append("Comida: ").append(nombre).append("\n");
+        sb.append("Ingredientes:\n");
         for (Map.Entry<Ingredientes, Integer> entry : ingredientesDeComida.entrySet()) {
             Ingredientes ingrediente = entry.getKey();
             int cantidad = entry.getValue();
-            sb.append(ingrediente.getNombre()).append(": ").append(cantidad).append("\n");
+            sb.append("- ").append(ingrediente.getNombre()).append(": ").append(cantidad).append("\n");
         }
         return sb.toString();
     }
+    public boolean verificarIngredientesDeComida(Comida comida) {
+        for (Map.Entry<Ingredientes, Integer> entry : comida.getIngredientesDeComida().entrySet()) {
+            Ingredientes ingrediente = entry.getKey();
+            int cantidadNecesaria = entry.getValue();
+            if (!this.ingredientesDeComida.containsKey(ingrediente) || this.ingredientesDeComida.get(ingrediente) < cantidadNecesaria) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public String getNombre() {
         return nombre;

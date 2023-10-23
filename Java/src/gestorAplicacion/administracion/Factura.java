@@ -21,9 +21,13 @@ public class Factura implements Serializable {
     	this.mesa = mesa;
     	this.pedido = pedido;
     	this.idFactura = idFactura;
+
         Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
         empleado.calificaciones.add(calficacionFinal);
-        /** En este constructor se asignan las características del momento después a que el cliente comió */
+        // En este constructor se asignan las características del momento después a que el cliente comió
+
+        //En este constructor se asignan las características del momento después a que el cliente comió
+
     }
     public float precioTotal() {
         float suma = 0;
@@ -72,6 +76,7 @@ public class Factura implements Serializable {
     	this.fecha = fecha;
     }
 
+
     public int getIdFactura() {
         return idFactura;
     }
@@ -96,3 +101,6 @@ public class Factura implements Serializable {
         this.empleado = empleado;
     }
 }
+
+
+
