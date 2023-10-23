@@ -117,7 +117,6 @@ public class TestEmpleados implements Serializable {
         mesas.add(mesa1);
         mesas.add(mesa2);  // Serializar las calificaciones en un archivo
         Object Serializador = null;
-        Serializador.serializarMesas(mesas);
 
 
 

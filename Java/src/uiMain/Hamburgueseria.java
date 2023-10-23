@@ -1,8 +1,12 @@
+package uiMain;
 
-/*  public class Hamburgueseria {
+import java.util.Scanner;
+
+public class Hamburgueseria {
     static Scanner scan = new Scanner(System.in);
 
-    static long readLong() {8
+    static long readLong() {
+
         return scan.nextLong();
     }
 
@@ -10,52 +14,57 @@
         scan.nextLine();
         return scan.nextLine();
     }
+
     static String bienvenida = """
-                    █████   ███   █████     ████                                             █████               ███
-                   ░░███   ░███  ░░███     ░░███                                            ░░███               ░███
-                    ░███   ░███   ░█████████░███  ██████  ██████ █████████████   ██████     ███████   ██████    ░███
-                    ░███   ░███   ░█████░░██░███ ███░░██████░░██░░███░░███░░███ ███░░███   ░░░███░   ███░░███   ░███
-                    ░░███  █████  ██░███████░███░███ ░░░░███ ░███░███ ░███ ░███░███████      ░███   ░███ ░███   ░███
-                     ░░░█████░█████░░███░░░ ░███░███  ██░███ ░███░███ ░███ ░███░███░░░       ░███ ██░███ ░███   ░░░
-                       ░░███ ░░███  ░░██████████░░██████░░██████ █████░███ ████░░██████      ░░█████░░██████     ███
-                        ░░░   ░░░    ░░░░░░░░░░░ ░░░░░░  ░░░░░░ ░░░░░ ░░░ ░░░░░ ░░░░░░        ░░░░░  ░░░░░░     ░░░
+                █████   ███   █████     ████                                             █████               ███
+               ░░███   ░███  ░░███     ░░███                                            ░░███               ░███
+                ░███   ░███   ░█████████░███  ██████  ██████ █████████████   ██████     ███████   ██████    ░███
+                ░███   ░███   ░█████░░██░███ ███░░██████░░██░░███░░███░░███ ███░░███   ░░░███░   ███░░███   ░███
+                ░░███  █████  ██░███████░███░███ ░░░░███ ░███░███ ░███ ░███░███████      ░███   ░███ ░███   ░███
+                 ░░░█████░█████░░███░░░ ░███░███  ██░███ ░███░███ ░███ ░███░███░░░       ░███ ██░███ ░███   ░░░
+                   ░░███ ░░███  ░░██████████░░██████░░██████ █████░███ ████░░██████      ░░█████░░██████     ███
+                    ░░░   ░░░    ░░░░░░░░░░░ ░░░░░░  ░░░░░░ ░░░░░ ░░░ ░░░░░ ░░░░░░        ░░░░░  ░░░░░░     ░░░
 
 
 
-                 █████       █████████   █████████       █████████  █████████ █████    █████   ██████████████   █████████
-                ░░███       ███░░░░░███ ███░░░░░███     ███░░░░░██████░░░░░██░░███    ░░███   ░░██████░░░░░███ ███░░░░░███
-                 ░███      ░███    ░███░███    ░░░     ███     ░░░░███    ░███░███     ░███    ░██░███    ░███░███    ░░░
-                 ░███      ░███████████░░█████████    ░███        ░███████████░███     ░███    ░██░███████████░░█████████
-                 ░███      ░███░░░░░███ ░░░░░░░░███   ░███        ░███░░░░░███░███     ░░███   ███░███░░░░░███ ░░░░░░░░███
-                 ░███      ░███    ░███ ███    ░███   ░░███     ██░███    ░███░███      ░░░█████░ ░███    ░███ ███    ░███
-                 ███████████████   ████░░█████████     ░░██████████████   ███████████████ ░░███   █████   ████░░█████████
-                ░░░░░░░░░░░░░░░   ░░░░░ ░░░░░░░░░       ░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░   ░░░   ░░░░░   ░░░░░ ░░░░░░░░░
+             █████       █████████   █████████       █████████  █████████ █████    █████   ██████████████   █████████
+            ░░███       ███░░░░░███ ███░░░░░███     ███░░░░░██████░░░░░██░░███    ░░███   ░░██████░░░░░███ ███░░░░░███
+             ░███      ░███    ░███░███    ░░░     ███     ░░░░███    ░███░███     ░███    ░██░███    ░███░███    ░░░
+             ░███      ░███████████░░█████████    ░███        ░███████████░███     ░███    ░██░███████████░░█████████
+             ░███      ░███░░░░░███ ░░░░░░░░███   ░███        ░███░░░░░███░███     ░░███   ███░███░░░░░███ ░░░░░░░░███
+             ░███      ░███    ░███ ███    ░███   ░░███     ██░███    ░███░███      ░░░█████░ ░███    ░███ ███    ░███
+             ███████████████   ████░░█████████     ░░██████████████   ███████████████ ░░███   █████   ████░░█████████
+            ░░░░░░░░░░░░░░░   ░░░░░ ░░░░░░░░░       ░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░   ░░░   ░░░░░   ░░░░░ ░░░░░░░░░
 
 
 
-                          ███████████ █████  ███████████████   █████████ █████████████████████   █████████     ███
-                         ░░███░░░░░██░░███  ░░██░░███░░░░░███ ███░░░░░██░░███░░░░░░░███░░░░░███ ███░░░░░███   ░███
-                          ░███    ░███░███   ░███░███    ░██████     ░░░ ░███  █ ░ ░███    ░███░███    ░░░    ░███
-                          ░██████████ ░███   ░███░██████████░███         ░██████   ░██████████ ░░█████████    ░███
-                          ░███░░░░░███░███   ░███░███░░░░░██░███    █████░███░░█   ░███░░░░░███ ░░░░░░░░███   ░███
-                          ░███    ░███░███   ░███░███    ░██░░███  ░░███ ░███ ░   █░███    ░███ ███    ░███   ░░░
-                          ███████████ ░░████████ █████   ████░░█████████ ███████████████   ████░░█████████     ███
-                         ░░░░░░░░░░░   ░░░░░░░░ ░░░░░   ░░░░░ ░░░░░░░░░ ░░░░░░░░░░░░░░░   ░░░░░ ░░░░░░░░░     ░░░
-                             """;
-     static String queHacer = """
-                ┌─┐ ┬ ┬┌─┐  ┌─┐ ┬ ┬┬┌─┐┬─┐┌─┐┌─┐  ┬ ┬┌─┐┌─┐┌─┐┬─┐┌─┐
-                │─┼┐│ │├┤   │─┼┐│ ││├┤ ├┬┘├┤ └─┐  ├─┤├─┤│  ├┤ ├┬┘ ┌┘
-                └─┘└└─┘└─┘  └─┘└└─┘┴└─┘┴└─└─┘└─┘  ┴ ┴┴ ┴└─┘└─┘┴└─ o\s""";
+                      ███████████ █████  ███████████████   █████████ █████████████████████   █████████     ███
+                     ░░███░░░░░██░░███  ░░██░░███░░░░░███ ███░░░░░██░░███░░░░░░░███░░░░░███ ███░░░░░███   ░███
+                      ░███    ░███░███   ░███░███    ░██████     ░░░ ░███  █ ░ ░███    ░███░███    ░░░    ░███
+                      ░██████████ ░███   ░███░██████████░███         ░██████   ░██████████ ░░█████████    ░███
+                      ░███░░░░░███░███   ░███░███░░░░░██░███    █████░███░░█   ░███░░░░░███ ░░░░░░░░███   ░███
+                      ░███    ░███░███   ░███░███    ░██░░███  ░░███ ░███ ░   █░███    ░███ ███    ░███   ░░░
+                      ███████████ ░░████████ █████   ████░░█████████ ███████████████   ████░░█████████     ███
+                     ░░░░░░░░░░░   ░░░░░░░░ ░░░░░   ░░░░░ ░░░░░░░░░ ░░░░░░░░░░░░░░░   ░░░░░ ░░░░░░░░░     ░░░
+                         """;
+    static String queHacer = """
+            ┌─┐ ┬ ┬┌─┐  ┌─┐ ┬ ┬┬┌─┐┬─┐┌─┐┌─┐  ┬ ┬┌─┐┌─┐┌─┐┬─┐┌─┐
+            │─┼┐│ │├┤   │─┼┐│ ││├┤ ├┬┘├┤ └─┐  ├─┤├─┤│  ├┤ ├┬┘ ┌┘
+            └─┘└└─┘└─┘  └─┘└└─┘┴└─┘┴└─└─┘└─┘  ┴ ┴┴ ┴└─┘└─┘┴└─ o\s""";
 
-
+    private static void salirDelSistema() {
+        System.out.println("Vuelva pronto, pero la proxima vez ojala un poco mas calvo :)");
+        //Serializador.serializarHamburgueseria(ArrayList < Hamburgueseria > lista);
+        //System.exit(0);
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcion, opcion2;
         do {
             System.out.println("");
-            System.out.println("Estas en las calvas ");
+            System.out.println(bienvenida);
             System.out.println("");
-            System.out.println("¿Que deseas hacer ?");
+            System.out.println(queHacer);
             System.out.println("");
             System.out.println("1. Ingresar al apartado de Contabilidad ");
             System.out.println("2. Ingresar a gestion de Empleados");
@@ -83,13 +92,12 @@
                             case 1:
                             case 2:
                             case 3:
-
                             case 4:
-
                             case 5:
                             case 6:
+
                         }
-                    } while (opcion2!=6);
+                    } while (opcion2 != 1);
                     break;
                 case 2:
                     do { // Funcionalidad Gestion Empleados
@@ -112,7 +120,7 @@
 
                             case 4: // Volver al menú principal
                         }
-                    } while (opcion!= 4);
+                    } while (opcion != 4);
                     break;
                 case 3:
                     do { //Gestion reserva
@@ -135,45 +143,42 @@
 
                             case 4: // Volver al menú principal
                         }
-                    }while (opcion2 != 4) ;
-                        break;
+                    } while (opcion2 != 4);
+                    break;
                 case 4:
                     do {// Funcionalidad Tomar Pedidos
-                                System.out.println(queHacer);
-                                System.out.println("1. Consultar Reserva");
-                                System.out.println("2. Volver al menú de las calvas");
-                                System.out.print("Escribe el número de la opción que necesitas: ");
-                                opcion = (int) readLong();
+                        System.out.println(queHacer);
+                        System.out.println("1. Consultar Reserva");
+                        System.out.println("2. Volver al menú de las calvas");
+                        System.out.print("Escribe el número de la opción que necesitas: ");
+                        opcion = (int) readLong();
 
-                                switch (opcion) {
+                        switch (opcion) {
 
-                                    case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
-                                    case 2://Hacer Recerva
-                                }
-                            } while (opcion != 2);
-                            break;
-                case 5:
-                    do {// Funcionalidad  Gestion Inventario
-                                System.out.println("¿Que deseas hacer?");
-                                System.out.println("1. Consultar Inventario");
-                                System.out.println("2. Volver al menú de las calvas");
-                                System.out.print("Escribe el número de la opción que necesitas: ");
-                                opcion2 = (int) readLong();
-
-                                switch (opcion2) {
-
-                                    case 1:// Mostrar inventario
-                                    case 2: // Volver al menú principal
-                                }
-                            } while (opcion2 != 2);
-
-
-                            private static void salirDelSistema () {
-                            System.out.println("Vuelva pronto, pero la proxima vez ojala un poco mas calvo :)");
-                            Serializador.serializarHamburgueseria(ArrayList < Hamburgueseria > lista);
-                            System.exit(0);
+                            case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
+                            case 2://Hacer Recerva
                         }
-                    }
+                    } while (opcion != 2);
+                    break;
+                case 5:
+                    do {// Funcionalidad Gestion Inventario
+                        System.out.println("¿Que deseas hacer?");
+                        System.out.println("1. Consultar Inventario");
+                        System.out.println("2. Volver al menú de las calvas");
+                        System.out.print("Escribe el número de la opción que necesitas: ");
+                        opcion2 = (int) readLong();
+
+                        switch (opcion2) {
+
+                            case 1:// Mostrar inventario
+                            case 2: // Volver al menú principal
+                            case 6:
+                                salirDelSistema();
+                                break;
+                        }
+                    } while (opcion2 != 2);
             }
-        }
-    } */
+        } while (opcion2 != 6);
+    }
+}
+
