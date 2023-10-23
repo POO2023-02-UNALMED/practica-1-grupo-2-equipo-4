@@ -2,6 +2,7 @@ package gestorAplicacion.restaurante;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -10,8 +11,8 @@ public class Pedido implements Serializable {
     private int idPedido;
     private Mesas mesa;
     private Menu menu;
-    private ArrayList<Comida> pedidoComidas;
-    private ArrayList<Gaseosas> pedidoGaseosas;
+    private List<Comida> pedidoComidas;
+    private List<Gaseosas> pedidoGaseosas;
     private String fecha;
     private int idCliente;
     private Boolean reserva;
@@ -35,6 +36,7 @@ public class Pedido implements Serializable {
         mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
     }
 
+<<<<<<< Updated upstream
     public void agregarAlPedido(ArrayList<Comida> comidas, ArrayList<Gaseosas> gaseosas) { //agrega todas las comidas y gaseosas al pedido
         if (pedidoComidas == null) {
             pedidoComidas = new ArrayList<>();
@@ -44,15 +46,11 @@ public class Pedido implements Serializable {
         }
         pedidoComidas.addAll(comidas);
         pedidoGaseosas.addAll(gaseosas);
+=======
+    public void agregarPedidoComida(Comida... nuevasComidas) {
+        pedidoComidas.addAll(Arrays.asList(nuevasComidas));
+>>>>>>> Stashed changes
     }
-    /*public void mostrarMenuDisponible() {
-        System.out.println("Menú disponible:");
-        for (Comida comida : menu.getComidas()) {
-            if (ingredientes.tieneIngredientes(comida.getIngredientes())) {
-                System.out.println(comida.getNombre());
-            }
-        }
-    } */
 
     public void confirmarOrden() {
         // resta ingredientes asociados a la orden del inventario, crea una factura, calcula el total del pedido
@@ -74,11 +72,11 @@ public class Pedido implements Serializable {
         this.mesa = mesa;
     }
 
-    public ArrayList<Comida> getPedidoComidas() {
+    public List<Comida> getPedidoComidas() {
         return pedidoComidas;
     }
 
-    public ArrayList<Gaseosas> getPedidoGaseosas() {
+    public List<Gaseosas> getPedidoGaseosas() {
         return pedidoGaseosas;
     }
 }
