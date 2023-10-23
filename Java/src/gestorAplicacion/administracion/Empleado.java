@@ -10,7 +10,7 @@ public class Empleado implements Serializable {
     private float salario;
     private Calificacion calificacion;
     private static int cantidadEmpleados = 0;
-    private static java.util.ArrayList<Empleado> empleados = new ArrayList<>();
+    public java.util.ArrayList<Empleado> empleados = new ArrayList<>();
 
 
     public Empleado(String nombre, int idEmpleado, float salario, Calificacion calificacion) {
