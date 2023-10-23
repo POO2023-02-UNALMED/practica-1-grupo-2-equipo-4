@@ -248,4 +248,44 @@ public class Deserializador {
             }
 
         }
+        public static ArrayList<Cocinero> deserializarCocinero() {
+        try {
+            FileInputStream file = new FileInputStream(new File(archivo.getAbsolutePath() +
+                    "\\src\\baseDatos\\temp\\administracion.txt"));
+            ObjectInputStream o = new ObjectInputStream(file);
+
+            ArrayList<Cocinero> lista_Cocinero = (ArrayList<Cocinero>) o.readObject();
+
+            file.close();
+            o.close();
+            return lista_Cocinero;
+
+        } catch (FileNotFoundException e) {
+            return new ArrayList<Cocinero>();
+        } catch (IOException e) {
+            return new ArrayList<Cocinero>();
+        } catch (ClassNotFoundException e) {
+            return new ArrayList<Cocinero>();
+        }
+      }
+    public static ArrayList<Mesero> deserializarMesero() {
+        try {
+            FileInputStream file = new FileInputStream(new File(archivo.getAbsolutePath() +
+                    "\\src\\baseDatos\\temp\\administracion.txt"));
+            ObjectInputStream o = new ObjectInputStream(file);
+
+            ArrayList<Mesero> lista_Mesero = (ArrayList<Mesero>) o.readObject();
+
+            file.close();
+            o.close();
+            return lista_Mesero;
+
+        } catch (FileNotFoundException e) {
+            return new ArrayList<Mesero>();
+        } catch (IOException e) {
+            return new ArrayList<Mesero>();
+        } catch (ClassNotFoundException e) {
+            return new ArrayList<Mesero>();
+        }
+      }
     } */

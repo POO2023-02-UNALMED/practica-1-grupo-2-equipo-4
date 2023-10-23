@@ -231,4 +231,44 @@ import gestorAplicacion.restaurante.*; */
             System.out.println("Error de flujo de inicializacion: " + e.getMessage());
         }
     }
+     public static void serializarMesero(ArrayList<Mesero> lista) {
+        try {
+            FileOutputStream f = new FileOutputStream(new File(archivo.getAbsolutePath()+
+                    "\\src\\baseDatos\\temp\\administracion.txt"));
+            ObjectOutputStream o = new ObjectOutputStream(f);
+
+            o.writeObject(lista);
+
+            o.close();
+            f.close();
+            System.out.println("La serialización se ha completado correctamente.");
+
+        }catch(FileNotFoundException e){
+            System.out.println("Archivo no encontrado: "+e.getMessage());
+        }
+        catch(IOException e) {
+            System.out.println("Error de flujo de inicializacion: "+ e.getMessage());
+        }
+
+    }
+     public static void serializarCocinero(ArrayList<Cocinero> lista) {
+        try {
+            FileOutputStream f = new FileOutputStream(new File(archivo.getAbsolutePath()+
+                    "\\src\\baseDatos\\temp\\administracion.txt"));
+            ObjectOutputStream o = new ObjectOutputStream(f);
+
+            o.writeObject(lista);
+
+            o.close();
+            f.close();
+            System.out.println("La serialización se ha completado correctamente.");
+
+        }catch(FileNotFoundException e){
+            System.out.println("Archivo no encontrado: "+e.getMessage());
+        }
+        catch(IOException e) {
+            System.out.println("Error de flujo de inicializacion: "+ e.getMessage());
+        }
+
+    }
 }*/
