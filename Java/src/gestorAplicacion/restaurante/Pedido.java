@@ -48,18 +48,31 @@ public class Pedido implements Serializable {
         pedidoGaseosas.addAll(Arrays.asList(gaseosas));
 
     }
-    public void confirmarOrden() {
-        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this.getIdPedido());
+    public String confirmarOrden() {
+        StringBuilder insufficientItems = new StringBuilder();
+
 
         for (Comida comida : pedidoComidas) {
-            comida.restarCantidad();
+            if (!comida.verificarIngredientes()) {
+                insufficientItems.append("No hay suficientes ingredientes para preparar " + comida.getNombre() + "\n");
+            } else {
+                comida.restarCantidad();
+            }
         }
 
         for (Gaseosas gaseosa : pedidoGaseosas) {
-            gaseosa.restarGaseosas(1, gaseosa);
+            if (gaseosa.getCantidad() < 1) {
+                insufficientItems.append("No hay suficientes " + gaseosa.getNombre() + "\n");
+            } else {
+                gaseosa.restarGaseosas(1, gaseosa);
+            }
+        }
+        if (insufficientItems.length() > 0) {
+            return insufficientItems.toString();
         }
 
-
+        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this.getIdPedido());
+        return "Orden confirmada y factura creada";
     }
 
     public int getIdPedido() {

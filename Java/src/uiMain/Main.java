@@ -40,7 +40,7 @@ public class Main {
 
         Ingredientes[] ingredientesCarneQuesoYTocineta = {pan, carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
         int[] cantidadesCarneQuesoYTocineta = {2, 1, 2, 3, 1, 2, 2};
-        Comida EspecialQuesoYTocineta = new Comida("Especial con queso y tocineta", ingredientesCarneQuesoYTocineta, cantidadesCarneQuesoYTocineta);
+        Comida especialQuesoYTocineta = new Comida("Especial con queso y tocineta", ingredientesCarneQuesoYTocineta, cantidadesCarneQuesoYTocineta);
 
         Ingredientes[] ingredientesClasicaPollo = {pan, carneDeRes, tomate, cebolla, lechuga};
         int[] cantidadesClasicaPollo = {2, 1, 1, 1, 1};
@@ -49,11 +49,11 @@ public class Main {
 
         Ingredientes[] ingredientesPolloqueso = {pan, carneDePollo, queso, tomate, cebolla, lechuga};
         int[] cantidadespolloconQueso = {2, 1, 1, 1, 1, 1};
-        Comida polloconQueso = new Comida("Clasica de Pollo", ingredientesPolloqueso, cantidadespolloconQueso);
+        Comida polloconQueso = new Comida("Clasica de Pollo con queso", ingredientesPolloqueso, cantidadespolloconQueso);
 
         Ingredientes[] ingredientesDobleCarneTocineta = {pan, carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
         int[] cantidadesDobleCarneTocineta = {2, 2, 3, 4, 2, 2, 2};
-        Comida DobleCarneTocineta = new Comida("Doble carne tocineta", ingredientesDobleCarneTocineta, cantidadesDobleCarneTocineta);
+        Comida dobleCarneTocineta = new Comida("Doble carne tocineta", ingredientesDobleCarneTocineta, cantidadesDobleCarneTocineta);
 
         Ingredientes[] ingredientesVegetariana = {pan, carneVegana, queso, tomate, cebolla, lechuga};
         int[] cantidadesVegetariana = {2, 1, 2, 2, 2, 2};
@@ -80,10 +80,10 @@ public class Main {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-        Cocinero linguini = new Cocinero("linguini",1001,80000,"Calvas");
+        Cocinero linguini = new Cocinero("linguini", 1001, 80000, "Calvas");
 
-        Pedido pedido1 = new Pedido( mesa2,"23-10-2023 1:40:00", linguini);
-        pedido1.agregarComidaAlPedido(vegetariana,carnibora);
+        Pedido pedido1 = new Pedido(mesa2, "23-10-2023 1:40:00", linguini);
+        pedido1.agregarComidaAlPedido(vegetariana, carnibora);
         pedido1.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido1.confirmarOrden();
         System.out.println(pan.toString());
@@ -94,11 +94,11 @@ public class Main {
         System.out.println(sprite.toString());
         System.out.println("");
 
-        Pedido pedido2 = new Pedido( mesa3,"23-10-2023 1:50:00", 456,linguini );
-        pedido2.agregarComidaAlPedido(clasicaDeCarne, clasicaDePollo, polloconQueso,vegetariana);
+        Pedido pedido2 = new Pedido(mesa3, "23-10-2023 1:50:00", 456, linguini);
+        pedido2.agregarComidaAlPedido(clasicaDeCarne, clasicaDePollo, polloconQueso, vegetariana);
         pedido2.imprimirComidas();
         pedido2.agregarGaseosaAlPedido(coca_cola, sprite, quatro, premio);
-        pedido2.confirmarOrden();
+        System.out.println(pedido2.confirmarOrden());
         System.out.println(pan.toString());
         System.out.println(carneDeRes.toString());
         System.out.println(carneDePollo.toString());
@@ -108,6 +108,13 @@ public class Main {
         System.out.println(coca_cola.toString());
         System.out.println(sprite.toString());
         System.out.println(premio.toString());
+
+        Pedido pedido3= new Pedido(mesa4, "23-10-2023 2:50:00", linguini);
+        pedido3.agregarGaseosaAlPedido(coca_cola,coca_cola,coca_cola,coca_cola,coca_cola,coca_cola,coca_cola,coca_cola);
+        pedido3.agregarComidaAlPedido(dobleCarneTocineta,dobleCarneTocineta,polloconQueso,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta);
+        System.out.println(pedido3.confirmarOrden());
+
+        System.out.println(Ingredientes.listaIngredientes.toString());
 
 
 

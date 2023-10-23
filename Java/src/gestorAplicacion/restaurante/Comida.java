@@ -73,11 +73,11 @@ public class Comida {
         }
         return sb.toString();
     }
-    public boolean verificarIngredientesDeComida(Comida comida) {
-        for (Map.Entry<Ingredientes, Integer> entry : comida.getIngredientesDeComida().entrySet()) {
+    public boolean verificarIngredientes() {
+        for (Map.Entry<Ingredientes, Integer> entry : ingredientesDeComida.entrySet()) {
             Ingredientes ingrediente = entry.getKey();
             int cantidadNecesaria = entry.getValue();
-            if (!this.ingredientesDeComida.containsKey(ingrediente) || this.ingredientesDeComida.get(ingrediente) < cantidadNecesaria) {
+            if (ingrediente.getCantidad() < cantidadNecesaria) {
                 return false;
             }
         }
