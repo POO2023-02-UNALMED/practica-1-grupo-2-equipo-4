@@ -83,9 +83,13 @@ public class Main {
         pedido1.agregarGaseosaAlPedido(sprite, coca_cola);
         pedido1.imprimirComidas();
 
-        mesa2.crearReserva(345,2,"23-10-2023 1:40:00");
-
+        mesa2.crearReserva(345,2,"23-10-2023 1:50:00");
         System.out.println(mesa2.toString());
+
+        mesa3.crearReserva(456, 3, "23-10-2023 1:50:00" );
+        Pedido pedido2 = new Pedido(2, mesa3,"23-10-2023 1:50:00", 456 );
+        System.out.println(mesa3.toString());
+
 
 
 

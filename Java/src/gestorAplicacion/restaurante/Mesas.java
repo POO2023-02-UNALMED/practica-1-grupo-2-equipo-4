@@ -21,13 +21,11 @@ public class Mesas implements Serializable {
 
     public void crearReserva(int idCliente, int idMesa, String fecha) {
         for (Mesas mesa : mesas) {
-            if (mesa.getIdMesa() == idMesa || !mesa.reservaPorCliente.containsValue(fecha)) {
+            if (mesa.getIdMesa() == idMesa && !mesa.reservaPorCliente.containsValue(fecha)) {
                 mesa.reservaPorCliente.put(idCliente, fecha);
                 mesa.setOcupadoEnFecha(true, fecha);
             }
-            else {
-                throw new RuntimeException("la mesa está ocupada");
-            }
+
         }
     }
 
@@ -54,7 +52,7 @@ public class Mesas implements Serializable {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Mesa número: ").append(idMesa).append("\n");
         stringBuilder.append("Número de sillas: ").append(numeroDeSillas).append("\n");
-        stringBuilder.append("Fechas ocupadas: ").append(ocupadoEnFecha.keySet()).append("\n");
+        stringBuilder.append("Está ocupada: ").append(ocupadoEnFecha.keySet()).append("\n");
         stringBuilder.append("Reservas:\n");
         for (Map.Entry<Integer, String> entry : reservaPorCliente.entrySet()) {
             Integer idCliente = entry.getKey();
