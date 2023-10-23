@@ -42,7 +42,7 @@ public class Mesas implements Serializable {
         for (Mesas mesa : mesas) {
             if (mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)) {
                 mesa.reservaPorCliente.remove(idCliente, fecha);
-                mesa.setOcupadoEnFecha(false, fecha);
+                mesa.ocupadoEnFecha.remove(fecha);
             }
         }
 

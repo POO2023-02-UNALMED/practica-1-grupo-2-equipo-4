@@ -1,5 +1,8 @@
 package gestorAplicacion.restaurante;
 
+import gestorAplicacion.administracion.Empleado;
+import gestorAplicacion.administracion.Factura;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,9 +10,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Pedido implements Serializable {
-
-    private int idPedido;
+    private static int idPedido = 10000000;
     private Mesas mesa;
+    private Empleado empleado;
     private Menu menu;
     private List<Comida> pedidoComidas;
     private List<Gaseosas> pedidoGaseosas;
@@ -17,22 +20,24 @@ public class Pedido implements Serializable {
     private int idCliente;
     private Boolean reserva;
 
-    public Pedido(int idPedido, Mesas mesa, String fecha, int idCliente) { // crea un pedido que a la vez efectua la reserva asociada a la fecha y al id del cliente
-        this.idPedido = idPedido;
+    public Pedido( Mesas mesa, String fecha, int idCliente, Empleado empleado) { // crea un pedido que a la vez efectua la reserva asociada a la fecha y al id del cliente
+        idPedido++ ;
         this.mesa = mesa;
         this.idCliente = idCliente;
         this.fecha = fecha;
         this.pedidoComidas = new ArrayList<>();
         this.pedidoGaseosas = new ArrayList<>();
+        this.empleado = empleado;
         mesa.efectuarReserva(idCliente, mesa.getIdMesa(), fecha);
     }
 
-    public Pedido(int IdPedido, Mesas mesa, String fecha) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
-        this.idPedido = IdPedido;
+    public Pedido( Mesas mesa, String fecha) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
+        idPedido++ ;
         this.mesa = mesa;
         this.fecha = fecha;
         this.pedidoComidas = new ArrayList<>();
         this.pedidoGaseosas = new ArrayList<>();
+        this.empleado = empleado;
         mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
     }
 
@@ -47,8 +52,11 @@ public class Pedido implements Serializable {
     }
 
 
-    public void confirmarOrden() {
-        // resta ingredientes asociados a la orden del inventario, crea una factura, calcula el total del pedido
+
+
+    public void confirmarOrden(Pedido pedido) {
+        Factura factura = new Factura(pedido.getEmpleado(),pedido.getMesa(),pe);
+
     }
 
     public int getIdPedido() {
@@ -78,8 +86,13 @@ public class Pedido implements Serializable {
         for (Comida comida : pedidoComidas) {
             System.out.println("Su pedido es:" + comida.getNombre() + " su precio es: " + comida.calcularPrecio());
         }
+    }
+    public Empleado getEmpleado() {
+        return empleado;
+    }
 
-
-}
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
 }
 

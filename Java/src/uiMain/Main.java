@@ -80,7 +80,9 @@ public class Main {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-        Pedido pedido1 = new Pedido(1, mesa2,"23-10-2023 1:40:00");
+        Cocinero linguini = new Cocinero("linguini",1001,80000,"Calvas");
+
+        Pedido pedido1 = new Pedido( mesa2,"23-10-2023 1:40:00");
         pedido1.agregarComidaAlPedido(vegetariana,carnibora);
         pedido1.agregarGaseosaAlPedido(sprite, coca_cola);
         pedido1.imprimirComidas();
@@ -89,14 +91,16 @@ public class Main {
         System.out.println(mesa2.toString());
 
         mesa3.crearReserva(456, 3, "23-10-2023 1:50:00" );
-        Pedido pedido2 = new Pedido(2, mesa3,"23-10-2023 1:50:00", 456 );
+        Pedido pedido2 = new Pedido( mesa3,"23-10-2023 1:50:00", 456,linguini );
         System.out.println(mesa3.toString());
 
-        Cocinero linguini = new Cocinero("linguini",1001,80000,"Calvas");
+
 
 
         Factura factura1 = new Factura(linguini,mesa1,pedido1,1,1.1);
         System.out.println(factura1.precioTotal());
+
+
 
 
 
