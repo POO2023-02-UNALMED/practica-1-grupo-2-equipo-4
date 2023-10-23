@@ -26,24 +26,7 @@
              }
          }
      }
-    /* public String verificarDisponibilidad (int numeroDeSillas, String fecha){
-         java.util.ArrayList<Mesas> mesasDisponibles = new ArrayList<>();
-         for (Mesas mesa: mesas) {
-             if (!mesa.reservaPorCliente.containsValue(fecha) && mesa.numeroDeSillas == numeroDeSillas ) {
-                 mesasDisponibles.add(mesa);
-                 if (mesasDisponibles.isEmpty()) {
-                     return "No hay mesas con "+numeroDeSillas+" en la fecha "+fecha;
-                 }
-             }
-         }
-         StringBuilder cadena = null;
-         for (Mesas mesa: mesasDisponibles){
-             cadena.append("La mesa ");
-             cadena.append(mesa.getIdMesa());
-             cadena.append(" esta disponible\n");
-         }
-         return "Mesas Disponibles:\n" + cadena;
-     }*/
+
     public void efectuarReserva(int idCliente,int idMesa,String fecha ){ // efectua una reserva, lo que hace que la reserva se borre, pero el estado de la mesa siga ocupada
             for(Mesas mesa : mesas ){
                 if(mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)){
@@ -107,7 +90,24 @@
          }
          return stringBuilder.toString();
      }
-
+   /* public String verificarDisponibilidad (int numeroDeSillas, String fecha){
+         java.util.ArrayList<Mesas> mesasDisponibles = new ArrayList<>();
+         for (Mesas mesa: mesas) {
+             if (!mesa.reservaPorCliente.containsValue(fecha) && mesa.numeroDeSillas == numeroDeSillas ) {
+                 mesasDisponibles.add(mesa);
+                 if (mesasDisponibles.isEmpty()) {
+                     return "No hay mesas con "+numeroDeSillas+" en la fecha "+fecha;
+                 }
+             }
+         }
+         StringBuilder cadena = null;
+         for (Mesas mesa: mesasDisponibles){
+             cadena.append("La mesa ");
+             cadena.append(mesa.getIdMesa());
+             cadena.append(" esta disponible\n");
+         }
+         return "Mesas Disponibles:\n" + cadena;
+     }*/
  }
 
 
