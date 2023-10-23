@@ -15,7 +15,7 @@ public class Main {
         // gaseosas
 
         Gaseosas coca_cola = new Gaseosas("Coca cola", 4000, 20);
-        Gaseosas Sprite = new Gaseosas("Sprite", 3500, 20);
+        Gaseosas sprite = new Gaseosas("Sprite", 3500, 20);
         Gaseosas premio = new Gaseosas("Premio", 3000, 20);
         Gaseosas quatro = new Gaseosas("Quatro", 2500, 20);
 
@@ -78,7 +78,16 @@ public class Main {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-        
+        Pedido pedido1 = new Pedido(1, mesa2,"23-10-2023 1:40:00");
+        pedido1.agregarComidaAlPedido(vegetariana,carnibora);
+        pedido1.agregarGaseosaAlPedido(sprite, coca_cola);
+        pedido1.imprimirComidas();
+
+        System.out.println(mesa2.toString());
+
+
+
+
 
 
 /*

@@ -36,21 +36,16 @@ public class Pedido implements Serializable {
         mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
     }
 
-<<<<<<< Updated upstream
-    public void agregarAlPedido(ArrayList<Comida> comidas, ArrayList<Gaseosas> gaseosas) { //agrega todas las comidas y gaseosas al pedido
-        if (pedidoComidas == null) {
-            pedidoComidas = new ArrayList<>();
-        }
-        if (pedidoGaseosas == null) {
-            pedidoGaseosas = new ArrayList<>();
-        }
-        pedidoComidas.addAll(comidas);
-        pedidoGaseosas.addAll(gaseosas);
-=======
-    public void agregarPedidoComida(Comida... nuevasComidas) {
-        pedidoComidas.addAll(Arrays.asList(nuevasComidas));
->>>>>>> Stashed changes
+
+    public void agregarComidaAlPedido(Comida... comidas) { //agrega comidas al pedido
+        pedidoComidas.addAll(Arrays.asList(comidas));
+
     }
+    public void agregarGaseosaAlPedido(Gaseosas... gaseosas) { //agrega gaseosas al pedido
+        pedidoGaseosas.addAll(Arrays.asList(gaseosas));
+
+    }
+
 
     public void confirmarOrden() {
         // resta ingredientes asociados a la orden del inventario, crea una factura, calcula el total del pedido
@@ -79,5 +74,12 @@ public class Pedido implements Serializable {
     public List<Gaseosas> getPedidoGaseosas() {
         return pedidoGaseosas;
     }
+    public void imprimirComidas() {
+        for (Comida comida : pedidoComidas) {
+            System.out.println("Su pedido es:" + comida.getNombre() + " su precio es: " + comida.calcularPrecio());
+        }
+
+
+}
 }
 

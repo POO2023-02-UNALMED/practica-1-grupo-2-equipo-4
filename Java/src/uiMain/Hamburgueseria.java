@@ -1,5 +1,5 @@
 
-/*/  public class Hamburgueseria {
+/*  public class Hamburgueseria {
     static Scanner scan = new Scanner(System.in);
 
     static long readLong() {8
@@ -176,4 +176,4 @@
                     }
             }
         }
-    }
+    } */
