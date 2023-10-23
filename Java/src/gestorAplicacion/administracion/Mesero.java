@@ -3,7 +3,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import gestorAplicacion.restaurante.Mesas;
-import gestorAplicacion.restaurante.Pedido;
 
 public class Mesero extends Empleado implements Serializable {
     public ArrayList<Mesas> mesasDeTrabajo = new ArrayList<>();
@@ -15,6 +14,15 @@ public class Mesero extends Empleado implements Serializable {
     }
     public void quitarMesas (Mesas quitar){
         this.mesasDeTrabajo.removeIf(mesa -> mesa.equals(quitar));
+    }
+    public String toString (){
+        StringBuilder cadena = new StringBuilder();
+        cadena.append("EL mesero es el encargado de las mesas: ");
+        for (Mesas mesa: this.mesasDeTrabajo){
+            cadena.append(mesa.getIdMesa());
+            cadena.append(", ");
+        }
+        return cadena.toString();
     }
     // Getters y setters
 }
