@@ -7,8 +7,9 @@ import gestorAplicacion.restaurante.Pedido;
 public class Repartidor extends Empleado {
     private String vehiculo;
     public Pedido pedido;
-    public boolean estadoPedido= false;
-    public void entregarPedido(){
+    public boolean estadoPedido = false;
+
+    public void entregarPedido() {
         this.estadoPedido = true;
     }
 

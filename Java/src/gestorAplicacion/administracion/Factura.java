@@ -17,14 +17,19 @@ public class Factura implements Serializable {
 
 
     public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, int calificacionServicio) {
-    	this.empleado = empleado;
-    	this.mesa = mesa;
-    	this.pedido = pedido;
-    	this.idFactura = idFactura;
+        this.empleado = empleado;
+        this.mesa = mesa;
+        this.pedido = pedido;
+        this.idFactura = idFactura;
+
         Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
         empleado.calificaciones.add(calficacionFinal);
-        /** En este constructor se asignan las características del momento después a que el cliente comió */
+        // En este constructor se asignan las características del momento después a que el cliente comió
+
+        //En este constructor se asignan las características del momento después a que el cliente comió
+
     }
+
     public float precioTotal() {
         float suma = 0;
 
@@ -38,35 +43,38 @@ public class Factura implements Serializable {
 
         return suma;
     }
-    public Factura(){ //Constructor sin argumentos necesario para deserialización
+
+    public Factura() { //Constructor sin argumentos necesario para deserialización
     }
+
     public Empleado getIdEmpleado() {
-    	return empleado;
+        return empleado;
     }
 
     public Mesas getMesa() {
-    	return mesa;
+        return mesa;
     }
-    
+
     public void setMesa(Mesas mesa) {
-    	this.mesa = mesa;
+        this.mesa = mesa;
     }
-    
+
     public Pedido getPedido() {
-    	return pedido;
+        return pedido;
     }
-    
+
     public void setPedido(Pedido pedido) {
-    	this.pedido = pedido;
+        this.pedido = pedido;
     }
-    
+
     public int getFecha() {
-    	return fecha;
+        return fecha;
     }
-    
+
     public void setFecha(int fecha) {
-    	this.fecha = fecha;
+        this.fecha = fecha;
     }
+
 
     public int getIdFactura() {
         return idFactura;
@@ -94,3 +102,6 @@ public class Factura implements Serializable {
     }
 
 }
+
+
+

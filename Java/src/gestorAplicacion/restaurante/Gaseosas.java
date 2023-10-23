@@ -9,12 +9,11 @@ public class Gaseosas extends Inventario implements Serializable {
     public static ArrayList<Gaseosas> listaGaseosas = new ArrayList<>();
 
     public Gaseosas(String nombre, float precio, int cantidad) {
-        super(nombre,precio,cantidad);
+        super(nombre, precio, cantidad);
         listaGaseosas.add(this);
     }
     public Gaseosas(){ //Constructor sin argumentos necesario para deserialización
     }
-
 
 
     public void comprar(int cantidad, Inventario gaseosa) { //Método para comprar gaseosas
@@ -26,6 +25,7 @@ public class Gaseosas extends Inventario implements Serializable {
             }
         }
     }
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + "Precio: " + precio + "Cantidad: " + cantidad + "Disponibilidad: " + disponibilidad;

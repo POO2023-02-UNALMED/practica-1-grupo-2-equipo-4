@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ArrayList;
+
 public class Pedido implements Serializable {
 
     private int IdPedido;
@@ -53,7 +54,7 @@ public class Pedido implements Serializable {
         }
     }*/
 
-    public void confirmarOrden(){
+    public void confirmarOrden() {
         // resta ingredientes asociados a la orden del inventario, crea una factura, calcula el total del pedido
     }
 

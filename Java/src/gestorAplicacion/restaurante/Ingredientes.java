@@ -2,6 +2,7 @@ package gestorAplicacion.restaurante;
 
 
 import gestorAplicacion.administracion.Contabilidad;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -10,10 +11,11 @@ public class Ingredientes extends Inventario implements Serializable {
     public static ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
 
     public Ingredientes(String nombre, float precio, int cantidad) {
-        super(nombre,precio,cantidad);
+        super(nombre, precio, cantidad);
         listaIngredientes.add(this);
 
     }
+
     public void comprar(int cantidad, Inventario ingrediente) { //Método para comprar ingredientes
         // se agrega la cantidad de ingrediente comprada
         for (Ingredientes i : listaIngredientes) {
@@ -31,7 +33,7 @@ public class Ingredientes extends Inventario implements Serializable {
     }
 
 
-    public  String getNombre(){
-        return  nombre;
+    public String getNombre() {
+        return nombre;
     }
 }
