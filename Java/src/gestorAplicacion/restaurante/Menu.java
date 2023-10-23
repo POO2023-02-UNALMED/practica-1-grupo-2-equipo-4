@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.*;
 
 public class Menu implements  Serializable {
+
     private List<Comida> comidas;
     private List<Gaseosas> gaseosas;
 
@@ -28,15 +29,32 @@ public class Menu implements  Serializable {
     public void removerGaseosa(Gaseosas gaseosa) { //remueve un tipo de gaseosa al menú
         gaseosas.remove(gaseosa);
     }
-    public void mostrarMenu() {
-        System.out.println("Comidas:");
+
+    public void mostrarMenuComidas() {
         for (Comida comida : comidas) {
             System.out.println(comida.getNombre() + " - Precio: $" + comida.calcularPrecio());
         }
+    }
 
-        System.out.println("\nGaseosas:");
+    public void mostrarMenuGaseosas() {
         for (Gaseosas gaseosa : gaseosas) {
             System.out.println(gaseosa.getNombre() + " - Precio: $" + gaseosa.getPrecio());
         }
+    }
+
+    public List<Comida> getComidas() {
+        return comidas;
+    }
+
+    public void setComidas(List<Comida> comidas) {
+        this.comidas = comidas;
+    }
+
+    public List<Gaseosas> getGaseosas() {
+        return gaseosas;
+    }
+
+    public void setGaseosas(List<Gaseosas> gaseosas) {
+        this.gaseosas = gaseosas;
     }
 }

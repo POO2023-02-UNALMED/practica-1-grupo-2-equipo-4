@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Comida {
+
     private String nombre;
     private Map<Ingredientes, Integer> ingredientesDeComida = new HashMap<>();
 

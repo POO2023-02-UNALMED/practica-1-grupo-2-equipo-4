@@ -7,26 +7,54 @@ import java.util.ArrayList;
 public class Pedido implements Serializable {
 
     private int IdPedido;
-    // private int
     private Mesas mesa;
+    private Menu menu;
     private ArrayList<Comida> pedidoComidas;
     private ArrayList<Gaseosas> pedidoGaseosas;
-    private boolean tieneReserva;
     private String fecha;
-    public Pedido(int IdPedido,Mesas mesa,ArrayList<Comida> pedidoComidas,ArrayList<Gaseosas> pedidoGaseosas,boolean tieneReserva){
+    private int idCliente;
+    private Boolean reserva;
+
+    public Pedido(int idPedido, Mesas mesa, String fecha, int idCliente) { // crea un pedido que a la vez efectua la reserva asociada a la fecha y al id del cliente
         this.IdPedido = IdPedido;
         this.mesa = mesa;
-        this.pedidoComidas = pedidoComidas;
-        this.pedidoGaseosas = pedidoGaseosas;
-        this.tieneReserva = tieneReserva;
-        /*if(tieneReserva){
-            mesa.efectuarReserva(mesa.getIdCliente(),mesa.getIdMesa(),mesa.getFechaReserva());
-            System.out.println("Su reserva fue efectuada correctamente");
+        this.idCliente = idCliente;
+        this.fecha = fecha;
+        this.pedidoComidas = new ArrayList<>();
+        this.pedidoGaseosas = new ArrayList<>();
+        mesa.efectuarReserva(idCliente, mesa.getIdMesa(), fecha);
+    }
 
+    public Pedido(int IdPedido, Mesas mesa, String fecha) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
+        this.IdPedido = IdPedido;
+        this.mesa = mesa;
+        this.fecha = fecha;
+        this.pedidoComidas = new ArrayList<>();
+        this.pedidoGaseosas = new ArrayList<>();
+        mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
+    }
+
+    public void agregarAlPedido(ArrayList<Comida> comidas, ArrayList<Gaseosas> gaseosas) {
+        if (pedidoComidas == null) {
+            pedidoComidas = new ArrayList<>();
         }
-        else {
-            //Mesas.crearReserva()
-        }*/
+        if (pedidoGaseosas == null) {
+            pedidoGaseosas = new ArrayList<>();
+        }
+        pedidoComidas.addAll(comidas);
+        pedidoGaseosas.addAll(gaseosas);
+    }
+    /*public void mostrarMenuDisponible() {
+        System.out.println("Menú disponible:");
+        for (Comida comida : menu.getListaComidas()) {
+            if (ingredientes.tieneIngredientes(comida.getIngredientes())) {
+                System.out.println(comida.getNombre());
+            }
+        }
+    }*/
+
+    public void confirmarOrden(){
+        // resta ingredientes asociados a la orden del inventario, crea una factura, calcula el total del pedido
     }
 
     public int getIdPedido() {
@@ -38,7 +66,7 @@ public class Pedido implements Serializable {
     }
 
     public Mesas getMesa() {
-        return  mesa;
+        return mesa;
     }
 
     public void setMesa(Mesas mesa) {
@@ -52,12 +80,5 @@ public class Pedido implements Serializable {
     public ArrayList<Gaseosas> getPedidoGaseosas() {
         return pedidoGaseosas;
     }
-    /*  public ArrayList getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(ArrayList pedido) {
-        this.pedido = pedido;
-    } */
 }
 
