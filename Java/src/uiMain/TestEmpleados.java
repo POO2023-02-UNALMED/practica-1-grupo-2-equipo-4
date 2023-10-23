@@ -1,4 +1,8 @@
 package uiMain;
+import java.io.Serializable;
+import java.util.ArrayList;
+import gestorAplicacion.administracion.Contabilidad;
+import gestorAplicacion.administracion.Factura;
 import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
@@ -8,7 +12,7 @@ import gestorAplicacion.restaurante.*;
 
 import java.util.Map;
 
-public class TestEmpleados {
+public class TestEmpleados implements Serializable {
     public static void main(String[] args) {
 
         // gaseosas
@@ -87,8 +91,34 @@ public class TestEmpleados {
         mesero1.agregarMesas(mesa2);
         mesero1.agregarMesas(mesa3);
         mesero1.agregarMesas(mesa4);
-        mesero1.agregarMesas(mesa5);
+        mesero2.agregarMesas(mesa5);
+        mesero2.agregarMesas(mesa6);
+        mesero2.agregarMesas(mesa7);
+        mesero2.agregarMesas(mesa8);
+        mesero3.agregarMesas(mesa9);
+        mesero3.agregarMesas(mesa10);
+        mesero3.agregarMesas(mesa11);
+        mesero3.agregarMesas(mesa12);
+        mesero4.agregarMesas(mesa13);
+        mesero4.agregarMesas(mesa14);
+        mesero4.agregarMesas(mesa15);
+        mesero4.agregarMesas(mesa1);
+        mesero5.agregarMesas(mesa2);
+        mesero5.agregarMesas(mesa3);
+        mesero5.agregarMesas(mesa4);
+        mesero5.agregarMesas(mesa5);
+
         System.out.println(mesero1.toString());
+        System.out.println(mesero2.toString());
+        System.out.println(mesero3.toString());
+        System.out.println(mesero4.toString());
+
+        ArrayList<Mesas> mesas = new ArrayList<>();
+        mesas.add(mesa1);
+        mesas.add(mesa2);  // Serializar las calificaciones en un archivo
+        Object Serializador = null;
+        Serializador.serializarMesas(mesas);
+
 
 
 
