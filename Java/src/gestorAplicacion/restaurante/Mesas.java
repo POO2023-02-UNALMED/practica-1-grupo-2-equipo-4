@@ -21,9 +21,12 @@ public class Mesas implements Serializable {
 
     public void crearReserva(int idCliente, int idMesa, String fecha) {
         for (Mesas mesa : mesas) {
-            if (mesa.getIdMesa() == idMesa && !mesa.reservaPorCliente.containsValue(fecha)) {
+            if (mesa.getIdMesa() == idMesa || !mesa.reservaPorCliente.containsValue(fecha)) {
                 mesa.reservaPorCliente.put(idCliente, fecha);
                 mesa.setOcupadoEnFecha(true, fecha);
+            }
+            else {
+                throw new RuntimeException("la mesa está ocupada");
             }
         }
     }
