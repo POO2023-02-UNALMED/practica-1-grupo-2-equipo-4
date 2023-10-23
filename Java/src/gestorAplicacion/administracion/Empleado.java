@@ -10,6 +10,8 @@ public class Empleado implements Serializable {
     private float salario;
     private Calificacion calificacion;
     private static int cantidadEmpleados = 0;
+    private static java.util.ArrayList<Empleado> empleados = new ArrayList<>();
+
 
 
     public Empleado(String nombre, int idEmpleado, float salario, Calificacion calificacion) {
@@ -18,6 +20,7 @@ public class Empleado implements Serializable {
         this.idEmpleado = idEmpleado;
         this.salario = salario;
         this.calificacion = calificacion;
+        empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
     // Calcular el promedio de las calificaciones y determinar si califica para el bono
