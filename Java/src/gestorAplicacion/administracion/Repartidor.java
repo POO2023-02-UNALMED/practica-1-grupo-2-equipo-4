@@ -1,4 +1,4 @@
-/* package gestorAplicacion.administracion;
+package gestorAplicacion.administracion;
 
 import gestorAplicacion.administracion.Calificacion;
 import gestorAplicacion.administracion.Empleado;
@@ -35,4 +35,4 @@ public class Repartidor extends Empleado {
     public void setVehiculo(String vehiculo) {
         this.vehiculo = vehiculo;
     }
-}*/
+}

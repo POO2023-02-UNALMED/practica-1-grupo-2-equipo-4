@@ -1,4 +1,4 @@
-/*package gestorAplicacion.administracion;
+package gestorAplicacion.administracion;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,8 +19,7 @@ public class Empleado implements Serializable {
         this.salario = salario;
         this.calificacion = calificacion;
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
-
-     /*
+    }
     // Calcular el promedio de las calificaciones y determinar si califica para el bono
     public boolean BONO() {
 
@@ -31,10 +30,11 @@ public class Empleado implements Serializable {
 
         double promedio = suma / calificaciones.size();
 
-        if(promedio >= 4.5)
-            return true;
-        else
+        if(promedio >= 4.5){
+            return true;}
+        else{
             return false;
+        }
     }
 
     public Empleado(){ // Constructor sin argumentos necesario para deserialización
@@ -76,4 +76,4 @@ public class Empleado implements Serializable {
     public void setCalificacion(Calificacion calificacion) {
     	this.calificacion = calificacion;
     }
-} */
+}

@@ -1,4 +1,4 @@
-/*package gestorAplicacion.administracion;
+package gestorAplicacion.administracion;
 import gestorAplicacion.restaurante.Comida;
 import gestorAplicacion.restaurante.Gaseosas;
 import gestorAplicacion.restaurante.Pedido;
@@ -26,4 +26,3 @@ public class Cocinero extends Empleado {
         this.especialidad = especialidad;
     }
 }
-*/

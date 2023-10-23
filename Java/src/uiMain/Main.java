@@ -1,7 +1,9 @@
 package uiMain;
 
 
+import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
+import gestorAplicacion.restaurante.Pedido;
 
 import java.util.Map;
 
@@ -49,7 +51,19 @@ public class Main {
 
         mesa1.crearReserva(789, 1, "11-12-2023 14:00:00");
         mesa2.crearReserva(456, 2, "11-12-2023 14:00:00");
-/*        mesa1.crearReserva(345,1,"10-12-2023 13:00:00");
+
+
+        Ingredientes albahaca = new Ingredientes("albahaca",3657,3);
+        Ingredientes tomate = new Ingredientes("tomate",5657,4);
+        Ingredientes carneDeCerdo = new Ingredientes("carne de cerdo", 15000, 6);
+        Ingredientes huevo = new Ingredientes("huevo", 800, 10);
+
+
+
+
+/*
+        Pedido pedido1 = new Pedido(1,mesa1,);
+        mesa1.crearReserva(345,1,"10-12-2023 13:00:00");
         mesa2.crearReserva(576, 2,"22-11-2023 13:00:00");
         mesa2.crearReserva(578, 2,"22-10-2023 13:00:00");
         System.out.println(mesa1.toString());

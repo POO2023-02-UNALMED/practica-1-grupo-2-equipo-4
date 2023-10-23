@@ -8,18 +8,21 @@ import gestorAplicacion.restaurante.Pedido;
 import java.io.Serializable;
 
 public class Factura implements Serializable {
-    private int idEmpleado;
+    private Empleado empleado;
     private Mesas mesa;
     private Pedido pedido;
     private int fecha;
     private int idFactura;
+    private Calificacion calificacionFinal;
 
 
-    public Factura(int idEmpleado, Mesas mesa, Pedido pedido, int idFactura) {
-    	this.idEmpleado = idEmpleado;
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, int calificacionServicio) {
+    	this.empleado = empleado;
     	this.mesa = mesa;
     	this.pedido = pedido;
     	this.idFactura = idFactura;
+        Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
+        empleado.calificaciones.add(calficacionFinal);
         /** En este constructor se asignan las características del momento después a que el cliente comió */
     }
     public float precioTotal() {
@@ -37,12 +40,12 @@ public class Factura implements Serializable {
     }
     public Factura(){ //Constructor sin argumentos necesario para deserialización
     }
-    public int getIdEmpleado() {
-    	return idEmpleado;
+    public Empleado getIdEmpleado() {
+    	return empleado;
     }
     
     public void setIdEmpleado(int idEmpleado) {
-    	this.idEmpleado = idEmpleado;
+    	this.empleado = empleado;
     }
     
     public Mesas getMesa() {
@@ -67,5 +70,29 @@ public class Factura implements Serializable {
     
     public void setFecha(int fecha) {
     	this.fecha = fecha;
+    }
+
+    public int getIdFactura() {
+        return idFactura;
+    }
+
+    public Calificacion getCalificacionFinal() {
+        return calificacionFinal;
+    }
+
+    public void setCalificacionFinal(Calificacion calificacionFinal) {
+        this.calificacionFinal = calificacionFinal;
+    }
+
+    public void setIdFactura(int idFactura) {
+        this.idFactura = idFactura;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 }
