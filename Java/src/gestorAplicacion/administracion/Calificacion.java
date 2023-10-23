@@ -18,8 +18,10 @@ public class Calificacion implements Serializable {
         this.calificacion = calificacion;
     }
 
-    public void setIdFactura(int idFactura) {
-        this.idFactura = idFactura;
+    //Getters y Setters
+    public void setIdFactura(int idFactura){
+    	this.idFactura = idFactura;
+
     }
 
     public void setIdEmpleado(Empleado idEmpleado) {

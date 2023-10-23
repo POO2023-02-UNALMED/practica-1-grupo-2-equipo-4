@@ -30,7 +30,8 @@ public class Factura implements Serializable {
 
     }
 
-    public float precioTotal() {
+    public float precioTotal() {//calcula el precio total sumando las comidas y las gaseosas con los métodos
+
         float suma = 0;
 
         for (Comida comida : this.pedido.getPedidoComidas()) {
@@ -47,6 +48,12 @@ public class Factura implements Serializable {
     public Factura() { //Constructor sin argumentos necesario para deserialización
     }
 
+
+    public void calificarEmpleado(int calificacion) { //Método que cambia el atributo int calificación de la clase Calificacón que ya se añadio al empleado
+        this.calificacionFinal.setCalificacion(calificacion);
+    }
+
+    //Getter y setters
     public Empleado getIdEmpleado() {
         return empleado;
     }

@@ -10,8 +10,7 @@ public class Empleado implements Serializable {
     private float salario;
     private Calificacion calificacion;
     private static int cantidadEmpleados = 0;
-    public java.util.ArrayList<Empleado> empleados = new ArrayList<>();
-
+    private static java.util.ArrayList<Empleado> empleados = new ArrayList<>();
 
 
     public Empleado(String nombre, int idEmpleado, float salario, Calificacion calificacion) {
@@ -23,6 +22,7 @@ public class Empleado implements Serializable {
         empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
+
     // Calcular el promedio de las calificaciones y determinar si califica para el bono
     public boolean BONO() {
 
@@ -33,49 +33,50 @@ public class Empleado implements Serializable {
 
         double promedio = suma / calificaciones.size();
 
-        if(promedio >= 4.5){
-            return true;}
-        else{
+        if (promedio >= 4.5) { // Si el promedio es mayor a 4.5 aplica para el bono
+            return true;
+        } else {
             return false;
         }
     }
-    public Empleado(){ // Constructor sin argumentos necesario para deserialización
+
+    public Empleado() { // Constructor sin argumentos necesario para deserialización
     }
 
-
+    //Getter y Setters
     public int getCantidadEmpleados() {
         return cantidadEmpleados;
     }
-    
+
     public String getNombre() {
-    	return nombre;
+        return nombre;
     }
-    
+
     public void setNombre(String Nombre) {
-    	this.nombre = nombre;
+        this.nombre = nombre;
     }
-    
+
     public int getIdEmpleado() {
-    	return idEmpleado;
+        return idEmpleado;
     }
-    
+
     public void setIdEmpleado(int idEmpleado) {
-    	this.idEmpleado = idEmpleado;
+        this.idEmpleado = idEmpleado;
     }
-    
+
     public float getSalario() {
-    	return salario;
+        return salario;
     }
-    
+
     public void setSalario(float salario) {
-    	this.salario = salario;
+        this.salario = salario;
     }
-    
+
     public Calificacion getCalificacion() {
-    	return calificacion;
+        return calificacion;
     }
-    
+
     public void setCalificacion(Calificacion calificacion) {
-    	this.calificacion = calificacion;
+        this.calificacion = calificacion;
     }
 }

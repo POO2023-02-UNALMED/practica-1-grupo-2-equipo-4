@@ -44,9 +44,27 @@ public class Main {
         int[] cantidadesClasicaPollo = {2, 1, 1, 1, 1};
         Comida clasicaDePollo = new Comida("Clasica de Pollo", ingredientesClasicaPollo, cantidadesClasicaPollo);
 
+
         Ingredientes[] ingredientesPolloqueso = {pan, carneDePollo, queso, tomate, cebolla, lechuga};
         int[] cantidadespolloconQueso = {2, 1, 1, 1, 1, 1};
         Comida polloconQueso = new Comida("Clasica de Pollo", ingredientesPolloqueso, cantidadespolloconQueso);
+
+ /*   Mesas mesa1 = new Mesas(1,2);
+        Mesas mesa2 = new Mesas(2,2);
+        Mesas mesa3 = new Mesas(3,2);
+        Mesas mesa4 = new Mesas(4,2);
+        Mesas mesa5 = new Mesas(5,4);
+        Mesas mesa6 = new Mesas(6,4);
+        Mesas mesa7 = new Mesas(7,4);
+        Mesas mesa8 = new Mesas(8,4);
+        Mesas mesa9 = new Mesas(9,4);
+        Mesas mesa10 = new Mesas(10,6);
+        Mesas mesa11 = new Mesas(11,6);
+        Mesas mesa12 = new Mesas(12,8);
+        Mesas mesa13 = new Mesas(13,8);
+        Mesas mesa14 = new Mesas(14,10);
+        Mesas mesa15 = new Mesas(15,10);
+        */
 
         Ingredientes[] ingredientesDobleCarneTocineta = {pan, carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
         int[] cantidadesDobleCarneTocineta = {2, 2, 3, 4, 2, 2, 2};
@@ -70,16 +88,10 @@ public class Main {
         System.out.println(mesa2.toString());
 */
 
-        Mesas mesa1 = new Mesas(1, 4);
-        Mesas mesa2 = new Mesas(2, 4);
-        Mesas mesa3 = new Mesas(3, 7);
-        Mesas mesa4 = new Mesas(4, 8);
-        Mesas mesa5 = new Mesas(5, 10);
-        Mesas mesa6 = new Mesas(6, 10);
-
+        /*
         mesa1.crearReserva(789, 1, "11-12-2023 14:00:00");
         mesa2.crearReserva(456, 2, "11-12-2023 14:00:00");
-
+*/
 
     }
 

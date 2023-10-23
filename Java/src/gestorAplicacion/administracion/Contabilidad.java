@@ -12,7 +12,9 @@ public class Contabilidad implements Serializable{
     private double pagarSueldos;
     private double calcularGastos;
     public static float saldo = 1000000;
+
     //private ArrayList<Factura> facturas;
+
     private static final float serviciosPublicos = 0;
     
    /* public Contabilidad(float saldo,ArrayList<Factura> facturas){
