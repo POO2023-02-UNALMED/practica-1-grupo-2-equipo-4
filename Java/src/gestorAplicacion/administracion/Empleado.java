@@ -33,7 +33,7 @@ public class Empleado implements Serializable {
 
         double promedio = suma / calificaciones.size();
 
-        if (promedio >= 4.5) {
+        if (promedio >= 4.5) { // Si el promedio es mayor a 4.5 aplica para el bono
             return true;
         } else {
             return false;
@@ -43,7 +43,7 @@ public class Empleado implements Serializable {
     public Empleado() { // Constructor sin argumentos necesario para deserialización
     }
 
-
+    //Getter y Setters
     public int getCantidadEmpleados() {
         return cantidadEmpleados;
     }

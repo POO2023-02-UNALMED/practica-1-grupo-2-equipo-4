@@ -26,6 +26,8 @@ public class Gaseosas extends Inventario implements Serializable {
         }
     }
 
+    //Getters y Setters
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + "Precio: " + precio + "Cantidad: " + cantidad + "Disponibilidad: " + disponibilidad;

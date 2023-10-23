@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Pedido implements Serializable {
 
-    private int IdPedido;
+    private int idPedido;
     private Mesas mesa;
     private Menu menu;
     private ArrayList<Comida> pedidoComidas;
@@ -17,7 +17,7 @@ public class Pedido implements Serializable {
     private Boolean reserva;
 
     public Pedido(int idPedido, Mesas mesa, String fecha, int idCliente) { // crea un pedido que a la vez efectua la reserva asociada a la fecha y al id del cliente
-        this.IdPedido = IdPedido;
+        this.idPedido = idPedido;
         this.mesa = mesa;
         this.idCliente = idCliente;
         this.fecha = fecha;
@@ -27,7 +27,7 @@ public class Pedido implements Serializable {
     }
 
     public Pedido(int IdPedido, Mesas mesa, String fecha) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
-        this.IdPedido = IdPedido;
+        this.idPedido = IdPedido;
         this.mesa = mesa;
         this.fecha = fecha;
         this.pedidoComidas = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Pedido implements Serializable {
         mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
     }
 
-    public void agregarAlPedido(ArrayList<Comida> comidas, ArrayList<Gaseosas> gaseosas) {
+    public void agregarAlPedido(ArrayList<Comida> comidas, ArrayList<Gaseosas> gaseosas) { //agrega todas las comidas y gaseosas al pedido
         if (pedidoComidas == null) {
             pedidoComidas = new ArrayList<>();
         }
@@ -59,11 +59,11 @@ public class Pedido implements Serializable {
     }
 
     public int getIdPedido() {
-        return IdPedido;
+        return idPedido;
     }
 
     public void setIdPedido(int idPedido) {
-        IdPedido = idPedido;
+        this.idPedido = idPedido;
     }
 
     public Mesas getMesa() {

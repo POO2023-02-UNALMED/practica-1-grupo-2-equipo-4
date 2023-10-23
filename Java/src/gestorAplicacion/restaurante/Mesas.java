@@ -47,10 +47,24 @@ public class Mesas implements Serializable {
 
     }
 
-
-    public static ArrayList<Mesas> getMesas() {
-        return mesas;
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Mesa número: ").append(idMesa).append("\n");
+        stringBuilder.append("Número de sillas: ").append(numeroDeSillas).append("\n");
+        stringBuilder.append("Fechas ocupadas: ").append(ocupadoEnFecha.keySet()).append("\n");
+        stringBuilder.append("Reservas:\n");
+        for (Map.Entry<Integer, String> entry : reservaPorCliente.entrySet()) {
+            Integer idCliente = entry.getKey();
+            String fecha = entry.getValue();
+            stringBuilder.append("ID de cliente: ").append(idCliente).append(", Fecha de reserva: ").append(fecha).append("\n");
+        }
+        return stringBuilder.toString();
     }
+     //Getters y Setters
+     public static ArrayList<Mesas> getMesas() {
+         return mesas;
+     }
+
 
     public void setIdMesa(int idMesa) {
         this.idMesa = idMesa;
@@ -72,6 +86,7 @@ public class Mesas implements Serializable {
         ocupadoEnFecha.put(fecha, estadoMesa);
     }
 
+
     public void set(Integer key, String value) {
         reservaPorCliente.put(key, value);
     }
@@ -80,19 +95,6 @@ public class Mesas implements Serializable {
         return idMesa;
     }
 
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Mesa número: ").append(idMesa).append("\n");
-        stringBuilder.append("Número de sillas: ").append(numeroDeSillas).append("\n");
-        stringBuilder.append("Fechas ocupadas: ").append(ocupadoEnFecha.keySet()).append("\n");
-        stringBuilder.append("Reservas:\n");
-        for (Map.Entry<Integer, String> entry : reservaPorCliente.entrySet()) {
-            Integer idCliente = entry.getKey();
-            String fecha = entry.getValue();
-            stringBuilder.append("ID de cliente: ").append(idCliente).append(", Fecha de reserva: ").append(fecha).append("\n");
-        }
-        return stringBuilder.toString();
-    }
    /* public String verificarDisponibilidad (int numeroDeSillas, String fecha){
          java.util.ArrayList<Mesas> mesasDisponibles = new ArrayList<>();
          for (Mesas mesa: mesas) {
