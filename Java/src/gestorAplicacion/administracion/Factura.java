@@ -43,11 +43,7 @@ public class Factura implements Serializable {
     public Empleado getIdEmpleado() {
     	return empleado;
     }
-    
-    public void setIdEmpleado(int idEmpleado) {
-    	this.empleado = empleado;
-    }
-    
+
     public Mesas getMesa() {
     	return mesa;
     }
@@ -82,6 +78,7 @@ public class Factura implements Serializable {
 
     public void setCalificacionFinal(Calificacion calificacionFinal) {
         this.calificacionFinal = calificacionFinal;
+
     }
 
     public void setIdFactura(int idFactura) {
@@ -95,4 +92,5 @@ public class Factura implements Serializable {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
+
 }
