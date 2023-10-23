@@ -84,24 +84,26 @@ public class Main {
 
         Pedido pedido1 = new Pedido( mesa2,"23-10-2023 1:40:00", linguini);
         pedido1.agregarComidaAlPedido(vegetariana,carnibora);
-        pedido1.agregarGaseosaAlPedido(sprite, coca_cola);
-        pedido1.imprimirComidas();
-
-        mesa2.crearReserva(345,2,"23-10-2023 1:50:00");
-        System.out.println(mesa2.toString());
-
-        mesa3.crearReserva(456, 3, "23-10-2023 1:50:00" );
-        Pedido pedido2 = new Pedido( mesa3,"23-10-2023 1:50:00", 456,linguini );
-        System.out.println(mesa3.toString());
-
-        Factura factura1 = new Factura(linguini,mesa1,pedido1,1,1.1);
-        System.out.println(factura1.precioTotal());
-
-        pedido1.confirmarOrden(pedido1);
+        pedido1.agregarGaseosaAlPedido(coca_cola, sprite);
+        pedido1.confirmarOrden();
         System.out.println(pan.toString());
         System.out.println(carneDeRes.toString());
         System.out.println(coca_cola.toString());
+        System.out.println(sprite.toString());
+        System.out.println("");
 
+        Pedido pedido2 = new Pedido( mesa3,"23-10-2023 1:50:00", 456,linguini );
+        pedido2.agregarComidaAlPedido(clasicaDeCarne, clasicaDePollo, polloconQueso,vegetariana);
+        pedido2.imprimirComidas();
+        pedido2.agregarGaseosaAlPedido(coca_cola, sprite, quatro, premio);
+        pedido2.confirmarOrden();
+        System.out.println(pan.toString());
+        System.out.println(carneDeRes.toString());
+        System.out.println(carneDePollo.toString());
+        System.out.println(queso.toString());
+        System.out.println(coca_cola.toString());
+        System.out.println(sprite.toString());
+        System.out.println(premio.toString());
 
 
 

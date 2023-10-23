@@ -48,8 +48,8 @@ public class Pedido implements Serializable {
         pedidoGaseosas.addAll(Arrays.asList(gaseosas));
 
     }
-    public void confirmarOrden(Pedido pedido) {
-        Factura factura = new Factura(pedido.getEmpleado(),pedido.getMesa(),pedido,getIdPedido());
+    public void confirmarOrden() {
+        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this.getIdPedido());
 
         for (Comida comida : pedidoComidas) {
             comida.restarCantidad();
