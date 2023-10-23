@@ -11,12 +11,11 @@ public class Factura implements Serializable {
     private Empleado empleado;
     private Mesas mesa;
     private Pedido pedido;
-    private int fecha;
     private int idFactura;
     private Calificacion calificacionFinal;
 
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, int calificacionServicio) {
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio) {
         this.empleado = empleado;
         this.mesa = mesa;
         this.pedido = pedido;
@@ -73,15 +72,6 @@ public class Factura implements Serializable {
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
-
-    public int getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(int fecha) {
-        this.fecha = fecha;
-    }
-
 
     public int getIdFactura() {
         return idFactura;

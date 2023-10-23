@@ -6,13 +6,13 @@ import java.io.Serializable;
 public class Calificacion implements Serializable {
     private int idFactura;
     private Empleado empleado;
-    private int calificacion;
+    private double calificacion;
 
     public Calificacion() {
         // Constructor sin argumentos necesario para deserialización
     }
 
-    public Calificacion(int idFactura, Empleado empleado, int calificacion) {
+    public Calificacion(int idFactura, Empleado empleado, double calificacion) {
         this.idFactura = idFactura;
         this.empleado = empleado;
         this.calificacion = calificacion;
@@ -41,7 +41,7 @@ public class Calificacion implements Serializable {
         return empleado;
     }
 
-    public int getCalificacion() {
+    public double getCalificacion() {
         return calificacion;
     }
 }

@@ -1,6 +1,8 @@
 package uiMain;
 
 
+import gestorAplicacion.administracion.Cocinero;
+import gestorAplicacion.administracion.Factura;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
 import gestorAplicacion.restaurante.Pedido;
@@ -90,9 +92,11 @@ public class Main {
         Pedido pedido2 = new Pedido(2, mesa3,"23-10-2023 1:50:00", 456 );
         System.out.println(mesa3.toString());
 
+        Cocinero linguini = new Cocinero("linguini",1001,80000,"Calvas");
 
 
-
+        Factura factura1 = new Factura(linguini,mesa1,pedido1,1,1.1);
+        System.out.println(factura1.precioTotal());
 
 
 
