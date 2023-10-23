@@ -1,7 +1,8 @@
 package uiMain;
+import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
-import gestorAplicacion.restaurante.Pedido;
+import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.*;
 
 
@@ -75,6 +76,20 @@ public class TestEmpleados {
         Mesas mesa13 = new Mesas(13, 8);
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
+
+
+        Mesero mesero1 = new Mesero("Pablo", 1,20000);
+        Mesero mesero2 = new Mesero("Sofia", 2,20000);
+        Mesero mesero3 = new Mesero("Andres", 3,20000);
+        Mesero mesero4 = new Mesero("Monica", 4,20000);
+        Mesero mesero5 = new Mesero("Horacio", 5,20000);
+        mesero1.agregarMesas(mesa1);
+        mesero1.agregarMesas(mesa2);
+        mesero1.agregarMesas(mesa3);
+        mesero1.agregarMesas(mesa4);
+        mesero1.agregarMesas(mesa5);
+        System.out.println(mesero1.toString());
+
 
 
 
