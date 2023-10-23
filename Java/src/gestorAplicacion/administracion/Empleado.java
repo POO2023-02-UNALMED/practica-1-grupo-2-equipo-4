@@ -10,7 +10,7 @@ public class Empleado implements Serializable {
     private float salario;
     private Calificacion calificacion;
     private static int cantidadEmpleados = 0;
-    private static java.util.ArrayList<Empleado> empleados = new ArrayList<>();
+    public java.util.ArrayList<Empleado> empleados = new ArrayList<>();
 
 
 
@@ -39,7 +39,6 @@ public class Empleado implements Serializable {
             return false;
         }
     }
-
     public Empleado(){ // Constructor sin argumentos necesario para deserialización
     }
 

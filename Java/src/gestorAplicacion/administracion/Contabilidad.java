@@ -15,9 +15,14 @@ public class Contabilidad implements Serializable{
     private ArrayList<Factura> facturas;
     private static final float serviciosPublicos = 0;
     
-    public Contabilidad(float saldo,ArrayList<Factura> facturas){
+    public Contabilidad(float saldo,ArrayList<Factura> facturas, double calcularUtilidad, double calcularGastos, double calcularIngresos, double pagarSueldos){
         Contabilidad.saldo = saldo;
         this.facturas = facturas;
+        this.calcularUtilidad= calcularUtilidad;
+        this.calcularIngresos = calcularIngresos;
+        this.calcularGastos = calcularGastos;
+        this.pagarSueldos = pagarSueldos;
+
     }
     public static float getSaldo() {
         return saldo;
@@ -28,6 +33,7 @@ public class Contabilidad implements Serializable{
     public ArrayList<Factura> getFacturas() {
         return facturas;
     }
+
     // Método para pagar servicios No terminado
     public void pagarServicios(float serviciosPublicos) {
         if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
@@ -61,10 +67,10 @@ public class Contabilidad implements Serializable{
     // Metodo para Pagar los sueldos a los empleados
     public double pagarSueldos() {
         double totalPago = 0;
-        for (Empleado empleado : getEmpleado()) { // deberia
+        for (Empleado empleado : empleado.empleados) { // deberia
             totalPago += empleado.getSalario();
-            if (empleado.Bono()) { // Si el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.
-                totalPago += (empleado.getSalario() * empleado.getValorBono()); // Necesita multiplicar el Salario por el valor del bono.
+            if (empleado.BONO()) { // Si el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.
+                totalPago += (empleado.getSalario() * 200000); // Necesita multiplicar el Salario por El valor de bono el cual es 200000$.
             } else {
                 totalPago += empleado.getSalario();
             }
