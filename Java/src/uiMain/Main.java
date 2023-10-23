@@ -22,21 +22,30 @@ public class Main {
 
 
         // ingredientes
-        Ingredientes pan = new Ingredientes("Pan", 3000, 20);
+        Ingredientes pan = new Ingredientes("Pan", 1000, 20);
         Ingredientes carneDeRes = new Ingredientes("Carne de res", 6000, 20);
         Ingredientes carneDePollo = new Ingredientes("Carne de pollo", 7000, 20);
         Ingredientes carneVegana = new Ingredientes("Carne vegana", 4000, 20);
-        Ingredientes tomate = new Ingredientes("Tomate", 800, 20);
-        Ingredientes cebolla = new Ingredientes("Cebolla", 700,20);
-        Ingredientes lechuga = new Ingredientes("Lechuga",550, 20);
-        Ingredientes queso = new Ingredientes("Queso", 4000, 20);
+        Ingredientes tomate = new Ingredientes("Tomate", 400, 20);
+        Ingredientes cebolla = new Ingredientes("Cebolla", 200,20);
+        Ingredientes lechuga = new Ingredientes("Lechuga",150, 20);
+        Ingredientes queso = new Ingredientes("Queso", 2000, 20);
         Ingredientes tocineta = new Ingredientes("Tocineta", 1000, 20 );
 
         // comidas
         Ingredientes[] ingredientesClasicaCarne = {pan,carneDeRes, tomate,cebolla,lechuga};
-        int[] cantidades ={2, 1,1,1,1};
-        Comida clasicaDeCarne = new Comida("Clasica de carne", ingredientesClasicaCarne, cantidades);
-        
+        int[] cantidadesClasicaCarne ={2, 1,1,1,1};
+        Comida clasicaDeCarne = new Comida("Clasica de carne", ingredientesClasicaCarne, cantidadesClasicaCarne);
+
+        Ingredientes[] ingredientesCarneQuesoYTocineta = {pan,carneDeRes,queso, tocineta, tomate, cebolla, lechuga};
+        int[] cantidadesCarneQuesoYTocineta = {2,1,2,3,1,2,2};
+        Comida EspecialQuesoYTocineta = new Comida("Especial con queso y tocineta", ingredientesCarneQuesoYTocineta, cantidadesCarneQuesoYTocineta);
+
+        Ingredientes [] ingredientesDobleCarneTocineta = {pan , carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
+        int [] 
+
+
+
 
 
 
