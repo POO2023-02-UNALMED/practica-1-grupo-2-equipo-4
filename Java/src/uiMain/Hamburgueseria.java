@@ -67,8 +67,7 @@ public class Hamburgueseria {
                                                  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░██ \s
                                                    ████████████████████████████   \s
             """;
-    private static void salirDelSistema() {
-        System.out.println("""
+    static String salirsistematxt = """
             ██╗   ██╗██╗   ██╗███████╗██╗    ██╗   ██╗ █████╗     ██████╗ ██████╗  ██████╗ ███╗   ██╗████████╗ ██████╗                           
             ██║   ██║██║   ██║██╔════╝██║    ██║   ██║██╔══██╗    ██╔══██╗██╔══██╗██╔═══██╗████╗  ██║╚══██╔══╝██╔═══██╗                          
             ██║   ██║██║   ██║█████╗  ██║    ██║   ██║███████║    ██████╔╝██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║                          
@@ -96,7 +95,9 @@ public class Hamburgueseria {
 ██║   ██║██║╚██╗██║    ██╔═══╝ ██║   ██║██║     ██║   ██║    ██║╚██╔╝██║██╔══██║╚════██║    ██║     ██╔══██║██║    ╚██╗ ██╔╝██║   ██║    ██╗ ██║ 
 ╚██████╔╝██║ ╚████║    ██║     ╚██████╔╝╚██████╗╚██████╔╝    ██║ ╚═╝ ██║██║  ██║███████║    ╚██████╗██║  ██║███████╗╚████╔╝ ╚██████╔╝    ╚═╝██╔╝ 
  ╚═════╝ ╚═╝  ╚═══╝    ╚═╝      ╚═════╝  ╚═════╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝     ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═══╝   ╚═════╝                                                                                                                  
-                """);
+                
+            """;
+    private static void salirDelSistema() {
         //Serializador.serializarHamburgueseria(ArrayList < Hamburgueseria > lista);
         System.exit(0);
     }
@@ -142,6 +143,7 @@ public class Hamburgueseria {
                             case 5:
                             case 6:
                             case 7:
+                                System.out.println(salirsistematxt);
                                 salirDelSistema();
                                 break;
                         }
@@ -170,6 +172,7 @@ public class Hamburgueseria {
                             case 4: // Volver al menú principal
 
                             case 5:
+                                System.out.println(salirsistematxt);
                                 salirDelSistema();
                                 break;
                         }
@@ -190,6 +193,8 @@ public class Hamburgueseria {
                         switch (opcion2) {
 
                             case 1://Efectuar Reserva
+                                System.out.println("reserva efectuada");
+
 
                             case 2://Hacer Recerva
 
@@ -198,6 +203,7 @@ public class Hamburgueseria {
                             case 4: // Volver al menú principal
 
                             case 5:
+                                System.out.println(salirsistematxt);
                                 salirDelSistema();
                                 break;
                         }
@@ -217,6 +223,7 @@ public class Hamburgueseria {
                             case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
                             case 2://Hacer Recerva
                             case 3:
+                                System.out.println(salirsistematxt);
                                 salirDelSistema();
                                 break;
                         }
@@ -236,11 +243,13 @@ public class Hamburgueseria {
                             case 1:// Mostrar inventario
                             case 2: // Volver al menú principal
                             case 3:
+                                System.out.println(salirsistematxt);
                                 salirDelSistema();
                                 break;
                         }
                     } while (opcion2 != 2);
                 case 6:
+                    System.out.println(salirsistematxt);
                     salirDelSistema();
                     break;
             }
