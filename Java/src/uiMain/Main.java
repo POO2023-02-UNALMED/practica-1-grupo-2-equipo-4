@@ -49,22 +49,16 @@ public class Main {
         Comida polloconQueso = new Comida("Clasica de Pollo", ingredientesPolloqueso, cantidadespolloconQueso);
 
         Ingredientes[] ingredientesDobleCarneTocineta = {pan, carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
-        int[] cantidadesDobleCarneTocineta = {2,2,3,4,2,2,2};
-        Comida DobleCarneTocineta = new Comida("Doble carne tocineta", ingredientesDobleCarneTocineta,cantidadesDobleCarneTocineta);
+        int[] cantidadesDobleCarneTocineta = {2, 2, 3, 4, 2, 2, 2};
+        Comida DobleCarneTocineta = new Comida("Doble carne tocineta", ingredientesDobleCarneTocineta, cantidadesDobleCarneTocineta);
 
         Ingredientes[] ingredientesVegetariana = {pan, carneVegana, queso, tomate, cebolla, lechuga};
-        int [] cantidadesVegetariana = {2,1,2,2,2,2};
-        Comida vegetariana = new Comida()
+        int[] cantidadesVegetariana = {2, 1, 2, 2, 2, 2};
+        Comida vegetariana = new Comida("Vegetariana", ingredientesVegetariana, cantidadesVegetariana);
 
-
-
-
-
-
-
-
-
-
+        Ingredientes[] ingredientesCarnibora = {pan, carneDeRes, carneDePollo, tocineta, queso};
+        int[] cantidadesCarnibora = {2, 1, 1, 4, 2};
+        Comida carnibora = new Comida("Carnibora", ingredientesCarnibora, cantidadesCarnibora);
 
 
 /*
