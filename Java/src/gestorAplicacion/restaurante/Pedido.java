@@ -56,7 +56,7 @@ public class Pedido implements Serializable {
         }
 
         for (Gaseosas gaseosa : pedidoGaseosas) {
-            gaseosa.restarCantidad();
+            gaseosa.restarGaseosas(1, gaseosa);
         }
 
 

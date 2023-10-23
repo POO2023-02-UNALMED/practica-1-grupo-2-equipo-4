@@ -87,6 +87,8 @@ public class Main {
         pedido1.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido1.confirmarOrden();
         System.out.println(pan.toString());
+        System.out.println(tomate.toString());
+        System.out.println(lechuga.toString());
         System.out.println(carneDeRes.toString());
         System.out.println(coca_cola.toString());
         System.out.println(sprite.toString());
@@ -100,6 +102,8 @@ public class Main {
         System.out.println(pan.toString());
         System.out.println(carneDeRes.toString());
         System.out.println(carneDePollo.toString());
+        System.out.println(tomate.toString());
+        System.out.println(lechuga.toString());
         System.out.println(queso.toString());
         System.out.println(coca_cola.toString());
         System.out.println(sprite.toString());

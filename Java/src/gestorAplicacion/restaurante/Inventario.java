@@ -60,7 +60,7 @@ public abstract class Inventario {
 
     public abstract void comprar(int cantidad, Inventario elemento);
 
-    public void disponibilidadInventario() { //el void hay que cambiarlo por boolean, lo puse así pa que compile xd
+    public boolean verificarDisponibilidad() { //el void hay que cambiarlo por boolean, lo puse así pa que compile xd
         // Se debe desarrollar al tiempo que clase pedido
     }
 

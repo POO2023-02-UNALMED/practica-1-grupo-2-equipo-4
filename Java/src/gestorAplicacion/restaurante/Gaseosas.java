@@ -30,12 +30,6 @@ public class Gaseosas extends Inventario implements Serializable {
     public void restarGaseosas(int cantidad, Gaseosas gaseosas) {
         gaseosas.setCantidad(gaseosas.getCantidad() - cantidad);
     }
-    public void restarCantidad() {
-        // Restar la cantidad de gaseosas en el pedido
-        for (Gaseosas gaseosa : listaGaseosas) {
-            gaseosa.restarGaseosas(1, gaseosa);
-        }
-    }
 
     @Override
     public String toString() {
