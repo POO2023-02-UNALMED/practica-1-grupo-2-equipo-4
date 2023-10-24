@@ -187,7 +187,7 @@ public class HamburgueseriaTest {
                                 System.out.println("Ingresaste a Efectuar Reserva");
                                 System.out.println("Ingrese el id del cliente que hizo la reserva: ");
                                 int clienteEfectuar = scanner.nextInt();
-                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
+                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
                                 String fechaEfectuar = readln();
                                 Mesas.efectuarReserva(clienteEfectuar,fechaEfectuar);
                                 System.out.println("Reserva efectuada");
@@ -200,7 +200,7 @@ public class HamburgueseriaTest {
                                 int reservaMesa = scanner.nextInt();
                                 System.out.println("Ingrese el id del cliente al que le corresponde la reserva: ");
                                 int clienteReserva = scanner.nextInt();
-                                System.out.println("Ingrese la fecha para la que desea reservar con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
+                                System.out.println("Ingrese la fecha para la que desea reservar con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
                                 String fechaReserva =  readln();
                                 Mesas.crearReserva(clienteReserva,reservaMesa,fechaReserva);
                                 System.out.println("Su reserva ha sido creada ");
@@ -215,7 +215,7 @@ public class HamburgueseriaTest {
                                 int cancelarMesa = scanner.nextInt();
                                 System.out.println("Ingrese el id del cliente que hizo la reserva: ");
                                 int clienteCancelar = scanner.nextInt();
-                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
+                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
                                 String fechaCancelar = readln();
                                 Mesas.cancelarReserva(clienteCancelar,fechaCancelar);
                                 System.out.println("Reserva cancelada");

@@ -8,7 +8,7 @@ public class Mesas implements Serializable {
     public static java.util.ArrayList<Mesas> mesas = new ArrayList<>();
     private int idMesa;
     private int numeroDeSillas;
-    public HashMap<Integer, String> reservaPorCliente = new HashMap<>();
+    private HashMap<Integer, String> reservaPorCliente = new HashMap<>();
     private HashMap<String, Boolean> ocupadoEnFecha = new HashMap<>();
 
 
