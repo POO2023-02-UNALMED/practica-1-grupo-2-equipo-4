@@ -189,7 +189,7 @@ public class HamburgueseriaTest {
                                 int clienteEfectuar = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
                                 String fechaEfectuar = readln();
-                                Mesas.efectuarReserva(clienteEfectuar,fechaEfectuar);
+                                Mesas.efectuarReserva(clienteEfectuar, fechaEfectuar);
                                 System.out.println("Reserva efectuada");
                                 System.out.println(" ");
                                 break;
@@ -201,8 +201,8 @@ public class HamburgueseriaTest {
                                 System.out.println("Ingrese el id del cliente al que le corresponde la reserva: ");
                                 int clienteReserva = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que desea reservar con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
-                                String fechaReserva =  readln();
-                                Mesas.crearReserva(clienteReserva,reservaMesa,fechaReserva);
+                                String fechaReserva = readln();
+                                Mesas.crearReserva(clienteReserva, reservaMesa, fechaReserva);
                                 System.out.println("Su reserva ha sido creada ");
                                 System.out.println(" ");
                                 break;
@@ -215,9 +215,9 @@ public class HamburgueseriaTest {
                                 int cancelarMesa = scanner.nextInt();
                                 System.out.println("Ingrese el id del cliente que hizo la reserva: ");
                                 int clienteCancelar = scanner.nextInt();
-                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
+                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
                                 String fechaCancelar = readln();
-                                Mesas.cancelarReserva(clienteCancelar,fechaCancelar);
+                                Mesas.cancelarReserva(clienteCancelar, fechaCancelar);
                                 System.out.println("Reserva cancelada");
                                 System.out.println(" ");
                                 break;
@@ -240,8 +240,23 @@ public class HamburgueseriaTest {
 
                         switch (opcion) {
 
-                            case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
-                            case 2://Hacer Recerva
+                            case 1:// Muestra si tiene reserva o no, en caso de que si tenga reserva mostrar Menu.
+                                System.out.println("Ingresaste a Consultar Reserva");
+                                System.out.println("El cliente tiene una reserva? (responda 'si' o 'no')");
+                                String tieneReserva = readln();
+                                if (tieneReserva.equals("si")) {
+                                    System.out.println("Ingrese el id del cliente que hizo la reserva: ");
+                                    int idCliente = scanner.nextInt();
+                                    System.out.println("Ingrese la fecha para la que reservaste con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
+                                    String fecha = readln();
+                                    Mesas.efectuarReserva(idCliente, fecha);
+
+                                }
+
+
+                                break;
+
+                            case 2://Hacer Reserva
                                 break;
                             default:
                                 System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
