@@ -110,6 +110,8 @@ public class HamburgueseriaTest {
         int opcion = 0;
         do {
             System.out.println("");
+            System.out.println(bienvenida);
+            System.out.println(burger);
             System.out.println(queHacer);
             System.out.println("");
             System.out.println("1. Ingresar al apartado de Contabilidad 📈📈‍🦲");
@@ -142,8 +144,10 @@ public class HamburgueseriaTest {
                             case 5:
                             case 6:
                                 break;
+                            default:
+                                System.out.println("Debes elegir una de las opciones dadas");
                         }
-                    } while (opcion3 != 6);
+                    } while (opcion3 < 1 || opcion3 > 6);
                     break;
                 case 2:
                     do { // Funcionalidad Gestion Empleados
@@ -153,10 +157,7 @@ public class HamburgueseriaTest {
                         System.out.println("3. Eliminar empleado");
                         System.out.println("4. Volver al menú de las calvas");
                         System.out.print("Escribe el número de la opción que necesitas: ");
-                        if (opcion < 0 || opcion > 4) {
-                            System.out.println(opcion);
-                            System.out.println("DEBES ELEGIR ALGUNA DE LAS OPCIONES DISPONIBLES");
-                        }
+
 
                         opcion = (int) readLong();
 
@@ -170,8 +171,10 @@ public class HamburgueseriaTest {
 
                             case 4: // Volver al menú principal
                                 break;
+                            default:
+                                System.out.println("Debes elegir una de las opciones dadas");
                         }
-                    } while (opcion != 4);
+                    } while (opcion < 1 || opcion > 4);
                     break;
                 case 3:
                     do { //Gestion reserva
@@ -220,12 +223,16 @@ public class HamburgueseriaTest {
                                 //hacer metodo que muestre la reserva
 
 
+
                             case 3://Cancelar Recerva
 
                             case 4: // Volver al menú principal
                                 break;
+                            default:
+                                System.out.println("Debes elegir una de las opciones dadas");
+
                         }
-                    } while (opcion2 != 4);
+                    } while (opcion2 < 1 || opcion2 > 4);;
                     break;
                 case 4:
                     do {// Funcionalidad Tomar Pedidos
@@ -240,8 +247,10 @@ public class HamburgueseriaTest {
                             case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
                             case 2://Hacer Recerva
                                 break;
+                            default:
+                                System.out.println("Debes elegir una de las opciones dadas");
                         }
-                    } while (opcion != 2);
+                    } while (opcion < 1 || opcion > 2);
                     break;
                 case 5:
                     do {// Funcionalidad Gestion Inventario
@@ -256,8 +265,10 @@ public class HamburgueseriaTest {
                             case 1:// Mostrar inventario
                             case 2:// Volver al menú principal
                                 break;
+                            default:
+                                System.out.println("Debes elegir una de las opciones dadas");
                         }
-                    } while (opcion != 2);
+                    } while (opcion < 1 || opcion > 2);
                     break;
 
                 case 6:
