@@ -136,9 +136,8 @@ public class Main {
 
 
 
-        System.out.println(Factura.facturasSinPagar.toString());
+       System.out.println(Factura.facturasSinPagar.toString());
         Factura.facturasSinPagar.get(0).pagarFactura();
-        Factura.facturasSinPagar.get(1).pagarFactura();
         Factura.facturasSinPagar.get(1).pagarFactura();
         System.out.println(Factura.facturasPagadas.toString());
 
@@ -148,9 +147,12 @@ public class Main {
 
         System.out.println(Calificacion.calificaciones.toString());
 
-
-
-
+        for (Factura factura: Factura.facturasSinPagar){
+            if (factura.getIdFactura() == 1000001){
+                factura.pagarFactura();
+            }
+        }
+        System.out.println(Factura.facturasPagadas.toString());
 
 
 

@@ -131,14 +131,14 @@ public class Pedido implements Serializable {
     public String imprimirComidas() {
         StringBuilder sb = new StringBuilder();
         for (Comida comida : pedidoComidas) {
-            sb.append("Su pedido es:" + comida.getNombre() + " su precio es: " + comida.calcularPrecio());
+            sb.append("Su pedido es: " + comida.getNombre() + " su precio es: " + comida.calcularPrecio());
         }
         return sb.toString();
     }
     public String imprimirGaseosas() {
         StringBuilder sb = new StringBuilder();
         for (Gaseosas gaseosas : pedidoGaseosas) {
-            sb.append("Su pedido es:" + gaseosas.getNombre() + " su precio es: " + gaseosas.getPrecio());
+            sb.append("Su pedido es: " + gaseosas.getNombre() + " su precio es: " + gaseosas.getPrecio());
         }
         return sb.toString();
     }
