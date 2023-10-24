@@ -151,25 +151,25 @@ public class Main {
 
 
         //Pedidos
-        /* ArrayList<Pedido> listaPedido = new ArrayList<>();
-        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
+         ArrayList<Pedido> listaPedido = new ArrayList<>();
+        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", Linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
         pedido3.confirmarOrden();
 
-        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", remi);
+        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", Remi);
         pedido5.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido5.agregarComidaAlPedido(vegetariana);
         pedido5.confirmarOrden();
 
-        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", linguini);
+        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", Linguini);
         pedido4.agregarGaseosaAlPedido(quatro, sprite);
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
         listaPedido.add(pedido4);
         listaPedido.add(pedido3);
         listaPedido.add(pedido5);
-        Serializador.serializarPedido(listaPedido);// Seriliza Pedido */
+        Serializador.serializarPedido(listaPedido);// Seriliza Pedido
 
 
 
@@ -199,7 +199,10 @@ public class Main {
         }
 
         Mesas.crearReserva(345,1,"10-12-2023 13:00:00");
-        Mesas.crearReserva(576, 2,"22-11-2023 13:00:00");
+        Mesas.crearReserva(576, 2,"25-11-2023 17:00:00");
+        Mesas.crearReserva(127, 10,"31-11-2023 20:00:00");
+        Mesas.crearReserva(234, 6,"30-11-2023 14:00:00");
+        Mesas.crearReserva(29, 2,"28-11-2023 19:00:00");
         }
 
     }
