@@ -74,9 +74,24 @@ public class Pedido implements Serializable {
         }
         ordenConfirmada = "Orden confirmada y factura creada";
         if(ordenConfirmada.equals("Orden confirmada y factura creada")){
-        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this,this.getIdPedido(),this.fecha);
+        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this,this.getIdPedido(),this.fecha, this.precioTotal());
         Factura.facturasSinPagar.add(factura);}
         return ordenConfirmada;
+    }
+
+    public float precioTotal() {//calcula el precio total sumando las comidas y las gaseosas con los métodos
+
+        float suma = 0;
+
+        for (Comida comida : pedidoComidas) {
+            suma += comida.calcularPrecio();
+        }
+
+        for (Gaseosas gaseosa : pedidoGaseosas) {
+            suma += gaseosa.getPrecio();
+        }
+
+        return suma;
     }
 
     public int getIdPedido() {
@@ -102,10 +117,19 @@ public class Pedido implements Serializable {
     public List<Gaseosas> getPedidoGaseosas() {
         return pedidoGaseosas;
     }
-    public void imprimirComidas() {
+    public String imprimirComidas() {
+        StringBuilder sb = new StringBuilder();
         for (Comida comida : pedidoComidas) {
-            System.out.println("Su pedido es:" + comida.getNombre() + " su precio es: " + comida.calcularPrecio());
+            sb.append("Su pedido es:" + comida.getNombre() + " su precio es: " + comida.calcularPrecio());
         }
+        return sb.toString();
+    }
+    public String imprimirGaseosas() {
+        StringBuilder sb = new StringBuilder();
+        for (Gaseosas gaseosas : pedidoGaseosas) {
+            sb.append("Su pedido es:" + gaseosas.getNombre() + " su precio es: " + gaseosas.getPrecio());
+        }
+        return sb.toString();
     }
     public Empleado getEmpleado() {
         return empleado;
@@ -114,5 +138,8 @@ public class Pedido implements Serializable {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
+
+
+
 }
 

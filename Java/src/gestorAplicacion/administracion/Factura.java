@@ -23,24 +23,26 @@ public class Factura implements Serializable {
 
     private Calificacion calificacionFinal;
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, String fecha) {
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, String fecha, float precioTotal) {
         this.empleado = empleado;
         this.mesa = mesa;
         this.idFactura = idFactura;
         this.facturaPagada = false;
         this.pedido = pedido;
         this.fecha = fecha;
+        this.precioTotal = precioTotal;
 
 
     }
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio, String fecha) {
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio, String fecha, float precioTotal) {
         this.empleado = empleado;
         this.mesa = mesa;
         this.pedido = pedido;
         this.idFactura = idFactura;
         this.facturaPagada = false;
         this.fecha = fecha;
+        this.precioTotal = precioTotal;
 
         Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
         empleado.calificaciones.add(calficacionFinal);
@@ -54,26 +56,14 @@ public class Factura implements Serializable {
     }
 
 
-    public float precioTotal() {//calcula el precio total sumando las comidas y las gaseosas con los métodos
-
-        float suma = 0;
-
-        for (Comida comida : this.pedido.getPedidoComidas()) {
-            suma += comida.calcularPrecio();
-        }
-
-        for (Gaseosas gaseosa : this.pedido.getPedidoGaseosas()) {
-            suma += gaseosa.getPrecio();
-        }
-
-        return suma;
-    }
 
     public void pagarFactura() {
         for(Factura factura : facturasSinPagar) {
+            if(facturasSinPagar.contains(factura)){
             this.facturaPagada = true;
-            this.precioTotal = precioTotal();
+            this.precioTotal = pedido.precioTotal();
             Contabilidad.sumarAlSaldo(this.precioTotal);
+            }
         }
 
         if (this.facturaPagada) {
@@ -145,6 +135,7 @@ public class Factura implements Serializable {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
+        sb.append("  Id factura:  ").append(getIdFactura()).append("\n");
         sb.append("fecha: ").append(getFecha()).append("\n");
         if (facturaPagada == true) {
             sb.append("  La factura está pagada").append("\n");
@@ -152,11 +143,11 @@ public class Factura implements Serializable {
         else {
             sb.append("  La factura no está pagada").append("\n");
         }
-
-        sb.append("  Id factura:  ").append(getIdFactura()).append("\n");
+        sb.append("  tu pedido fue: \n").append(pedido.imprimirComidas()).append("\n");
+        sb.append(pedido.imprimirGaseosas()).append("\n");
         sb.append("  te atendio: ").append(this.getEmpleado()).append("\n");
         sb.append("  estuviste en la Mesa: ").append(mesa.getIdMesa()).append("\n");
-        sb.append("  el valor a pagar es: ").append(this.precioTotal()).append("\n");
+        sb.append("  el valor a pagar es: ").append(pedido.precioTotal()).append("\n");
         sb.append("\n");
 
         return sb.toString();

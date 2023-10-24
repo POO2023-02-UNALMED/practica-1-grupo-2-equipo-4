@@ -33,7 +33,7 @@ public class Gaseosas extends Inventario implements Serializable {
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + " Precio: " + precio + " Cantidad: " + cantidad ;
+        return "Nombre: " + nombre + "Precio " + this.getPrecio() + " Cantidad:" + this.cantidad;
     }
 
     @Override

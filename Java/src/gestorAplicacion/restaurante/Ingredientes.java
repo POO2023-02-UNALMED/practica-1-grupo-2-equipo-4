@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Ingredientes extends Inventario implements Serializable {
-    public static double ingredientesComprados;
+    public static int ingredientesComprados;
 
     public static ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
 
