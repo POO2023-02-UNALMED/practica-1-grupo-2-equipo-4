@@ -121,8 +121,7 @@ public class TestEmpleados implements Serializable {
         Object Serializador = null;
 
         // Serializador.serializarMesas(mesas);
-        Mesas.crearReserva(1,1,"23-10-2023 1:50:00");
-        System.out.println(Mesas.mostrarReserva(1,1,"23-10-2023 1:50:00"));
+        //Mesas.crearReserva(1,1,"23-10-2023 1:50:00");
 
 
 

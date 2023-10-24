@@ -8,7 +8,7 @@ public class Mesas implements Serializable {
     public static java.util.ArrayList<Mesas> mesas = new ArrayList<>();
     private int idMesa;
     private int numeroDeSillas;
-    private HashMap<Integer, String> reservaPorCliente = new HashMap<>();
+    public HashMap<Integer, String> reservaPorCliente = new HashMap<>();
     private HashMap<String, Boolean> ocupadoEnFecha = new HashMap<>();
 
 
@@ -45,19 +45,6 @@ public class Mesas implements Serializable {
             }
         }
 
-    }
-
-    public static String mostrarReserva (int mesaid,int idcliente,String fecha){
-        StringBuilder string = new StringBuilder();
-        for (Mesas mesa: mesas){
-            if (mesa.getIdMesa() == mesaid){
-                string.append("Mesa número: ").append(mesaid).append("\n");
-                string.append("Número de sillas: ").append(mesa.getNumeroDeSillas()).append("\n");
-                string.append("Propietario de la Reserva: ").append(idcliente).append("\n");
-                string.append("Fecha de la reserva: ").append(mesa.reservaPorCliente.get(idcliente));
-            }
-        }
-        return string.toString();
     }
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
