@@ -10,6 +10,7 @@ import gestorAplicacion.restaurante.*;
 
 
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -125,15 +126,16 @@ public class Main {
         pedido4.confirmarOrden();
 
 
-        System.out.println(Factura.facturasSinPagar.toString());
-        Factura.facturasSinPagar.get(0).pagarFactura();
-        System.out.println(Factura.facturasPagadas.toString());
+
+        int indiceFacturaAPagar = 0; // Índice de la factura que deseas pagar
+        Factura facturaAPagar = Factura.facturasSinPagar.get(indiceFacturaAPagar);
+        facturaAPagar.pagarFactura();
 
 
-
-
+        System.out.println(Factura.facturas.toString());
 
         mesa2.crearReserva(1,2, "23-10-2023 3:50:00");
+        System.out.println(mesa2.toString());
 
 
 
