@@ -1,11 +1,10 @@
-package gestorAplicacion.administracion;
+ package gestorAplicacion.administracion;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
 import gestorAplicacion.restaurante.*;
 
-public class Contabilidad implements Serializable {
+public class Contabilidad implements Serializable{
     private static final long serialVersionUID = 1L;
     private Empleado empleado;
     private double calcularUtilidad;
@@ -30,18 +29,13 @@ public class Contabilidad implements Serializable {
     public static float getSaldo() {
         return saldo;
     }
-
     public static void setSaldo(float saldo) {
         Contabilidad.saldo = saldo;
     }
-
-    public ArrayList<Factura> getFacturas() {
+     public ArrayList<Factura> getFacturas() {
         return facturas;
     }
     // Método para pagar servicios No terminado
-    public static void sumarAlSaldo(float ingreso){
-        saldo += ingreso;
-    }
     public void pagarServicios(float serviciosPublicos) {
         if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
             saldo -= serviciosPublicos;
@@ -50,9 +44,8 @@ public class Contabilidad implements Serializable {
             System.out.println("Fondos insuficientes para realizar el pago.");
         }
     }
-
     //Metodo para calcular Ingresos Totales
-    public double calcularIngresos() {
+     public double calcularIngresos() {
         double ingresoVentas = 0;
         for (Factura factura : facturas) {
             ingresoVentas += factura.precioTotal();
@@ -60,22 +53,19 @@ public class Contabilidad implements Serializable {
         this.calcularIngresos = ingresoVentas;
         return this.calcularIngresos;
     }
-
-    //Metodo para calular Utilidad
-    public double calcularUtilidad() {
+     //Metodo para calular Utilidad
+     public double calcularUtilidad() {
         double totalGastos = calcularGastos();
         double ingresoVentas = calcularIngresos();
         this.calcularUtilidad = ingresoVentas - totalGastos;
         return this.calcularUtilidad;
     }
-
-    //Metodo para calcular Los Gastos de La Hamburgueseria
-    public double calcularGastos() {
+     //Metodo para calcular Los Gastos de La Hamburgueseria
+    public double calcularGastos(){
         double gastos = pagarSueldos() + Ingredientes.ingredientesComprados;
         return gastos;
     }
-
-    //Metodo para Pagar los sueldos a los empleados
+     //Metodo para Pagar los sueldos a los empleados
     public double pagarSueldos() {
         double totalPago = 0;
         for (Empleado empleado : empleado.empleados) { // deberia

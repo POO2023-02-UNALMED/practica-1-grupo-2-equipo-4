@@ -75,7 +75,7 @@ public class Pedido implements Serializable {
         ordenConfirmada = "Orden confirmada y factura creada";
         if(ordenConfirmada.equals("Orden confirmada y factura creada")){
         Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this,this.getIdPedido(),this.fecha);
-        Factura.facturasSinPagar.add(factura);}
+        Factura.facturas.add(factura);}
         return ordenConfirmada;
     }
 

@@ -10,16 +10,13 @@ import java.util.ArrayList;
 
 public class Factura implements Serializable {
 
-    public static ArrayList<Factura> facturasSinPagar = new ArrayList<>();
-    public static ArrayList<Factura> facturasPagadas = new ArrayList<>();
+    public static ArrayList<Factura> facturas = new ArrayList<>();
     private Empleado empleado;
     private Mesas mesa;
     private Pedido pedido;
     private int idFactura;
 
     private String fecha;
-    private boolean facturaPagada; //false es no pagada
-    private float precioTotal;
 
     private Calificacion calificacionFinal;
 
@@ -27,10 +24,8 @@ public class Factura implements Serializable {
         this.empleado = empleado;
         this.mesa = mesa;
         this.idFactura = idFactura;
-        this.facturaPagada = false;
         this.pedido = pedido;
         this.fecha = fecha;
-
 
     }
 
@@ -39,7 +34,6 @@ public class Factura implements Serializable {
         this.mesa = mesa;
         this.pedido = pedido;
         this.idFactura = idFactura;
-        this.facturaPagada = false;
         this.fecha = fecha;
 
         Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
@@ -50,9 +44,9 @@ public class Factura implements Serializable {
 
     }
 
-    public Factura() { //Constructor sin argumentos necesario para deserialización
-    }
+    public void getFactura() {
 
+    }
 
     public float precioTotal() {//calcula el precio total sumando las comidas y las gaseosas con los métodos
 
@@ -69,17 +63,7 @@ public class Factura implements Serializable {
         return suma;
     }
 
-    public void pagarFactura() {
-        for(Factura factura : facturasSinPagar) {
-            this.facturaPagada = true;
-            this.precioTotal = precioTotal();
-            Contabilidad.sumarAlSaldo(this.precioTotal);
-        }
-
-        if (this.facturaPagada) {
-            Factura.facturasPagadas.add(this);
-            Factura.facturasSinPagar.remove(this);
-        }
+    public Factura() { //Constructor sin argumentos necesario para deserialización
     }
 
 
@@ -92,7 +76,6 @@ public class Factura implements Serializable {
     public Empleado getIdEmpleado() {
         return empleado;
     }
-
     public Mesas getMesa() {
         return mesa;
     }
@@ -146,13 +129,6 @@ public class Factura implements Serializable {
 
         StringBuilder sb = new StringBuilder();
         sb.append("fecha: ").append(getFecha()).append("\n");
-        if (facturaPagada == true) {
-            sb.append("  La factura está pagada").append("\n");
-        }
-        else {
-            sb.append("  La factura no está pagada").append("\n");
-        }
-
         sb.append("  Id factura:  ").append(getIdFactura()).append("\n");
         sb.append("  te atendio: ").append(this.getEmpleado()).append("\n");
         sb.append("  estuviste en la Mesa: ").append(mesa.getIdMesa()).append("\n");
