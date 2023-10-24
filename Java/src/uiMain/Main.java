@@ -189,14 +189,12 @@ public class Main {
         System.out.println(("**************"));
         MenuMethods.mostrarMenuComidas();*/
 
-/*
-        Pedido pedido1 = new Pedido(1,mesa1,);
-        mesa1.crearReserva(345,1,"10-12-2023 13:00:00");
-        mesa2.crearReserva(576, 2,"22-11-2023 13:00:00");
-        mesa2.crearReserva(578, 2,"22-10-2023 13:00:00");
+
+        Mesas.crearReserva(345,1,"10-12-2023 13:00:00");
+        Mesas.crearReserva(576, 2,"22-11-2023 13:00:00");
         System.out.println(mesa1.toString());
         System.out.println(mesa2.toString());
-*/
+
 
         }
 
