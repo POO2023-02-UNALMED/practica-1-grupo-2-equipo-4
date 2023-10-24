@@ -31,9 +31,9 @@ public class Main {
         // ingredientes
         ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
         Ingredientes pan = new Ingredientes("Pan", 1000, 20);
-        Ingredientes carneDeRes = new Ingredientes("Carne de res", 6000, 20);
+        Ingredientes carneDeRes = new Ingredientes("Carne de Res", 6000, 20);
         Ingredientes carneDePollo = new Ingredientes("Carne de pollo", 7000, 20);
-        Ingredientes carneVegana = new Ingredientes("Carne vegana", 4000, 20);
+        Ingredientes carneVegana = new Ingredientes("Carne Vegana", 4000, 20);
         Ingredientes tomate = new Ingredientes("Tomate", 400, 20);
         Ingredientes cebolla = new Ingredientes("Cebolla", 200, 20);
         Ingredientes lechuga = new Ingredientes("Lechuga", 150, 20);
@@ -61,11 +61,11 @@ public class Main {
 
         Ingredientes[] ingredientesClasicaPollo = {pan, carneDeRes, tomate, cebolla, lechuga};
         int[] cantidadesClasicaPollo = {2, 1, 1, 1, 1};
-        Comida clasicaDePollo = new Comida("Clasica de Pollo", ingredientesClasicaPollo, cantidadesClasicaPollo);
+        Comida clasicaDePollo = new Comida("Clasica de pollo", ingredientesClasicaPollo, cantidadesClasicaPollo);
 
         Ingredientes[] ingredientesPolloqueso = {pan, carneDePollo, queso, tomate, cebolla, lechuga};
         int[] cantidadespolloconQueso = {2, 1, 1, 1, 1, 1};
-        Comida polloconQueso = new Comida("Clasica de Pollo con queso", ingredientesPolloqueso, cantidadespolloconQueso);
+        Comida polloconQueso = new Comida("Clasica de pollo con queso", ingredientesPolloqueso, cantidadespolloconQueso);
 
         Ingredientes[] ingredientesDobleCarneTocineta = {pan, carneDeRes, queso, tocineta, tomate, cebolla, lechuga};
         int[] cantidadesDobleCarneTocineta = {2, 2, 3, 4, 2, 2, 2};
@@ -75,16 +75,16 @@ public class Main {
         int[] cantidadesVegetariana = {2, 1, 2, 2, 2, 2};
         Comida vegetariana = new Comida("Vegetariana", ingredientesVegetariana, cantidadesVegetariana);
 
-        Ingredientes[] ingredientesCarnibora = {pan, carneDeRes, carneDePollo, tocineta, queso};
-        int[] cantidadesCarnibora = {2, 1, 1, 4, 2};
-        Comida carnibora = new Comida("Carnibora", ingredientesCarnibora, cantidadesCarnibora);
+        Ingredientes[] ingredientesCarnivora = {pan, carneDeRes, carneDePollo, tocineta, queso};
+        int[] cantidadesCarnivora = {2, 1, 1, 4, 2};
+        Comida carnivora = new Comida("Carnivora", ingredientesCarnivora, cantidadesCarnivora);
         listaComida.add(clasicaDeCarne);
         listaComida.add(especialQuesoYTocineta);
         listaComida.add(clasicaDePollo);
         listaComida.add(polloconQueso);
         listaComida.add(dobleCarneTocineta);
         listaComida.add(vegetariana);
-        listaComida.add(carnibora);
+        listaComida.add(carnivora);
         Serializador.serializarComida(listaComida);// Serializar Comida
 
         // Mesas
