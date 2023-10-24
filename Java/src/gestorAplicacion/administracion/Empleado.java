@@ -72,8 +72,8 @@ public abstract class Empleado implements Serializable {
     public void setSalario(float salario) {
         this.salario = salario;
     }
-    public String getOcupacion () {return this.getOcupacion();}
+
     public String toString(){
-        return this.getNombre() + this.getIdEmpleado() + this.getSalario() + this.getOcupacion() +"\n";
+        return this.getNombre() + this.getIdEmpleado() + this.getSalario() ;
     }
 }

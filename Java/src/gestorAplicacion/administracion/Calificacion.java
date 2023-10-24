@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Calificacion implements Serializable {
-    public static ArrayList<Calificacion> Calificaciones;
+    public static ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private int idFactura;
     private Empleado empleado;
     private float calificacion;
@@ -21,8 +21,8 @@ public class Calificacion implements Serializable {
     }
 
     //Getters y Setters
-    public void setIdFactura(int idFactura){
-    	this.idFactura = idFactura;
+    public void setIdFactura(int idFactura) {
+        this.idFactura = idFactura;
 
     }
 
@@ -39,14 +39,22 @@ public class Calificacion implements Serializable {
         return idFactura;
     }
 
-    public Empleado getIdEmpleado() {
+    public Empleado getEmpleado() {
         return empleado;
     }
 
     public double getCalificacion() {
         return calificacion;
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Empleado:").append(this.getEmpleado().getNombre()).append("\n");
+        sb.append("Calificación: ").append(this.calificacion).append("\n");
+        return sb.toString();
+    }
 }
+
 
 
 

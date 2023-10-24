@@ -36,7 +36,6 @@ public class Factura implements Serializable {
         this.precioTotal = precioTotal;
         this.precioTotalSinGanancia = precioTotalSinGanancia;
 
-
     }
 
     public Factura() { //Constructor sin argumentos necesario para deserialización
@@ -51,11 +50,11 @@ public class Factura implements Serializable {
         Contabilidad.sumarIngresosPedidoAlSaldo(this.getPrecioTotal());
         Contabilidad.calcularUtilidades(this.getPrecioTotal(), this.getPrecioTotalSinGanancia());
         Mesas.cancelarReserva(getIdFactura(), getFecha());
-        }
+    }
 
     public void calificarEmpleado(float valoracion) { //Método que le crea una calificación al empleado
-        Calificacion calificacion = new Calificacion(this.getIdFactura(),this.getEmpleado(),valoracion);
-        Calificacion.Calificaciones.add(calificacion);
+        Calificacion calificacion = new Calificacion(this.getIdFactura(), this.getEmpleado(), valoracion);
+        Calificacion.calificaciones.add(calificacion);
     }
 
 
@@ -64,6 +63,7 @@ public class Factura implements Serializable {
     public Empleado getIdEmpleado() {
         return empleado;
     }
+
     public Mesas getMesa() {
         return mesa;
     }

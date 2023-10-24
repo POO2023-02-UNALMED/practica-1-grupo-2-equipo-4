@@ -1,6 +1,7 @@
 package uiMain;
 
 
+import gestorAplicacion.administracion.Calificacion;
 import gestorAplicacion.administracion.Cocinero;
 import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Factura;
@@ -83,6 +84,7 @@ public class Main {
         Mesas mesa15 = new Mesas(15, 10);
 
         Cocinero linguini = new Cocinero("linguini", 1001, 80000, "Calvas");
+        Cocinero remi = new Cocinero("remi", 1002, 90000, "Clvados");
 
         /* Pedido pedido1 = new Pedido(mesa2, "23-10-2023 1:40:00", linguini);
         pedido1.agregarComidaAlPedido(vegetariana, carnibora);
@@ -116,7 +118,7 @@ public class Main {
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
         pedido3.confirmarOrden();
 
-        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", linguini);
+        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", remi);
         pedido5.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido5.agregarComidaAlPedido(vegetariana);
         pedido5.confirmarOrden();
@@ -137,10 +139,14 @@ public class Main {
         System.out.println(Factura.facturasSinPagar.toString());
         Factura.facturasSinPagar.get(0).pagarFactura();
         Factura.facturasSinPagar.get(1).pagarFactura();
+        Factura.facturasSinPagar.get(1).pagarFactura();
         System.out.println(Factura.facturasPagadas.toString());
-        System.out.println(Contabilidad.saldo);
-        System.out.println(Contabilidad.getIngresos());
-        System.out.println(Contabilidad.getUtilidades());
+
+        Factura.facturasPagadas.get(0).calificarEmpleado(3);
+        Factura.facturasPagadas.get(1).calificarEmpleado(4);
+        Factura.facturasPagadas.get(1).calificarEmpleado(2);
+
+        System.out.println(Calificacion.calificaciones.toString());
 
 
 
