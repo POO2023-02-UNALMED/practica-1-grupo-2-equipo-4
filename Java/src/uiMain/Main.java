@@ -149,6 +149,7 @@ public class Main {
 
 
     Mesas.crearReserva(1,1,"23-10-2023 1:50:00");
+    MenuMethods.mostrarMenuGaseosas();
 
 
 

@@ -254,6 +254,7 @@ public class HamburgueseriaTest {
                                     Mesas.efectuarReserva(idCliente, fecha);
                                     MenuMethods.mostrarMenuComidas();
                                     MenuMethods.mostrarMenuGaseosas();
+                                    break;
                                 }
 
 
