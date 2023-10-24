@@ -127,9 +127,11 @@ public class Main {
 
 
 
+
         int indiceFacturaAPagar = 0; // Índice de la factura que deseas pagar
         Factura facturaAPagar = Factura.facturasSinPagar.get(indiceFacturaAPagar);
         facturaAPagar.pagarFactura();
+
 
 
         System.out.println(Factura.facturas.toString());
