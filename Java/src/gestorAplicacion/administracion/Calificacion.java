@@ -8,13 +8,13 @@ public class Calificacion implements Serializable {
     public static ArrayList<Calificacion> Calificaciones;
     private int idFactura;
     private Empleado empleado;
-    private double calificacion;
+    private float calificacion;
 
     public Calificacion() {
         // Constructor sin argumentos necesario para deserialización
     }
 
-    public Calificacion(int idFactura, Empleado empleado, double calificacion) {
+    public Calificacion(int idFactura, Empleado empleado, float calificacion) {
         this.idFactura = idFactura;
         this.empleado = empleado;
         this.calificacion = calificacion;

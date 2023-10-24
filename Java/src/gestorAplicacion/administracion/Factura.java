@@ -39,24 +39,6 @@ public class Factura implements Serializable {
 
     }
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio, String fecha, float precioTotal,float precioTotalSinGanancia) {
-        this.empleado = empleado;
-        this.mesa = mesa;
-        this.pedido = pedido;
-        this.idFactura = idFactura;
-        this.facturaPagada = false;
-        this.fecha = fecha;
-        this.precioTotal = precioTotal;
-        this.precioTotalSinGanancia = precioTotalSinGanancia;
-
-        Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
-        empleado.calificaciones.add(calficacionFinal);
-        // En este constructor se asignan las características del momento después a que el cliente comió
-
-        //En este constructor se asignan las características del momento después a que el cliente comió
-
-    }
-
     public Factura() { //Constructor sin argumentos necesario para deserialización
     }
 
