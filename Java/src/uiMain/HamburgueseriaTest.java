@@ -1,6 +1,7 @@
 package uiMain;
 
 import gestorAplicacion.restaurante.Menu;
+import gestorAplicacion.restaurante.MenuMethods;
 import gestorAplicacion.restaurante.Mesas;
 
 import java.util.Scanner;
@@ -251,8 +252,8 @@ public class HamburgueseriaTest {
                                     System.out.println("Ingrese la fecha para la que reservaste con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
                                     String fecha = readln();
                                     Mesas.efectuarReserva(idCliente, fecha);
-                                    Menu.mostrarMenuComidas();
-                                    Menu.mostrarMenuGaseosas();
+                                    MenuMethods.mostrarMenuComidas();
+                                    MenuMethods.mostrarMenuGaseosas();
                                 }
 
 
