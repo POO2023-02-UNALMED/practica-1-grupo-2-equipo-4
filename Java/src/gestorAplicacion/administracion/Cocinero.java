@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Cocinero extends Empleado {
     private String especialidad;
+    private static final String ocupacion = "Cocinero";
 
     public Cocinero(String nombre, int idEmpleado, float salario, String especialidad) {
         super(nombre, idEmpleado, salario);

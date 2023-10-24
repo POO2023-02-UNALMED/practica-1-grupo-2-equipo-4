@@ -39,24 +39,6 @@ public class Factura implements Serializable {
 
     }
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio, String fecha, float precioTotal,float precioTotalSinGanancia) {
-        this.empleado = empleado;
-        this.mesa = mesa;
-        this.pedido = pedido;
-        this.idFactura = idFactura;
-        this.facturaPagada = false;
-        this.fecha = fecha;
-        this.precioTotal = precioTotal;
-        this.precioTotalSinGanancia = precioTotalSinGanancia;
-
-        Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
-        empleado.calificaciones.add(calficacionFinal);
-        // En este constructor se asignan las características del momento después a que el cliente comió
-
-        //En este constructor se asignan las características del momento después a que el cliente comió
-
-    }
-
     public Factura() { //Constructor sin argumentos necesario para deserialización
     }
 
@@ -69,11 +51,11 @@ public class Factura implements Serializable {
         Contabilidad.sumarIngresosPedidoAlSaldo(this.getPrecioTotal());
         Contabilidad.calcularUtilidades(this.getPrecioTotal(), this.getPrecioTotalSinGanancia());
         Mesas.cancelarReserva(getIdFactura(), getFecha());
-
         }
 
-    public void calificarEmpleado(int calificacion) { //Método que cambia el atributo int calificación de la clase Calificacón que ya se añadio al empleado
-        this.calificacionFinal.setCalificacion(calificacion);
+    public void calificarEmpleado(float valoracion) { //Método que le crea una calificación al empleado
+        Calificacion calificacion = new Calificacion(this.getIdFactura(),this.getEmpleado(),valoracion);
+        Calificacion.Calificaciones.add(calificacion);
     }
 
 

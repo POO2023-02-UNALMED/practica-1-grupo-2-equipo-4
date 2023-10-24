@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import gestorAplicacion.restaurante.Mesas;
 
 public class Mesero extends Empleado implements Serializable {
+    private static final String ocupacion = "Mesero";
     public ArrayList<Mesas> mesasDeTrabajo = new ArrayList<>();
     public Mesero(String nombre, int idEmpleado, float salario) {
         super(nombre, idEmpleado, salario);
