@@ -83,36 +83,8 @@ public class Main {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-
-        /* Pedido pedido1 = new Pedido(mesa2, "23-10-2023 1:40:00", linguini);
-        pedido1.agregarComidaAlPedido(vegetariana, carnibora);
-        pedido1.agregarGaseosaAlPedido(coca_cola, sprite);
-        pedido1.confirmarOrden();
-        System.out.println(pan.toString());
-        System.out.println(tomate.toString());
-        System.out.println(lechuga.toString());
-        System.out.println(carneDeRes.toString());
-        System.out.println(coca_cola.toString());
-        System.out.println(sprite.toString());
-        System.out.println(""); */
-
-        /* Pedido pedido2 = new Pedido(mesa3, "23-10-2023 1:50:00", 456, linguini);
-        pedido2.agregarComidaAlPedido(clasicaDeCarne, clasicaDePollo, polloconQueso, vegetariana);
-        pedido2.imprimirComidas();
-        pedido2.agregarGaseosaAlPedido(coca_cola, sprite, quatro, premio);
-        System.out.println(pedido2.confirmarOrden());
-        System.out.println(pan.toString());
-        System.out.println(carneDeRes.toString());
-        System.out.println(carneDePollo.toString());
-        System.out.println(tomate.toString());
-        System.out.println(lechuga.toString());
-        System.out.println(queso.toString());
-        System.out.println(coca_cola.toString());
-        System.out.println(sprite.toString());
-        System.out.println(premio.toString()); */
-
-        Cocinero linguini = new Cocinero("linguini", 8000, "Calvas");
-        Cocinero remi = new Cocinero("remi", 9000, "Clvados");
+        Cocinero linguini = new Cocinero("linguini", 0100, 9000, "Calvas");
+        Cocinero remi = new Cocinero("remi", 0101, 9000, "Calvas");
 
         Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
@@ -130,8 +102,6 @@ public class Main {
         pedido4.confirmarOrden();
 
 
-
-        System.out.println(Factura.facturasSinPagar.toString());
 
         int idFacturaDeseada = 10000001;
         for (Factura factura : Factura.facturasSinPagar) {
@@ -157,45 +127,9 @@ public class Main {
                 break;
             }
         }
-        System.out.println(Factura.facturasPagadas.toString());
-
-        System.out.println(mesa1.toString());
-
-        System.out.println(mesa1.toString());
-
-        System.out.println(Factura.facturasSinPagar.toString());
-
-        for (Factura factura : Factura.facturasSinPagar) {
-            if (factura.getIdFactura() == 10000001) {
-                factura.pagarFactura();
-            }
-        }
-        System.out.println(Factura.facturasPagadas.toString());
-
-
-        System.out.println(Calificacion.calificaciones.toString());
-
-        System.out.println(linguini.toString());
-
-        System.out.println(Contabilidad.calcularGastos());
-
-        MenuMethods.mostrarMenuGaseosas();
-        MenuMethods.mostrarMenuComidas();
-
-
-
-        /* MenuMethods.mostrarMenuGaseosas();
-        MenuMethods.mostrarMenuGaseosas();
-        System.out.println(("**************"));
-        MenuMethods.mostrarMenuComidas();*/
-
 
         Mesas.crearReserva(345,1,"10-12-2023 13:00:00");
         Mesas.crearReserva(576, 2,"22-11-2023 13:00:00");
-        System.out.println(mesa1.toString());
-        System.out.println(mesa2.toString());
-
-
         }
 
     }

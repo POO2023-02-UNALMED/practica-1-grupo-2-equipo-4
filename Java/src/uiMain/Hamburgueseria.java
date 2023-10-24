@@ -2,6 +2,7 @@ package uiMain;
 
 import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Empleado;
+import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.MenuMethods;
 import gestorAplicacion.restaurante.Mesas;
 import gestorAplicacion.restaurante.Pedido;
@@ -142,8 +143,7 @@ public class Hamburgueseria {
                         opcionF = scanner.nextInt();
                         switch (opcionF) {
                             case 1:
-                                float servicios = Contabilidad.pagarServicios();
-                                System.out.println("Ingrese el nombre del empleado que quiere ver: ");
+                                float servicios =Contabilidad.pagarServicios();
 
 
 
@@ -183,7 +183,19 @@ public class Hamburgueseria {
                                 }
 
                             case 2://AgregarEmpleado
+                                System.out.println("Ingrese la ocupacion del empleado (1 en caso de ser mesero, 2 en caso de ser Cocinero): ");
+                                int ocup = (int) readLong();
+                                if (ocup == 1){
+                                    System.out.println("Ingrese el nombre del empleado: ");
+                                    System.out.println("Ingrese el id del empleado: ");
+                                    System.out.println("Ingrese el salario del empleado: ");
+                                } else if (ocup == 2) {
+                                    System.out.println("Ingrese el nombre del empleado: ");
+                                    System.out.println("Ingrese el id del empleado: ");
+                                    System.out.println("Ingrese el salario del empleado: ");
+                                    System.out.println("Ingrese la especialidad del empleado: ");
 
+                                }
                             case 3://Eliminar empleado
 
                             case 4: // Volver al menú principal
@@ -289,8 +301,8 @@ public class Hamburgueseria {
                                             break;
                                         }
                                     }
-                                    MenuMethods.mostrarMenuComidas();
-                                    MenuMethods.mostrarMenuGaseosas();
+                                    System.out.println(MenuMethods.mostrarMenuComidas());
+                                    System.out.println(MenuMethods.mostrarMenuGaseosas());
                                     Pedido pedido = new Pedido(mesaDeReserva, fecha, idCliente, mesero1);
                                     System.out.println("Ingrese el pedido de comidas: ");
                                     // ArrayList<String> pedidoComidas = readln();  // Esta Generando Error
@@ -321,6 +333,42 @@ public class Hamburgueseria {
                         switch (opcion) {
 
                             case 1:// Mostrar inventario
+                                System.out.println("Entraste a consultar inventario");
+                                System.out.println("¿Qué quieres hacer?");
+                                System.out.println("1. Comprar ingredientes");
+                                System.out.println("2. Ver ingrediente");
+                                System.out.println("3. volver al menu");
+                                int consultar;
+                                consultar = (int) readLong();
+                                do {
+                                    switch (consultar) {
+                                        case 1:
+                                            System.out.println("Ingrese el ingrediente que desea comprar");
+                                            String ingredienteNombre = readln();
+                                            System.out.println("Ingrese la cantidad que quiere comprar");
+                                            int cantidad = scan.nextInt();
+                                            for(Ingredientes ingrediente: Ingredientes.listaIngredientes){
+                                                if (ingrediente.getNombre() == ingredienteNombre){
+                                                    ingrediente.comprar(cantidad, ingrediente);
+                                                    System.out.println("Te costo: $"+ingrediente.getPrecio()*cantidad);
+                                                }
+                                            }
+                                            System.out.println("Compraste "+cantidad+" de "+ingredienteNombre);
+                                            break;
+                                        case 2:
+                                            System.out.println("Ingresa el ingrediente que quieres ver: ");
+                                            String ingredienteVer = readln();
+                                            for(Ingredientes ingrediente: Ingredientes.listaIngredientes){
+                                                if (ingrediente.getNombre() == ingredienteVer){
+                                                    System.out.println(ingrediente.toString());
+                                                }
+                                            }
+                                            break;
+                                        case 3:
+                                            break;
+                                    }
+                                    break;
+                                } while (consultar != 3);
                             case 2:// Volver al menú principal
                                 break;
                             default:
