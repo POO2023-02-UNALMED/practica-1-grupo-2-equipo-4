@@ -129,6 +129,7 @@ public class Main {
         System.out.println(Factura.facturas.toString());
 
         mesa2.crearReserva(1,2, "23-10-2023 3:50:00");
+        System.out.println(mesa2.toString());
 
 
 
