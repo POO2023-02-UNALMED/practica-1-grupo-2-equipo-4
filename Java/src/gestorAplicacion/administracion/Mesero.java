@@ -10,9 +10,6 @@ public class Mesero extends Empleado implements Serializable {
     public Mesero(String nombre,int idEmpleado,  float salario) {
         super(nombre, idEmpleado, salario);
     }
-    public Mesero(String nombre){
-        this(nombre,20000);
-    }
     public void agregarMesas (Mesas mesa){
         this.mesasDeTrabajo.add(mesa);
     }
