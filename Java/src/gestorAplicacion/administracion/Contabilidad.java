@@ -48,19 +48,19 @@ public class Contabilidad implements Serializable {
         utilidades = ganancia + neto;
     }
 
-   /* public float pagarSueldos() {
+   public static float pagarSueldos() {
         float totalPago = 0;
-        for (Empleado empleado : Empleado.empleados) { // deberia
+        for (Empleado empleado : Empleado.empleados) {
             totalPago += empleado.getSalario();
-            if (empleado.BONO()) { // Sí el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.
-                totalPago += (empleado.getSalario() * 200000); // Necesita multiplicar el Salario por el valor del bono.
+            if (empleado.bono()) {
+                totalPago = totalPago + (empleado.getSalario() * (15/100));
             } else {
                 totalPago += empleado.getSalario();
             }
         }
-        this.pagarSueldos = totalPago;
-        return this.pagarSueldos;
-    }*/
+        saldo = saldo - totalPago;
+        return totalPago;
+    }
    public float calcularGastos() {
        float gastos = Ingredientes.ingredientesComprados;
        return gastos;

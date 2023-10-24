@@ -2,10 +2,10 @@ package gestorAplicacion.administracion;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Empleado implements Serializable {
     public static ArrayList<Empleado> empleados = new ArrayList<>();
-    public ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private String nombre;
     private int idEmpleado;
     private float salario;
@@ -28,20 +28,29 @@ public abstract class Empleado implements Serializable {
 
     // Calcular el promedio de las calificaciones y determinar si califica para el bono
 
-    public boolean BONO() {
+    public boolean bono() {
 
-        double suma = 0.0;
-        for (Calificacion calificacion : calificaciones) {
-            suma += calificacion.getCalificacion();
+        List<Float> calificacionesEmpleado = new ArrayList<>();
+        float suma = 0;
+        boolean tieneBono;
+        for (Calificacion calificacion : Calificacion.calificaciones) {
+            if(calificacion.getEmpleado() == this){
+                calificacionesEmpleado.add(calificacion.getCalificacion());
+            }
+        }
+        for (float califica : calificacionesEmpleado) {
+            suma += califica;
+        }
+        float promedio = suma / calificacionesEmpleado.size();
+
+        if(promedio >= 4.5f){
+            tieneBono = true;
+        }
+        else{
+            tieneBono = false;
         }
 
-        double promedio = suma / calificaciones.size();
-
-        if (promedio >= 4.5) { // Si el promedio es mayor a 4.5 aplica para el bono
-            return true;
-        } else {
-            return false;
-        }
+        return tieneBono;
     }
 
     //Getter y Setters
@@ -74,6 +83,16 @@ public abstract class Empleado implements Serializable {
     }
 
     public String toString(){
-        return this.getNombre() + this.getIdEmpleado() + this.getSalario() ;
+        StringBuilder sb = new StringBuilder();
+        sb.append("El empleado: ").append(this.getNombre()).append("\n");
+        sb.append("Tiene el id: ").append(this.getIdEmpleado()).append("\n");
+        sb.append("Gana un salario de: ").append(this.getSalario()).append("\n");
+        if (this.bono() == true){
+            sb.append("El empleado tiene bono").append("\n");
+        }
+        else {
+            sb.append("El empleado no tiene bono").append("\n");
+        }
+        return sb.toString();
     }
 }

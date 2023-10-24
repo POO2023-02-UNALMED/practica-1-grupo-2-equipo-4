@@ -83,8 +83,6 @@ public class Main {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-        Cocinero linguini = new Cocinero("linguini", 1001, 80000, "Calvas");
-        Cocinero remi = new Cocinero("remi", 1002, 90000, "Clvados");
 
         /* Pedido pedido1 = new Pedido(mesa2, "23-10-2023 1:40:00", linguini);
         pedido1.agregarComidaAlPedido(vegetariana, carnibora);
@@ -113,6 +111,9 @@ public class Main {
         System.out.println(sprite.toString());
         System.out.println(premio.toString()); */
 
+        Cocinero linguini = new Cocinero("linguini", 1001, 8000, "Calvas");
+        Cocinero remi = new Cocinero("remi", 1002, 9000, "Clvados");
+
         Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
@@ -128,50 +129,46 @@ public class Main {
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
 
-        System.out.println(mesa1.toString());
 
-        System.out.println(mesa1.toString());
+        System.out.println(Factura.facturasSinPagar.toString());
 
-
-
-
-
-       System.out.println(Factura.facturasSinPagar.toString());
-        Factura.facturasSinPagar.get(0).pagarFactura();
-        Factura.facturasSinPagar.get(1).pagarFactura();
-        System.out.println(Factura.facturasPagadas.toString());
-
-        Factura.facturasPagadas.get(0).calificarEmpleado(3);
-        Factura.facturasPagadas.get(1).calificarEmpleado(4);
-        Factura.facturasPagadas.get(1).calificarEmpleado(2);
-
-        System.out.println(Calificacion.calificaciones.toString());
-
-        for (Factura factura: Factura.facturasSinPagar){
-            if (factura.getIdFactura() == 1000001){
+        int idFacturaDeseada = 10000001;
+        for (Factura factura : Factura.facturasSinPagar) {
+            if (factura.getIdFactura() == idFacturaDeseada ) {
                 factura.pagarFactura();
+                factura.calificarEmpleado(4.5f);
+                break;
+            }
+        }
+        int idFacturaDeseada2 = 10000002;
+        for (Factura factura : Factura.facturasSinPagar) {
+            if (factura.getIdFactura() == idFacturaDeseada2 ) {
+                factura.pagarFactura();
+                factura.calificarEmpleado(5);
+                break;
+            }
+        }
+        int idFacturaDeseada3 = 10000003;
+        for (Factura factura : Factura.facturasSinPagar) {
+            if (factura.getIdFactura() == idFacturaDeseada3 ) {
+                factura.pagarFactura();
+                factura.calificarEmpleado(4.7f);
+                break;
             }
         }
         System.out.println(Factura.facturasPagadas.toString());
+        System.out.println(Calificacion.calificaciones.toString());
+
+        System.out.println(linguini.toString());
+
+        System.out.println(Contabilidad.pagarSueldos());
 
 
 
-    Mesas.crearReserva(1,1,"23-10-2023 1:50:00");
-    MenuMethods.mostrarMenuGaseosas();
-
-
-
-/*
-        Pedido pedido1 = new Pedido(1,mesa1,);
-        mesa1.crearReserva(345,1,"10-12-2023 13:00:00");
-        mesa2.crearReserva(576, 2,"22-11-2023 13:00:00");
-        mesa2.crearReserva(578, 2,"22-10-2023 13:00:00");
-        System.out.println(mesa1.toString());
-        System.out.println(mesa2.toString());
-*/
+        /* MenuMethods.mostrarMenuGaseosas();
         MenuMethods.mostrarMenuGaseosas();
         System.out.println(("**************"));
-        MenuMethods.mostrarMenuComidas();
+        MenuMethods.mostrarMenuComidas();*/
 
 
     }

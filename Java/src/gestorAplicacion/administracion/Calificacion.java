@@ -43,14 +43,15 @@ public class Calificacion implements Serializable {
         return empleado;
     }
 
-    public double getCalificacion() {
+    public float getCalificacion() {
         return calificacion;
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Empleado:").append(this.getEmpleado().getNombre()).append("\n");
-        sb.append("Calificación: ").append(this.calificacion).append("\n");
+        sb.append("Del servicio: ").append(this.idFactura).append("\n");
+        sb.append("Su calificación fue: ").append(this.calificacion).append("\n");
         return sb.toString();
     }
 }
