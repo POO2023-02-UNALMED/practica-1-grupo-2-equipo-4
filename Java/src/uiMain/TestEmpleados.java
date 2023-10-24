@@ -1,9 +1,8 @@
 package uiMain;
 import java.io.Serializable;
 import java.util.ArrayList;
-import gestorAplicacion.administracion.Contabilidad;
-import gestorAplicacion.administracion.Factura;
-import gestorAplicacion.administracion.Mesero;
+
+import gestorAplicacion.administracion.*;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
 import gestorAplicacion.administracion.Mesero;
@@ -81,7 +80,10 @@ public class TestEmpleados implements Serializable {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-
+        Empleado cocinero1 = new Cocinero("juancho",9,5000,"Carnes");
+        System.out.println(cocinero1.accion());
+        Empleado meser8 = new Mesero("messi",8,3030);
+        System.out.println(meser8.accion());
         Mesero mesero1 = new Mesero("Pablo", 1,20000);
         Mesero mesero2 = new Mesero("Sofia", 2,20000);
         Mesero mesero3 = new Mesero("Andres", 3,20000);
