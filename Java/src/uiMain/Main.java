@@ -4,6 +4,7 @@ package uiMain;
 import baseDatos.Serializador;
 import gestorAplicacion.administracion.Cocinero;
 import gestorAplicacion.administracion.Factura;
+import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
 import gestorAplicacion.restaurante.Pedido;
@@ -78,10 +79,10 @@ public class Main {
         int[] cantidadesCarnibora = {2, 1, 1, 4, 2};
         Comida carnibora = new Comida("Carnibora", ingredientesCarnibora, cantidadesCarnibora);
         listaComida.add(clasicaDeCarne);
-        listaComida.add(cantidadesCarneQuesoYTocineta);
-        listaComida.add(cantidadesClasicaPollo);
-        listaComida.add(cantidadespolloconQueso);
-        listaComida.add(clasicaDeCarne);
+        listaComida.add(especialQuesoYTocineta);
+        listaComida.add(clasicaDePollo);
+        listaComida.add(polloconQueso);
+        listaComida.add(dobleCarneTocineta);
         listaComida.add(vegetariana);
         listaComida.add(carnibora);
         Serializador.serializarComida(listaComida);// Serializar Comida
@@ -119,18 +120,34 @@ public class Main {
         listaMesas.add(mesa14);
         listaMesas.add(mesa15);
         Serializador.serializarMesas(listaMesas);// Serializar Mesas
-
+//Empleados
         //Cocineros
         ArrayList<Cocinero> listaCocinero = new ArrayList<>();
-        Cocinero linguini = new Cocinero("linguini", 0100, 9000, "Calvas");
-        Cocinero remi = new Cocinero("remi", 0101, 9000, "Calvas");
-        listaCocinero.add(linguini);
-        listaCocinero.add(remi);
+        Cocinero Linguini = new Cocinero("Linguini", 0100, 10000, "Clasica de Carne");
+        Cocinero Remi = new Cocinero("Remi", 0101, 9000, "Vegetariana");
+        Cocinero Gordon = new Cocinero("Gordon", 0102, 12000, "Carnivora");
+        Cocinero Ricard = new Cocinero("Ricard", 0103, 9000, "Especial con queso y tocineta");
+        Cocinero David = new Cocinero("David", 0104, 8000, "Carnivora");
+        listaCocinero.add(Linguini);
+        listaCocinero.add(Remi);
+        listaCocinero.add(Gordon);
+        listaCocinero.add(Ricard);
+        listaCocinero.add(David);
         Serializador.serializarCocinero(listaCocinero);
 
         //Meseros
+        ArrayList<Mesero> listaMeseros = new ArrayList<>();
+        Mesero mesero1 = new Mesero("Pablo",0200,20000);
+        Mesero mesero2 = new Mesero("Sofia",0201,20000);
+        Mesero mesero3 = new Mesero("Andres",0202,20000);
+        Mesero mesero4 = new Mesero("Monica",0203,20000);
+        Mesero mesero5 = new Mesero("Horacio",0204,20000);
+        listaMeseros.add(mesero1);
+        listaMeseros.add(mesero2);
+        listaMeseros.add(mesero3);
+        listaMeseros.add(mesero4);
+        listaMeseros.add(mesero5);
 
-        //Empleados
 
 
         //Pedidos
