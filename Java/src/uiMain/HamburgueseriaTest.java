@@ -1,5 +1,6 @@
 package uiMain;
 
+import gestorAplicacion.administracion.Empleado;
 import gestorAplicacion.restaurante.Menu;
 import gestorAplicacion.restaurante.MenuMethods;
 import gestorAplicacion.restaurante.Mesas;
@@ -160,6 +161,13 @@ public class HamburgueseriaTest {
                         switch (opcion) {
 
                             case 1://Ver empleado
+                                System.out.println("Ingrese el nombre del empleado que quiere ver: ");
+                                String verNombre = readln();
+                                for (Empleado empleado: Empleado.empleados){
+                                    if (verNombre == empleado.getNombre()){
+                                        System.out.println(empleado.toString());
+                                    }
+                                }
 
                             case 2://AgregarEmpleado
 
