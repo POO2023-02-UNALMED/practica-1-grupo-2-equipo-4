@@ -18,6 +18,10 @@ public class Cocinero extends Empleado {
     public String accion() {// Ligadura Dinamica
         return "El Cocinero " + this.getNombre() + " esta cocinando.";
     }
+    @Override
+    public String getOcupacion() {
+        return "Cocinero";
+    }
 
     public void prepararPlato(Pedido pedido) {
         System.out.println("El cocinero " + this.getNombre() + " ha terminado de preparar el pedido de" + pedido.getIdPedido());
