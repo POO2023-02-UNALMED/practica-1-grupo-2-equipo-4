@@ -111,8 +111,8 @@ public class Main {
         System.out.println(sprite.toString());
         System.out.println(premio.toString()); */
 
-        Cocinero linguini = new Cocinero("linguini", 1001, 8000, "Calvas");
-        Cocinero remi = new Cocinero("remi", 1002, 9000, "Clvados");
+        Cocinero linguini = new Cocinero("linguini", 8000, "Calvas");
+        Cocinero remi = new Cocinero("remi", 9000, "Clvados");
 
         Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);

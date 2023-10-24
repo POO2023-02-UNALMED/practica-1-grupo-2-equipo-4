@@ -8,9 +8,10 @@ public class Mesas implements Serializable {
     public static java.util.ArrayList<Mesas> mesas = new ArrayList<>();
     private int idMesa;
     private int numeroDeSillas;
-    private HashMap<Integer, String> reservaPorCliente = new HashMap<>();
-    private HashMap<String, Boolean> ocupadoEnFecha = new HashMap<>();
 
+    private HashMap<Integer, String> reservaPorCliente = new HashMap<>();
+
+    private HashMap<String, Boolean> ocupadoEnFecha = new HashMap<>();
 
     public Mesas(int idMesa, int numeroDeSillas) {
         this.idMesa = idMesa;
@@ -46,6 +47,7 @@ public class Mesas implements Serializable {
         }
 
     }
+
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Mesa número: ").append(idMesa).append("\n");
@@ -64,7 +66,6 @@ public class Mesas implements Serializable {
     public static ArrayList<Mesas> getMesas() {
         return mesas;
     }
-
 
     public void setIdMesa(int idMesa) {
         this.idMesa = idMesa;
@@ -93,6 +94,22 @@ public class Mesas implements Serializable {
 
     public int getIdMesa() {
         return idMesa;
+    }
+
+    public HashMap<Integer, String> getReservaPorCliente() {
+        return reservaPorCliente;
+    }
+
+    public void setReservaPorCliente(HashMap<Integer, String> reservaPorCliente) {
+        this.reservaPorCliente = reservaPorCliente;
+    }
+
+    public HashMap<String, Boolean> getOcupadoEnFecha() {
+        return ocupadoEnFecha;
+    }
+
+    public void setOcupadoEnFecha(HashMap<String, Boolean> ocupadoEnFecha) {
+        this.ocupadoEnFecha = ocupadoEnFecha;
     }
 
    /* public String verificarDisponibilidad (int numeroDeSillas, String fecha){

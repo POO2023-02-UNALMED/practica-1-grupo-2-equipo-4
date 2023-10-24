@@ -7,8 +7,11 @@ import gestorAplicacion.restaurante.Mesas;
 public class Mesero extends Empleado implements Serializable {
     private static final String ocupacion = "Mesero";
     public ArrayList<Mesas> mesasDeTrabajo = new ArrayList<>();
-    public Mesero(String nombre, int idEmpleado, float salario) {
-        super(nombre, idEmpleado, salario);
+    public Mesero(String nombre, float salario) {
+        super(nombre, salario);
+    }
+    public Mesero(String nombre){
+        this(nombre,20000);
     }
     public void agregarMesas (Mesas mesa){
         this.mesasDeTrabajo.add(mesa);

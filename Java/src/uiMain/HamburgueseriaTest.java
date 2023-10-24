@@ -1,9 +1,12 @@
 package uiMain;
 
 import gestorAplicacion.administracion.Empleado;
+import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.MenuMethods;
 import gestorAplicacion.restaurante.Mesas;
+import gestorAplicacion.restaurante.Pedido;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HamburgueseriaTest {
@@ -242,7 +245,8 @@ public class HamburgueseriaTest {
                 case 4:
                     do {// Funcionalidad Tomar Pedidos
                         System.out.println(queHacer);
-                        System.out.println("1. Consultar Reserva");
+                        System.out.println("1. Hacer pedido");
+                        System.out.println("");
                         System.out.println("2. Volver al menú de las calvas");
                         System.out.print("Escribe el número de la opción que necesitas: ");
                         opcion = (int) readLong();
@@ -250,18 +254,39 @@ public class HamburgueseriaTest {
                         switch (opcion) {
 
                             case 1:// Muestra si tiene reserva o no, en caso de que si tenga reserva mostrar Menu.
-                                System.out.println("Ingresaste a Consultar Reserva");
+                                System.out.println("Ingresaste a hacer pedido");
                                 System.out.println("El cliente tiene una reserva? (responda 'si' o 'no')");
                                 String tieneReserva = readln();
                                 if (tieneReserva.equals("si")) {
                                     System.out.println("Ingrese el id del cliente que hizo la reserva: ");
                                     int idCliente = scanner.nextInt();
-                                    System.out.println("Ingrese la fecha para la que reservaste con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
+                                    System.out.println("Ingrese la fecha para la se reservó la mesa con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
                                     String fecha = readln();
-                                    Mesas.efectuarReserva(idCliente, fecha);
+                                    System.out.println("Ingrese el nombre del mesero que va a atender el pedido:  ");
+                                    String nombreEmpleado = readln();
+                                    Empleado mesero1 = null;
+                                    for(Empleado mesero: Empleado.empleados){
+                                        if(mesero.getNombre().equals(nombreEmpleado)){
+                                            mesero1 = mesero;
+                                            break;
+                                        }
+                                    }
+                                    Mesas mesaDeReserva = null;
+                                    for(Mesas mesa : Mesas.mesas){
+                                        if (mesa.getReservaPorCliente().containsKey(idCliente) && mesa.getOcupadoEnFecha().containsKey(fecha)){
+                                            mesaDeReserva = mesa;
+                                            break;
+                                        }
+                                    }
                                     MenuMethods.mostrarMenuComidas();
                                     MenuMethods.mostrarMenuGaseosas();
+                                    Pedido pedido = new Pedido(mesaDeReserva, fecha, idCliente, mesero1);
+                                    System.out.println("Ingrese el pedido de comidas: ");
+                                    ArrayList<String> pedidoComidas = readln();
                                     break;
+                                }
+                                else {
+
                                 }
 
 
