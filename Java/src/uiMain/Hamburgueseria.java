@@ -143,11 +143,7 @@ public class Hamburgueseria {
                         opcionF = scanner.nextInt();
                         switch (opcionF) {
                             case 1:
-                                float servicios =Contabilidad.pagarServicios();
-
-
-
-
+                                float servicios = Contabilidad.pagarServicios();
                             case 2:
                             case 3:
                             case 4:
