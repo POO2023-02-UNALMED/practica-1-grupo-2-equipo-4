@@ -126,14 +126,18 @@ public class Main {
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
 
-        System.out.println(pedido3.precioTotal());
+        System.out.println(mesa1.toString());
+
+        Factura.facturasSinPagar.get(2).pagarFactura();
+
+        System.out.println(mesa1.toString());
 
 
-        System.out.println(Factura.facturasSinPagar.toString());
+        /*System.out.println(Factura.facturasSinPagar.toString());
         Factura.facturasSinPagar.get(0).pagarFactura();
         Factura.facturasSinPagar.get(1).pagarFactura();
         System.out.println(Factura.facturasPagadas.toString());
-        System.out.println(Contabilidad.saldo);
+        System.out.println(Contabilidad.saldo); */
 
 
 

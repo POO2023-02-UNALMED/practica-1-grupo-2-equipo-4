@@ -28,7 +28,7 @@ public class Pedido implements Serializable {
         this.pedidoComidas = new ArrayList<>();
         this.pedidoGaseosas = new ArrayList<>();
         this.empleado = empleado;
-        mesa.efectuarReserva(idCliente, fecha);
+        Mesas.efectuarReserva(idCliente, fecha);
     }
 
     public Pedido( Mesas mesa, String fecha, Empleado empleado) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
@@ -38,7 +38,7 @@ public class Pedido implements Serializable {
         this.pedidoComidas = new ArrayList<>();
         this.pedidoGaseosas = new ArrayList<>();
         this.empleado = empleado;
-        mesa.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
+        Mesas.crearReserva(getIdPedido(), mesa.getIdMesa(), fecha);
     }
     public void agregarComidaAlPedido(Comida... comidas) { //agrega comidas al pedido
         pedidoComidas.addAll(Arrays.asList(comidas));

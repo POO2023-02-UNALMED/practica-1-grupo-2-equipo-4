@@ -58,22 +58,13 @@ public class Factura implements Serializable {
 
 
     public void pagarFactura() {
-        for (Factura factura : facturasSinPagar) {
-            if (facturasSinPagar.contains(factura)) {
-                this.facturaPagada = true;
-                this.precioTotal = pedido.precioTotal();
-            }
+        this.facturaPagada = true;
+        this.precioTotal = pedido.precioTotal();
+        Factura.facturasPagadas.add(this);
+        Factura.facturasSinPagar.remove(this);
+        Contabilidad.sumarIngresosPedidoAlSaldo(this.getPrecioTotal());
+        Mesas.cancelarReserva(getIdFactura(), getFecha());
         }
-
-        for (Factura factura : facturasPagadas) {
-            if (factura.facturaPagada == true){
-            Factura.facturasPagadas.add(this);
-            Factura.facturasSinPagar.remove(this);
-            Contabilidad.sumarIngresosPedidoAlSaldo(factura.getPrecioTotal());
-            }
-        }
-    }
-
 
     public void calificarEmpleado(int calificacion) { //Método que cambia el atributo int calificación de la clase Calificacón que ya se añadio al empleado
         this.calificacionFinal.setCalificacion(calificacion);
