@@ -52,7 +52,8 @@ public class HamburgueseriaTest {
     static String queHacer = """
             ┌─┐ ┬ ┬┌─┐  ┌─┐ ┬ ┬┬┌─┐┬─┐┌─┐┌─┐  ┬ ┬┌─┐┌─┐┌─┐┬─┐┌─┐
             │─┼┐│ │├┤   │─┼┐│ ││├┤ ├┬┘├┤ └─┐  ├─┤├─┤│  ├┤ ├┬┘ ┌┘
-            └─┘└└─┘└─┘  └─┘└└─┘┴└─┘┴└─└─┘└─┘  ┴ ┴┴ ┴└─┘└─┘┴└─ o\s""";
+            └─┘└└─┘└─┘  └─┘└└─┘┴└─┘┴└─└─┘└─┘  ┴ ┴┴ ┴└─┘└─┘┴└─ o\s
+            (Escribe un numero entero entre las opciones dadas)""";
     static String burger = """
                                                        ████████████████████       \s
                                                      ██░░░░░░░░░░░░░░░░░░░░██     \s
@@ -110,6 +111,8 @@ public class HamburgueseriaTest {
         int opcion = 0;
         do {
             System.out.println("");
+            System.out.println(bienvenida);
+            System.out.println(burger);
             System.out.println(queHacer);
             System.out.println("");
             System.out.println("1. Ingresar al apartado de Contabilidad 📈📈‍🦲");
@@ -142,8 +145,10 @@ public class HamburgueseriaTest {
                             case 5:
                             case 6:
                                 break;
+                            default:
+                                System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
                         }
-                    } while (opcion3 != 6);
+                    } while (opcion3 < 1 || opcion3 > 6);
                     break;
                 case 2:
                     do { // Funcionalidad Gestion Empleados
@@ -153,10 +158,7 @@ public class HamburgueseriaTest {
                         System.out.println("3. Eliminar empleado");
                         System.out.println("4. Volver al menú de las calvas");
                         System.out.print("Escribe el número de la opción que necesitas: ");
-                        if (opcion < 0 || opcion > 4) {
-                            System.out.println(opcion);
-                            System.out.println("DEBES ELEGIR ALGUNA DE LAS OPCIONES DISPONIBLES");
-                        }
+
 
                         opcion = (int) readLong();
 
@@ -170,8 +172,10 @@ public class HamburgueseriaTest {
 
                             case 4: // Volver al menú principal
                                 break;
+                            default:
+                                System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
                         }
-                    } while (opcion != 4);
+                    } while (opcion < 1 || opcion > 4);
                     break;
                 case 3:
                     do { //Gestion reserva
@@ -187,49 +191,49 @@ public class HamburgueseriaTest {
                         switch (opcion2) {
 
                             case 1://Efectuar Reserva
-                                System.out.println("Ingresaste a Efectuar Reserva");
+                                System.out.println("Ingrese el numero de la mesa en la cual desea efectuar la reserva: ");
+                                int efectuarMesa = scanner.nextInt();
                                 System.out.println("Ingrese el id del cliente que hizo la reserva: ");
                                 int clienteEfectuar = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
                                 String fechaEfectuar = readln();
-                                Mesas.efectuarReserva(clienteEfectuar,fechaEfectuar);
-                                System.out.println("Reserva efectuada");
+                                for (Mesas mesa : Mesas.mesas) {
+                                    if (mesa.getIdMesa() == efectuarMesa) {
+                                        mesa.efectuarReserva(clienteEfectuar, fechaEfectuar);
+                                    }
+                                }
+                                System.out.println("reserva efectuada");
                                 System.out.println(" ");
                                 break;
 
-                            case 2://Hacer Reserva
-                                System.out.println("Ingresaste a Hacer Reserva");
+                            case 2://Hacer Recerva
                                 System.out.println("Ingrese el numero de la mesa en la cual desea hacer la reserva: ");
                                 int reservaMesa = scanner.nextInt();
                                 System.out.println("Ingrese el id del cliente al que le corresponde la reserva: ");
                                 int clienteReserva = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que desea reservar con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
                                 String fechaReserva =  readln();
-                                Mesas.crearReserva(clienteReserva,reservaMesa,fechaReserva);
-                                Mesas.mostrarReserva(reservaMesa, clienteReserva, fechaReserva);
+                                for (Mesas mesa: Mesas.mesas){
+                                    if (mesa.getIdMesa() == reservaMesa){
+                                        mesa.crearReserva(clienteReserva, reservaMesa, fechaReserva);
+                                    }
+                                }
                                 System.out.println("Su reserva ha sido creada ");
                                 System.out.println(" ");
                                 break;
                                 //hacer metodo que muestre la reserva
 
 
-                            case 3://Cancelar Reserva
-                                System.out.println("Ingresaste a Cancelar Reserva");
-                                System.out.println("Ingrese el numero de la mesa en la cual desea cancelar la reserva: ");
-                                int cancelarMesa = scanner.nextInt();
-                                System.out.println("Ingrese el id del cliente que hizo la reserva: ");
-                                int clienteCancelar = scanner.nextInt();
-                                System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
-                                String fechaCancelar = readln();
-                                Mesas.cancelarReserva(clienteCancelar,fechaCancelar);
-                                System.out.println("Reserva cancelada");
-                                System.out.println(" ");
-                                break;
+
+                            case 3://Cancelar Recerva
 
                             case 4: // Volver al menú principal
                                 break;
+                            default:
+                                System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
+
                         }
-                    } while (opcion2 != 4);
+                    } while (opcion2 < 1 || opcion2 > 4);;
                     break;
                 case 4:
                     do {// Funcionalidad Tomar Pedidos
@@ -244,8 +248,10 @@ public class HamburgueseriaTest {
                             case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
                             case 2://Hacer Recerva
                                 break;
+                            default:
+                                System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
                         }
-                    } while (opcion != 2);
+                    } while (opcion < 1 || opcion > 2);
                     break;
                 case 5:
                     do {// Funcionalidad Gestion Inventario
@@ -260,8 +266,10 @@ public class HamburgueseriaTest {
                             case 1:// Mostrar inventario
                             case 2:// Volver al menú principal
                                 break;
+                            default:
+                                System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
                         }
-                    } while (opcion != 2);
+                    } while (opcion < 1 || opcion > 2);
                     break;
 
                 case 6:
