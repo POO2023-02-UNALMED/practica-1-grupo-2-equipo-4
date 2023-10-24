@@ -3,7 +3,7 @@ package gestorAplicacion.administracion;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empleado implements Serializable {
+public abstract class Empleado implements Serializable {
     private String nombre;
     public java.util.ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private int idEmpleado;
@@ -19,6 +19,10 @@ public class Empleado implements Serializable {
         this.empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
+    public void accion() { // Ligadura Dinamica
+        System.out.println("El Empleado esta Trabajando.");
+    }
+
 
     // Calcular el promedio de las calificaciones y determinar si califica para el bono
     public boolean BONO() {

@@ -15,6 +15,10 @@ public class Mesero extends Empleado implements Serializable {
     public void quitarMesas (Mesas quitar){
         this.mesasDeTrabajo.removeIf(mesa -> mesa.equals(quitar));
     }
+    @Override
+    public void accion() {// Ligadura Dinamica
+        System.out.println("El Mesero " + this.getNombre() + "está atendiendo a las mesas.");
+    }
     public String toString (){
         StringBuilder cadena = new StringBuilder();
         cadena.append("EL mesero es el encargado de las mesas: ");

@@ -13,6 +13,10 @@ public class Cocinero extends Empleado {
         super(nombre, idEmpleado, salario);
         this.especialidad = especialidad;
     }
+    @Override
+    public void accion() {// Ligadura Dinamica
+        System.out.println("Cocinero " + this.getNombre() + " Esta cocinando.");
+    }
 
     public void prepararPlato(Pedido pedido) {
         System.out.println("El cocinero " + this.getNombre() + " ha terminado de preparar el pedido de" + pedido.getIdPedido());
