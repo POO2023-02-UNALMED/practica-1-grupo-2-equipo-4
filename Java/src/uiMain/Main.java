@@ -129,6 +129,7 @@ public class Main {
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
 
+<<<<<<< Updated upstream
 
         System.out.println(Factura.facturasSinPagar.toString());
 
@@ -157,6 +158,21 @@ public class Main {
             }
         }
         System.out.println(Factura.facturasPagadas.toString());
+
+        System.out.println(mesa1.toString());
+
+        System.out.println(mesa1.toString());
+
+        System.out.println(Factura.facturasSinPagar.toString());
+
+        for (Factura factura : Factura.facturasSinPagar) {
+            if (factura.getIdFactura() == 10000001) {
+                factura.pagarFactura();
+            }
+        }
+        System.out.println(Factura.facturasPagadas.toString());
+
+
         System.out.println(Calificacion.calificaciones.toString());
 
         System.out.println(linguini.toString());
@@ -170,7 +186,15 @@ public class Main {
         System.out.println(("**************"));
         MenuMethods.mostrarMenuComidas();*/
 
+/*
+        Pedido pedido1 = new Pedido(1,mesa1,);
+        mesa1.crearReserva(345,1,"10-12-2023 13:00:00");
+        mesa2.crearReserva(576, 2,"22-11-2023 13:00:00");
+        mesa2.crearReserva(578, 2,"22-10-2023 13:00:00");
+        System.out.println(mesa1.toString());
+        System.out.println(mesa2.toString());
+*/
+
+        }
 
     }
-
-}
