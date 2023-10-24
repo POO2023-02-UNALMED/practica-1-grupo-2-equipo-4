@@ -188,14 +188,14 @@ public class HamburgueseriaTest {
 
                             case 1://Efectuar Reserva
                                 System.out.println("Ingrese el numero de la mesa en la cual desea efectuar la reserva: ");
-                                int numeroMesa = scanner.nextInt();
+                                int efectuarMesa = scanner.nextInt();
                                 System.out.println("Ingrese el id del cliente que hizo la reserva: ");
-                                int idCliente = scanner.nextInt();
+                                int clienteEfectuar = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
-                                String fechaReserva = readln();
+                                String fechaEfectuar = readln();
                                 for (Mesas mesa : Mesas.mesas) {
-                                    if (mesa.getIdMesa() == numeroMesa) {
-                                        mesa.efectuarReserva(idCliente, fechaReserva);
+                                    if (mesa.getIdMesa() == efectuarMesa) {
+                                        mesa.efectuarReserva(clienteEfectuar, fechaEfectuar);
                                     }
                                 }
                                 System.out.println("reserva efectuada");
@@ -203,6 +203,22 @@ public class HamburgueseriaTest {
                                 break;
 
                             case 2://Hacer Recerva
+                                System.out.println("Ingrese el numero de la mesa en la cual desea hacer la reserva: ");
+                                int reservaMesa = scanner.nextInt();
+                                System.out.println("Ingrese el id del cliente al que le corresponde la reserva: ");
+                                int clienteReserva = scanner.nextInt();
+                                System.out.println("Ingrese la fecha para la que desea reservar con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
+                                String fechaReserva =  readln();
+                                for (Mesas mesa: Mesas.mesas){
+                                    if (mesa.getIdMesa() == reservaMesa){
+                                        mesa.crearReserva(clienteReserva, reservaMesa, fechaReserva);
+                                    }
+                                }
+                                System.out.println("Su reserva ha sido creada ");
+                                System.out.println(" ");
+                                break;
+                                //hacer metodo que muestre la reserva
+
 
                             case 3://Cancelar Recerva
 
