@@ -22,9 +22,11 @@ public class Factura implements Serializable {
 
     private float precioTotal;
 
+    private float precioTotalSinGanancia;
+
     private Calificacion calificacionFinal;
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, String fecha, float precioTotal) {
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, String fecha, float precioTotal, float precioTotalSinGanancia) {
         this.empleado = empleado;
         this.mesa = mesa;
         this.idFactura = idFactura;
@@ -32,11 +34,12 @@ public class Factura implements Serializable {
         this.pedido = pedido;
         this.fecha = fecha;
         this.precioTotal = precioTotal;
+        this.precioTotalSinGanancia = precioTotalSinGanancia;
 
 
     }
 
-    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio, String fecha, float precioTotal) {
+    public Factura(Empleado empleado, Mesas mesa, Pedido pedido, int idFactura, double calificacionServicio, String fecha, float precioTotal,float precioTotalSinGanancia) {
         this.empleado = empleado;
         this.mesa = mesa;
         this.pedido = pedido;
@@ -44,6 +47,7 @@ public class Factura implements Serializable {
         this.facturaPagada = false;
         this.fecha = fecha;
         this.precioTotal = precioTotal;
+        this.precioTotalSinGanancia = precioTotalSinGanancia;
 
         Calificacion calficacionFinal = new Calificacion(this.idFactura, this.empleado, calificacionServicio);
         empleado.calificaciones.add(calficacionFinal);
@@ -63,7 +67,9 @@ public class Factura implements Serializable {
         Factura.facturasPagadas.add(this);
         Factura.facturasSinPagar.remove(this);
         Contabilidad.sumarIngresosPedidoAlSaldo(this.getPrecioTotal());
+        Contabilidad.calcularUtilidades(this.getPrecioTotal(), this.getPrecioTotalSinGanancia());
         Mesas.cancelarReserva(getIdFactura(), getFecha());
+
         }
 
     public void calificarEmpleado(int calificacion) { //Método que cambia el atributo int calificación de la clase Calificacón que ya se añadio al empleado
@@ -72,10 +78,10 @@ public class Factura implements Serializable {
 
 
     //Getter y setters
+
     public Empleado getIdEmpleado() {
         return empleado;
     }
-
     public Mesas getMesa() {
         return mesa;
     }
@@ -131,6 +137,14 @@ public class Factura implements Serializable {
 
     public void setPrecioTotal(float precioTotal) {
         this.precioTotal = precioTotal;
+    }
+
+    public float getPrecioTotalSinGanancia() {
+        return precioTotalSinGanancia;
+    }
+
+    public void setPrecioTotalSinGanancia(float precioTotalSinGanancia) {
+        this.precioTotalSinGanancia = precioTotalSinGanancia;
     }
 
     public String toString() {

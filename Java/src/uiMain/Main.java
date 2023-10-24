@@ -140,6 +140,7 @@ public class Main {
         System.out.println(Factura.facturasPagadas.toString());
         System.out.println(Contabilidad.saldo);
         System.out.println(Contabilidad.getIngresos());
+        System.out.println(Contabilidad.getUtilidades());
 
 
 

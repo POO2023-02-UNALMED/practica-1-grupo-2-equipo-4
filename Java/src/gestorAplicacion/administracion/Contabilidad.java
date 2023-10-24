@@ -18,6 +18,7 @@ public class Contabilidad implements Serializable {
     private static float gastos;
 
     private static float serviciosPublicos;
+
     public Contabilidad() {
         utilidades = 0;
         ingresos = 0;
@@ -25,6 +26,7 @@ public class Contabilidad implements Serializable {
         gastos = 0;
         serviciosPublicos = 0;
     }
+
     public void pagarServicios(float serviciosPublicos) {
         if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
             saldo -= serviciosPublicos;
@@ -33,24 +35,19 @@ public class Contabilidad implements Serializable {
             System.out.println("Fondos insuficientes para realizar el pago.");
         }
     }
-    public static void sumarIngresosPedidoAlSaldo(float ingreso){
-        saldo = saldo+ingreso;
-        ingresos = ingreso;
-    }
+
+    public static void sumarIngresosPedidoAlSaldo(float ingreso) {
+        saldo = saldo + ingreso;
+        ingresos += ingreso;
+
+}
 
 
     //Metodo para calular Utilidad
-    /*public float calcularUtilidad() {
-        float totalGastos = calcularGastos();
-        float ingresoVentas = calcularIngresos();
-        this.calcularUtilidad = ingresoVentas - totalGastos;
-        return this.calcularUtilidad;
-    }*/
-
-    public float calcularGastos() {
-        float gastos = Ingredientes.ingredientesComprados;
-        return gastos;
+    public static void calcularUtilidades(float ganancia, float neto) {
+        utilidades = ganancia + neto;
     }
+
    /* public float pagarSueldos() {
         float totalPago = 0;
         for (Empleado empleado : Empleado.empleados) { // deberia
@@ -64,10 +61,15 @@ public class Contabilidad implements Serializable {
         this.pagarSueldos = totalPago;
         return this.pagarSueldos;
     }*/
+   public float calcularGastos() {
+       float gastos = Ingredientes.ingredientesComprados;
+       return gastos;
+   }
 
     public static void setSaldo(float saldo) {
         Contabilidad.saldo = saldo;
     }
+
     public static float getUtilidades() {
         return utilidades;
     }

@@ -73,7 +73,7 @@ public class Pedido implements Serializable {
         }
         ordenConfirmada = "Orden confirmada y factura creada";
         if(ordenConfirmada.equals("Orden confirmada y factura creada")){
-        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this,this.getIdPedido(),this.fecha, this.precioTotal());
+        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this,this.getIdPedido(),this.fecha, this.precioTotal(),this.precioTotalSinGanancia());
         Factura.facturasSinPagar.add(factura);}
         return ordenConfirmada;
     }
@@ -88,6 +88,19 @@ public class Pedido implements Serializable {
 
         for (Gaseosas gaseosa : pedidoGaseosas) {
             suma += gaseosa.getPrecioConGanancia();
+        }
+
+        return suma;
+    }
+    public float precioTotalSinGanancia(){
+        float suma = 0;
+
+        for (Comida comida : pedidoComidas) {
+            suma += comida.calcularPrecio();
+        }
+
+        for (Gaseosas gaseosa : pedidoGaseosas) {
+            suma += gaseosa.getPrecio();
         }
 
         return suma;
