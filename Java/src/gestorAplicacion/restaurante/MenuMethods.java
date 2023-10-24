@@ -4,7 +4,7 @@ public interface MenuMethods {
     static String mostrarMenuComidas(){
         StringBuilder menuComidas = new StringBuilder();
         for (Comida comida : Comida.listaComida) {
-            menuComidas.append(comida.getNombre()).append(" - Precio: $").append(comida.calcularPrecio());
+            menuComidas.append(comida.getNombre()).append(" - Precio: $\n").append(comida.calcularPrecio());
         }
         return menuComidas.toString();
     }
