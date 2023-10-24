@@ -4,12 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public abstract class Empleado implements Serializable {
+    public static ArrayList<Empleado> empleados = new ArrayList<>();
+    public ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private String nombre;
-    public java.util.ArrayList<Calificacion> calificaciones = new ArrayList<>();
     private int idEmpleado;
     private float salario;
     private static int cantidadEmpleados = 0;
-    public java.util.ArrayList<Empleado> empleados = new ArrayList<>();
 
     public Empleado(String nombre, int idEmpleado, float salario) {
         cantidadEmpleados++;

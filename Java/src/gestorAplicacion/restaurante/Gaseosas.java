@@ -36,6 +36,9 @@ public class Gaseosas extends Inventario implements Serializable {
         return "Nombre: " + nombre + "Precio " + this.getPrecio() + " Cantidad:" + this.cantidad;
     }
 
+    public  float getPrecioConGanancia(){
+        return super.getPrecio() + super.getPrecio()*10/100;
+    }
     @Override
     public float getPrecio() {
         return super.getPrecio();

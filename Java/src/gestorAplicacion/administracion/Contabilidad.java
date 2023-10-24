@@ -7,42 +7,24 @@ import gestorAplicacion.restaurante.*;
 
 public class Contabilidad implements Serializable {
     private static final long serialVersionUID = 1L;
-    private Empleado empleado;
-    private float calcularUtilidad;
-    private float calcularIngresos;
-    private float pagarSueldos;
-    private float calcularGastos;
     public static float saldo = 1000000;
 
-    private ArrayList<Factura> facturas;
+    private static float utilidades;
 
-    private static final float serviciosPublicos = 0;
+    private static float ingresos;
 
-    public Contabilidad(Empleado empleado, float calcularUtilidad, float calcularIngresos, float pagarSueldos, float calcularGastos, ArrayList<Factura> facturas) {
-        this.empleado = empleado;
-        this.calcularUtilidad = calcularUtilidad;
-        this.calcularIngresos = calcularIngresos;
-        this.pagarSueldos = pagarSueldos;
-        this.calcularGastos = calcularGastos;
-        this.facturas = facturas;
+    private static float sueldos;
+
+    private static float gastos;
+
+    private static float serviciosPublicos;
+    public Contabilidad() {
+        utilidades = 0;
+        ingresos = 0;
+        sueldos = 0; // no es 0, se debe calcular en total sueldos en empleado
+        gastos = 0;
+        serviciosPublicos = 0;
     }
-
-    public static float getSaldo() {
-        return saldo;
-    }
-
-    public static void setSaldo(float saldo) {
-        Contabilidad.saldo = saldo;
-    }
-
-    public ArrayList<Factura> getFacturas() {
-        return facturas;
-    }
-    // Método para pagar servicios No terminado
-    public static void sumarIngresosPedidoAlSaldo(float ingreso){
-                saldo = saldo+ingreso;
-            }
-
     public void pagarServicios(float serviciosPublicos) {
         if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
             saldo -= serviciosPublicos;
@@ -51,35 +33,27 @@ public class Contabilidad implements Serializable {
             System.out.println("Fondos insuficientes para realizar el pago.");
         }
     }
+    public static void sumarIngresosPedidoAlSaldo(float ingreso){
+        saldo = saldo+ingreso;
+        ingresos = ingreso;
+    }
 
-    //Metodo para calcular Ingresos Totales
-    /* public float calcularIngresos() {
-        float ingresoVentas = 0;
-        for (Factura factura : facturas) {
-            ingresoVentas +=  ;
-        }
-        this.calcularIngresos = ingresoVentas;
-        return this.calcularIngresos;
-    } */
 
     //Metodo para calular Utilidad
-    /* public float calcularUtilidad() {
+    /*public float calcularUtilidad() {
         float totalGastos = calcularGastos();
         float ingresoVentas = calcularIngresos();
         this.calcularUtilidad = ingresoVentas - totalGastos;
         return this.calcularUtilidad;
-    } */
+    }*/
 
-    //Metodo para calcular Los Gastos de La Hamburgueseria
     public float calcularGastos() {
-        float gastos = pagarSueldos() + Ingredientes.ingredientesComprados;
+        float gastos = Ingredientes.ingredientesComprados;
         return gastos;
     }
-
-    //Metodo para Pagar los sueldos a los empleados
-    public float pagarSueldos() {
+   /* public float pagarSueldos() {
         float totalPago = 0;
-        for (Empleado empleado : empleado.empleados) { // deberia
+        for (Empleado empleado : Empleado.empleados) { // deberia
             totalPago += empleado.getSalario();
             if (empleado.BONO()) { // Sí el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.
                 totalPago += (empleado.getSalario() * 200000); // Necesita multiplicar el Salario por el valor del bono.
@@ -89,5 +63,41 @@ public class Contabilidad implements Serializable {
         }
         this.pagarSueldos = totalPago;
         return this.pagarSueldos;
+    }*/
+
+    public static void setSaldo(float saldo) {
+        Contabilidad.saldo = saldo;
     }
+    public static float getUtilidades() {
+        return utilidades;
+    }
+
+    public static void setUtilidades(float utilidades) {
+        Contabilidad.utilidades = utilidades;
+    }
+
+    public static float getIngresos() {
+        return ingresos;
+    }
+
+    public static void setIngresos(float ingresos) {
+        Contabilidad.ingresos = ingresos;
+    }
+
+    public static float getSueldos() {
+        return sueldos;
+    }
+
+    public static void setSueldos(float sueldos) {
+        Contabilidad.sueldos = sueldos;
+    }
+
+    public static float getGastos() {
+        return gastos;
+    }
+
+    public static void setGastos(float gastos) {
+        Contabilidad.gastos = gastos;
+    }
+
 }

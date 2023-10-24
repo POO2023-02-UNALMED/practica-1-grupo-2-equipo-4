@@ -32,7 +32,7 @@ public class Menu implements Serializable {
 
     public void mostrarMenuComidas() {
         for (Comida comida : comidas) {
-            System.out.println(comida.getNombre() + " - Precio: $" + comida.calcularPrecio());
+            System.out.println(comida.getNombre() + " - Precio: $" + comida.calcularPrecioConGanancia());
         }
     }
 

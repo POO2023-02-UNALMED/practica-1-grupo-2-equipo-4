@@ -18,7 +18,6 @@ public class Pedido implements Serializable {
     private List<Gaseosas> pedidoGaseosas;
     private String fecha;
     private int idCliente;
-    private Boolean reserva;
 
     public Pedido( Mesas mesa, String fecha, int idCliente, Empleado empleado) { // crea un pedido que a la vez efectua la reserva asociada a la fecha y al id del cliente
         idPedido++ ;
@@ -84,11 +83,11 @@ public class Pedido implements Serializable {
         float suma = 0;
 
         for (Comida comida : pedidoComidas) {
-            suma += comida.calcularPrecio();
+            suma += comida.calcularPrecioConGanancia();
         }
 
         for (Gaseosas gaseosa : pedidoGaseosas) {
-            suma += gaseosa.getPrecio();
+            suma += gaseosa.getPrecioConGanancia();
         }
 
         return suma;

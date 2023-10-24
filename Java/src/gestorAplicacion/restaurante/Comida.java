@@ -61,6 +61,17 @@ public class Comida {
         return  precioTotal;
     }
 
+    public float calcularPrecioConGanancia() {
+
+        float precioTotalConGanancia = 0;
+        for (Map.Entry<Ingredientes, Integer> entry : ingredientesDeComida.entrySet()) {
+            Ingredientes ingrediente = entry.getKey();
+            int cantidad = entry.getValue();
+            precioTotalConGanancia += ingrediente.precio * cantidad + (ingrediente.precio * cantidad)*10/100;
+        }
+        return  precioTotalConGanancia;
+    }
+
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
