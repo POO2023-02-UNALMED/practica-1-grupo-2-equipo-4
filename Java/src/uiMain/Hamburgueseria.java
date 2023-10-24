@@ -342,10 +342,14 @@ public class Hamburgueseria {
                                             }
                                         }
                                     }
-                                    System.out.println("el pedido de comidas es: ");
-                                    System.out.println(mapComida.values());
-                                    System.out.println(" El pedido de bebidad es: ");
-                                    System.out.println(mapGaseosa.values());
+                                    System.out.println("Los pedidos de comidas son: ");
+                                    for (String nombreComida : mapComida.keySet()) {
+                                        System.out.println(nombreComida);
+                                    }
+                                    System.out.println("Los pedidos de gaseosas son: ");
+                                    for (String nombreGaseosa : mapGaseosa.keySet()) {
+                                        System.out.println(nombreGaseosa);
+                                    }
 
 
                                 } else {
