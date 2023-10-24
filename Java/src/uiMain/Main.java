@@ -1,9 +1,8 @@
 package uiMain;
 
 
-import gestorAplicacion.administracion.Calificacion;
+import baseDatos.Serializador;
 import gestorAplicacion.administracion.Cocinero;
-import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Factura;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
@@ -11,21 +10,25 @@ import gestorAplicacion.restaurante.Pedido;
 import gestorAplicacion.restaurante.*;
 
 
-import java.util.Map;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
         // gaseosas
-
+        ArrayList<Gaseosas> listaGaseosas = new ArrayList<>();
         Gaseosas coca_cola = new Gaseosas("Coca cola", 4000, 20);
         Gaseosas sprite = new Gaseosas("Sprite", 3500, 20);
         Gaseosas premio = new Gaseosas("Premio", 3000, 20);
         Gaseosas quatro = new Gaseosas("Quatro", 2500, 20);
-
+        listaGaseosas.add(coca_cola);
+        listaGaseosas.add(sprite);
+        listaGaseosas.add(premio);
+        listaGaseosas.add(quatro);
+        Serializador.serializarGaseosa(listaGaseosas);// Serializar Gaseosas
 
         // ingredientes
+        ArrayList<Ingredientes> listaIngredientes = new ArrayList<>();
         Ingredientes pan = new Ingredientes("Pan", 1000, 20);
         Ingredientes carneDeRes = new Ingredientes("Carne de res", 6000, 20);
         Ingredientes carneDePollo = new Ingredientes("Carne de pollo", 7000, 20);
@@ -35,8 +38,18 @@ public class Main {
         Ingredientes lechuga = new Ingredientes("Lechuga", 150, 20);
         Ingredientes queso = new Ingredientes("Queso", 2000, 20);
         Ingredientes tocineta = new Ingredientes("Tocineta", 1000, 20);
+        listaIngredientes.add(pan);
+        listaIngredientes.add(carneDeRes);
+        listaIngredientes.add(carneDePollo);
+        listaIngredientes.add(tomate);
+        listaIngredientes.add(cebolla);
+        listaIngredientes.add(lechuga);
+        listaIngredientes.add(queso);
+        listaIngredientes.add(tocineta);
+        Serializador.serializarIngredientes(listaIngredientes);// Serializar Ingredientes
 
         // comidas
+        ArrayList<Comida> listaComida = new ArrayList<>();
         Ingredientes[] ingredientesClasicaCarne = {pan, carneDeRes, tomate, cebolla, lechuga};
         int[] cantidadesClasicaCarne = {2, 1, 1, 1, 1};
         Comida clasicaDeCarne = new Comida("Clasica de carne", ingredientesClasicaCarne, cantidadesClasicaCarne);
@@ -48,7 +61,6 @@ public class Main {
         Ingredientes[] ingredientesClasicaPollo = {pan, carneDeRes, tomate, cebolla, lechuga};
         int[] cantidadesClasicaPollo = {2, 1, 1, 1, 1};
         Comida clasicaDePollo = new Comida("Clasica de Pollo", ingredientesClasicaPollo, cantidadesClasicaPollo);
-
 
         Ingredientes[] ingredientesPolloqueso = {pan, carneDePollo, queso, tomate, cebolla, lechuga};
         int[] cantidadespolloconQueso = {2, 1, 1, 1, 1, 1};
@@ -65,8 +77,17 @@ public class Main {
         Ingredientes[] ingredientesCarnibora = {pan, carneDeRes, carneDePollo, tocineta, queso};
         int[] cantidadesCarnibora = {2, 1, 1, 4, 2};
         Comida carnibora = new Comida("Carnibora", ingredientesCarnibora, cantidadesCarnibora);
+        listaComida.add(clasicaDeCarne);
+        listaComida.add(cantidadesCarneQuesoYTocineta);
+        listaComida.add(cantidadesClasicaPollo);
+        listaComida.add(cantidadespolloconQueso);
+        listaComida.add(clasicaDeCarne);
+        listaComida.add(vegetariana);
+        listaComida.add(carnibora);
+        Serializador.serializarComida(listaComida);// Serializar Comida
 
-
+        // Mesas
+        ArrayList<Mesas> listaMesas = new ArrayList<>();
         Mesas mesa1 = new Mesas(1, 2);
         Mesas mesa2 = new Mesas(2, 2);
         Mesas mesa3 = new Mesas(3, 2);
@@ -82,10 +103,38 @@ public class Main {
         Mesas mesa13 = new Mesas(13, 8);
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
+        listaMesas.add(mesa1);
+        listaMesas.add(mesa2);
+        listaMesas.add(mesa3);
+        listaMesas.add(mesa4);
+        listaMesas.add(mesa5);
+        listaMesas.add(mesa6);
+        listaMesas.add(mesa7);
+        listaMesas.add(mesa8);
+        listaMesas.add(mesa9);
+        listaMesas.add(mesa10);
+        listaMesas.add(mesa11);
+        listaMesas.add(mesa12);
+        listaMesas.add(mesa13);
+        listaMesas.add(mesa14);
+        listaMesas.add(mesa15);
+        Serializador.serializarMesas(listaMesas);// Serializar Mesas
 
+        //Cocineros
+        ArrayList<Cocinero> listaCocinero = new ArrayList<>();
         Cocinero linguini = new Cocinero("linguini", 0100, 9000, "Calvas");
         Cocinero remi = new Cocinero("remi", 0101, 9000, "Calvas");
+        listaCocinero.add(linguini);
+        listaCocinero.add(remi);
+        Serializador.serializarCocinero(listaCocinero);
 
+        //Meseros
+
+        //Empleados
+
+
+        //Pedidos
+        ArrayList<Pedido> listaPedido = new ArrayList<>();
         Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
@@ -100,6 +149,10 @@ public class Main {
         pedido4.agregarGaseosaAlPedido(quatro, sprite);
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
+        listaPedido.add(pedido4);
+        listaPedido.add(pedido3);
+        listaPedido.add(pedido5);
+        Serializador.serializarPedido(listaPedido);// Seriliza Pedido
 
 
 

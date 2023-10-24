@@ -1,4 +1,4 @@
-/*package baseDatos;
+package baseDatos;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,12 +8,32 @@ import java.util.ArrayList;
 
 import uiMain.Hamburgueseria;
 import gestorAplicacion.administracion.*;
-import gestorAplicacion.restaurante.*; */
+import gestorAplicacion.restaurante.*;
 
-/*public class Serializador {
+public class Serializador {
     static File archivo = new File("");
 
     public static void serializarCalificaicon(ArrayList<Calificacion> lista) {
+        try {
+            FileOutputStream f = new FileOutputStream(new File(archivo.getAbsolutePath()+
+                    "\\src\\baseDatos\\temp\\administracion.txt"));
+            ObjectOutputStream o = new ObjectOutputStream(f);
+
+            o.writeObject(lista);
+
+            o.close();
+            f.close();
+            System.out.println("La serialización se ha completado correctamente.");
+
+        }catch(FileNotFoundException e){
+            System.out.println("Archivo no encontrado: "+e.getMessage());
+        }
+        catch(IOException e) {
+            System.out.println("Error de flujo de inicializacion: "+ e.getMessage());
+        }
+
+    }
+    public static void serializarComida(ArrayList<Comida> lista) {
         try {
             FileOutputStream f = new FileOutputStream(new File(archivo.getAbsolutePath()+
                     "\\src\\baseDatos\\temp\\administracion.txt"));
@@ -271,4 +291,4 @@ import gestorAplicacion.restaurante.*; */
         }
 
     }
-}*/
+}

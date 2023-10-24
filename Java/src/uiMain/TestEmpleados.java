@@ -63,7 +63,8 @@ public class TestEmpleados implements Serializable {
         int[] cantidadesCarnibora = {2, 1, 1, 4, 2};
         Comida carnibora = new Comida("Carnibora", ingredientesCarnibora, cantidadesCarnibora);
 
-
+        //Mesas
+        ArrayList<Mesas> listaMesas = new ArrayList<>();
         Mesas mesa1 = new Mesas(1, 2);
         Mesas mesa2 = new Mesas(2, 2);
         Mesas mesa3 = new Mesas(3, 2);
@@ -80,7 +81,8 @@ public class TestEmpleados implements Serializable {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-        Cocinero cocinero = new Cocinero("Raúl",2,"Calvas");
+
+        Cocinero cocinero = new Cocinero("Raúl",2,200000);
         System.out.println("El Empleado "+ cocinero.getNombre() +" Es un "+cocinero.getOcupacion());
         Mesero mesero1 = new Mesero("Pablo",20000);
         Mesero mesero2 = new Mesero("Sofia",20000);
