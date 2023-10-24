@@ -160,6 +160,9 @@ public class Main {
         System.out.println(mesa1.toString());
         System.out.println(mesa2.toString());
 */
+        MenuMethods.mostrarMenuGaseosas();
+        System.out.println(("**************"));
+        MenuMethods.mostrarMenuComidas();
 
 
     }
