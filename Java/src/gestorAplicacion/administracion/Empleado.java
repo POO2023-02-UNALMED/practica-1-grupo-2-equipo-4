@@ -19,8 +19,8 @@ public abstract class Empleado implements Serializable {
         this.empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
-    public void accion() { // Ligadura Dinamica
-        System.out.println("El Empleado esta Trabajando.");
+    public String accion() { // Ligadura Dinamica
+        return "El Empleado esta Trabajando";
     }
 
 

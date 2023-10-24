@@ -14,8 +14,8 @@ public class Cocinero extends Empleado {
         this.especialidad = especialidad;
     }
     @Override
-    public void accion() {// Ligadura Dinamica
-        System.out.println("Cocinero " + this.getNombre() + " Esta cocinando.");
+    public String accion() {// Ligadura Dinamica
+        return "El Cocinero " + this.getNombre() + " esta cocinando.";
     }
 
     public void prepararPlato(Pedido pedido) {

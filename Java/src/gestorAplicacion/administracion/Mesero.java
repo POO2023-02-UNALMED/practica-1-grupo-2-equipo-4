@@ -16,8 +16,8 @@ public class Mesero extends Empleado implements Serializable {
         this.mesasDeTrabajo.removeIf(mesa -> mesa.equals(quitar));
     }
     @Override
-    public void accion() {// Ligadura Dinamica
-        System.out.println("El Mesero " + this.getNombre() + "está atendiendo a las mesas.");
+    public String accion() {// Ligadura Dinamica
+        return "El Mesero " + this.getNombre() + " está atendiendo las mesas.";
     }
     public String toString (){
         StringBuilder cadena = new StringBuilder();
