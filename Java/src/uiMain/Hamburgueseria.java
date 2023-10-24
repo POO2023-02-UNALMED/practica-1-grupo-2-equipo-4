@@ -317,6 +317,7 @@ public class Hamburgueseria {
                                         for (Comida comida : Comida.listaComida) {
                                             if (comida.getNombre().equals(nombreComida)) {
                                                 mapComida.put(nombreComida, comida);
+                                                pedido.agregarComidaAlPedido(mapComida.get(nombreComida));
                                                 break;
                                             }
                                         }
@@ -342,14 +343,20 @@ public class Hamburgueseria {
                                             }
                                         }
                                     }
+                                    Collection<Gaseosas> gaseosasCollection = mapGaseosa.values();
+                                    Gaseosas[] gaseosasArray = gaseosasCollection.toArray(new Gaseosas[0]);
+                                    pedido.agregarGaseosaAlPedido(gaseosasArray);
+
+                                    Collection<Comida> comidasCollection = mapComida.values();
+                                    Comida[] comidasArray = comidasCollection.toArray(new Comida[0]);
+                                    pedido.agregarComidaAlPedido(comidasArray);
+
+
                                     System.out.println("Los pedidos de comidas son: ");
-                                    for (String nombreComida : mapComida.keySet()) {
-                                        System.out.println(nombreComida);
-                                    }
+                                    System.out.println(pedido.imprimirComidas());
                                     System.out.println("Los pedidos de gaseosas son: ");
-                                    for (String nombreGaseosa : mapGaseosa.keySet()) {
-                                        System.out.println(nombreGaseosa);
-                                    }
+                                    System.out.println(pedido.imprimirGaseosas());
+
 
 
                                 } else {
