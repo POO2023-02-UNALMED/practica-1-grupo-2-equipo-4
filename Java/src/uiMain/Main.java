@@ -199,7 +199,10 @@ public class Main {
         }
 
         Mesas.crearReserva(345,1,"10-12-2023 13:00:00");
-        Mesas.crearReserva(576, 2,"22-11-2023 13:00:00");
+        Mesas.crearReserva(576, 2,"25-11-2023 17:00:00");
+        Mesas.crearReserva(127, 10,"31-11-2023 20:00:00");
+        Mesas.crearReserva(234, 6,"30-11-2023 14:00:00");
+        Mesas.crearReserva(29, 2,"28-11-2023 19:00:00");
         }
 
     }
