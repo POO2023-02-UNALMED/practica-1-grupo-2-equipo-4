@@ -125,13 +125,8 @@ public class Main {
         pedido4.confirmarOrden();
 
 
-        System.out.println(Factura.facturasSinPagar.toString());
-        Factura.facturasSinPagar.get(0).pagarFactura();
-        System.out.println(Factura.facturasPagadas.toString());
 
-
-
-
+        System.out.println(Factura.facturas.toString());
 
         mesa2.crearReserva(1,2, "23-10-2023 3:50:00");
         System.out.println(mesa2.toString());
