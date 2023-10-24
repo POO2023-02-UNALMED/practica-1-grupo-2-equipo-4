@@ -61,7 +61,7 @@ public class Comida {
         return  precioTotal;
     }
 
-    @Override
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Comida: ").append(nombre).append("\n");
@@ -73,6 +73,7 @@ public class Comida {
         }
         return sb.toString();
     }
+
     public boolean verificarIngredientes() {
         for (Map.Entry<Ingredientes, Integer> entry : ingredientesDeComida.entrySet()) {
             Ingredientes ingrediente = entry.getKey();

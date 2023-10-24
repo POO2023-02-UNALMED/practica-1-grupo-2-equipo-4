@@ -8,17 +8,17 @@ import gestorAplicacion.restaurante.*;
 public class Contabilidad implements Serializable {
     private static final long serialVersionUID = 1L;
     private Empleado empleado;
-    private double calcularUtilidad;
-    private double calcularIngresos;
-    private double pagarSueldos;
-    private double calcularGastos;
+    private float calcularUtilidad;
+    private float calcularIngresos;
+    private float pagarSueldos;
+    private float calcularGastos;
     public static float saldo = 1000000;
 
     private ArrayList<Factura> facturas;
 
     private static final float serviciosPublicos = 0;
 
-    public Contabilidad(Empleado empleado, double calcularUtilidad, double calcularIngresos, double pagarSueldos, double calcularGastos, ArrayList<Factura> facturas) {
+    public Contabilidad(Empleado empleado, float calcularUtilidad, float calcularIngresos, float pagarSueldos, float calcularGastos, ArrayList<Factura> facturas) {
         this.empleado = empleado;
         this.calcularUtilidad = calcularUtilidad;
         this.calcularIngresos = calcularIngresos;
@@ -52,32 +52,32 @@ public class Contabilidad implements Serializable {
     }
 
     //Metodo para calcular Ingresos Totales
-    public double calcularIngresos() {
-        double ingresoVentas = 0;
+    /* public float calcularIngresos() {
+        float ingresoVentas = 0;
         for (Factura factura : facturas) {
-            ingresoVentas += factura.precioTotal();
+            ingresoVentas +=  ;
         }
         this.calcularIngresos = ingresoVentas;
         return this.calcularIngresos;
-    }
+    } */
 
     //Metodo para calular Utilidad
-    public double calcularUtilidad() {
-        double totalGastos = calcularGastos();
-        double ingresoVentas = calcularIngresos();
+    /* public float calcularUtilidad() {
+        float totalGastos = calcularGastos();
+        float ingresoVentas = calcularIngresos();
         this.calcularUtilidad = ingresoVentas - totalGastos;
         return this.calcularUtilidad;
-    }
+    } */
 
     //Metodo para calcular Los Gastos de La Hamburgueseria
-    public double calcularGastos() {
-        double gastos = pagarSueldos() + Ingredientes.ingredientesComprados;
+    public float calcularGastos() {
+        float gastos = pagarSueldos() + Ingredientes.ingredientesComprados;
         return gastos;
     }
 
     //Metodo para Pagar los sueldos a los empleados
-    public double pagarSueldos() {
-        double totalPago = 0;
+    public float pagarSueldos() {
+        float totalPago = 0;
         for (Empleado empleado : empleado.empleados) { // deberia
             totalPago += empleado.getSalario();
             if (empleado.BONO()) { // Sí el Empleado tiene un buen promedio de las calificaciones se le aplicara el Bono a su salario final.

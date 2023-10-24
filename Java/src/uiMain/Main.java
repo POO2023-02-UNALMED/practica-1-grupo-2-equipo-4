@@ -2,6 +2,7 @@ package uiMain;
 
 
 import gestorAplicacion.administracion.Cocinero;
+import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Factura;
 import gestorAplicacion.restaurante.Ingredientes;
 import gestorAplicacion.restaurante.Mesas;
@@ -125,10 +126,13 @@ public class Main {
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
 
+        System.out.println(pedido3.precioTotal());
+
 
         System.out.println(Factura.facturasSinPagar.toString());
         Factura.facturasSinPagar.get(0).pagarFactura();
         System.out.println(Factura.facturasPagadas.toString());
+        System.out.println(Contabilidad.saldo);
 
 
 
