@@ -7,6 +7,22 @@ import java.util.Map;
 public class Comida {
     static ArrayList<Comida> listaComida = new ArrayList<>();
     private String nombre;
+    private String menucomida = """ 
+        Clasica de carne - Precio: $8750.0
+        Especial con queso y tocineta - Precio: $16100.0
+        Clasica de Pollo - Precio: $8750.0
+        Clasica de Pollo con queso - Precio: $11750.0
+        Doble carne tocineta - Precio: $25500.0
+        Vegetariana - Precio: $11500.0
+        Carnibora - Precio: $23000.0
+        Clasica de carne - Precio: $8750.0
+        Especial con queso y tocineta - Precio: $16100.0
+        Clasica de Pollo - Precio: $8750.0
+        Clasica de Pollo con queso - Precio: $11750.0
+        Doble carne tocineta - Precio: $25500.0
+        Vegetariana - Precio: $11500.0
+        Carnibora - Precio: $23000.0
+           """;
 
     private HashMap<Ingredientes, Integer> ingredientesDeComida;
 

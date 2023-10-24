@@ -134,6 +134,8 @@ public class Main {
         listaCocinero.add(Ricard);
         listaCocinero.add(David);
         Serializador.serializarCocinero(listaCocinero);
+        System.out.println(MenuMethods.mostrarMenuComidas());
+        System.out.println(MenuMethods.mostrarMenuComidas());
 
         //Meseros
         ArrayList<Mesero> listaMeseros = new ArrayList<>();
@@ -152,17 +154,17 @@ public class Main {
 
         //Pedidos
         ArrayList<Pedido> listaPedido = new ArrayList<>();
-        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
+        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", Linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
         pedido3.confirmarOrden();
 
-        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", remi);
+        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", Remi);
         pedido5.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido5.agregarComidaAlPedido(vegetariana);
         pedido5.confirmarOrden();
 
-        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", linguini);
+        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", Linguini);
         pedido4.agregarGaseosaAlPedido(quatro, sprite);
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
@@ -189,6 +191,7 @@ public class Main {
                 break;
             }
         }
+
         int idFacturaDeseada3 = 10000003;
         for (Factura factura : Factura.facturasSinPagar) {
             if (factura.getIdFactura() == idFacturaDeseada3 ) {
@@ -201,5 +204,7 @@ public class Main {
         Mesas.crearReserva(345,1,"10-12-2023 13:00:00");
         Mesas.crearReserva(576, 2,"22-11-2023 13:00:00");
         }
+
+
 
     }
