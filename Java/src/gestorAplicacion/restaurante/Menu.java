@@ -6,8 +6,8 @@ import java.util.*;
 
 public class Menu implements Serializable {
 
-    private List<Comida> comidas;
-    private List<Gaseosas> gaseosas;
+    public static List<Comida> comidas;
+    public static List<Gaseosas> gaseosas;
 
     public Menu() {
         comidas = new ArrayList<>();
@@ -30,14 +30,14 @@ public class Menu implements Serializable {
         gaseosas.remove(gaseosa);
     }
 
-    public void mostrarMenuComidas() {
-        for (Comida comida : comidas) {
+    static public void mostrarMenuComidas() {
+        for (Comida comida : Menu.comidas) {
             System.out.println(comida.getNombre() + " - Precio: $" + comida.calcularPrecioConGanancia());
         }
     }
 
-    public void mostrarMenuGaseosas() {
-        for (Gaseosas gaseosa : gaseosas) {
+    static public void mostrarMenuGaseosas() {
+        for (Gaseosas gaseosa : Menu.gaseosas) {
             System.out.println(gaseosa.getNombre() + " - Precio: $" + gaseosa.getPrecio());
         }
     }

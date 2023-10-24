@@ -16,6 +16,7 @@ public class Comida {
         for (int i = 0; i < ingredientes.length; i++) {
             this.ingredientesDeComida.put(ingredientes[i], cantidades[i]);
         }
+        Menu.comidas.add(this);
     }
 
     public void agregarIngrediente(Ingredientes ingrediente, int cantidad) {  /* agrega un ingrediente a la receta, si esté ya estaba en la receta, suma la cantidad

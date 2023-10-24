@@ -11,6 +11,7 @@ public class Gaseosas extends Inventario implements Serializable {
     public Gaseosas(String nombre, float precio, int cantidad) {
         super(nombre, precio, cantidad);
         listaGaseosas.add(this);
+        Menu.gaseosas.add(this);
     }
 
     public Gaseosas() { //Constructor sin argumentos necesario para deserialización
