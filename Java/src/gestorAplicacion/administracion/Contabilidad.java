@@ -27,33 +27,28 @@ public class Contabilidad implements Serializable {
         serviciosPublicos = 0;
     }
 
-    public void pagarServicios(float serviciosPublicos) {
-        if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
-            saldo -= serviciosPublicos;
-            System.out.println("Pago de servicios exitoso. Nuevo saldo: " + saldo);
-        } else {
-            System.out.println("Fondos insuficientes para realizar el pago.");
-        }
+    public static float pagarServicios() {
+        return  saldo = saldo - serviciosPublicos;
     }
+
 
     public static void sumarIngresosPedidoAlSaldo(float ingreso) {
         saldo = saldo + ingreso;
         ingresos += ingreso;
 
-}
-
+    }
 
     //Metodo para calular Utilidad
     public static void calcularUtilidades(float ganancia, float neto) {
         utilidades = ganancia + neto;
     }
 
-   public static float pagarSueldos() {
+    public static float pagarSueldos() {
         float totalPago = 0;
         for (Empleado empleado : Empleado.empleados) {
             totalPago += empleado.getSalario();
-            if (empleado.bono()) {
-                totalPago = totalPago + (empleado.getSalario() * (15/100));
+            if (empleado.bono() == true) {
+                totalPago = totalPago + (empleado.getSalario() * (15f / 100f));
             } else {
                 totalPago += empleado.getSalario();
             }
@@ -61,10 +56,11 @@ public class Contabilidad implements Serializable {
         saldo = saldo - totalPago;
         return totalPago;
     }
-   public float calcularGastos() {
-       float gastos = Ingredientes.ingredientesComprados;
-       return gastos;
-   }
+
+    public static float calcularGastos() {
+        gastos = gastos + pagarSueldos() + pagarServicios();
+        return gastos;
+    }
 
     public static void setSaldo(float saldo) {
         Contabilidad.saldo = saldo;
@@ -99,7 +95,7 @@ public class Contabilidad implements Serializable {
     }
 
     public static void setGastos(float gastos) {
-        Contabilidad.gastos = gastos;
+        Contabilidad.gastos = Contabilidad.gastos + gastos;
     }
 
 }

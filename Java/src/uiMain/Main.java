@@ -129,7 +129,7 @@ public class Main {
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
 
-<<<<<<< Updated upstream
+
 
         System.out.println(Factura.facturasSinPagar.toString());
 
@@ -177,7 +177,7 @@ public class Main {
 
         System.out.println(linguini.toString());
 
-        System.out.println(Contabilidad.pagarSueldos());
+        System.out.println(Contabilidad.calcularGastos());
 
 
 

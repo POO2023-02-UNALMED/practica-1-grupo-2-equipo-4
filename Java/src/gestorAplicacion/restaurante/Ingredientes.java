@@ -23,6 +23,7 @@ public class Ingredientes extends Inventario implements Serializable {
             if (i.equals(ingrediente)) {
                 ingrediente.cantidad = ingrediente.cantidad + cantidad;
                 Contabilidad.saldo -= ingrediente.precio * cantidad; //resta del saldo de la tienda el precio*cantidad de ingredientes
+                Contabilidad.setGastos(ingrediente.precio*cantidad);
                 ingredientesComprados += ingrediente.precio * cantidad;
             }
         }

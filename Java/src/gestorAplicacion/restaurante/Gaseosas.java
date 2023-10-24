@@ -23,6 +23,8 @@ public class Gaseosas extends Inventario implements Serializable {
             if (i.equals(gaseosa)) {
                 gaseosa.cantidad = gaseosa.cantidad + cantidad;
                 Contabilidad.saldo = Contabilidad.saldo - gaseosa.precio * cantidad; //resta del saldo de la tienda el precio*cantidad de ingredientes
+                Contabilidad.setGastos(gaseosa.precio*cantidad);
+
             }
         }
     }
@@ -36,9 +38,10 @@ public class Gaseosas extends Inventario implements Serializable {
         return "Nombre: " + nombre + "Precio " + this.getPrecio() + " Cantidad:" + this.cantidad;
     }
 
-    public  float getPrecioConGanancia(){
-        return super.getPrecio() + super.getPrecio()*10/100;
+    public float getPrecioConGanancia() {
+        return super.getPrecio() + super.getPrecio() * 10 / 100;
     }
+
     @Override
     public float getPrecio() {
         return super.getPrecio();
