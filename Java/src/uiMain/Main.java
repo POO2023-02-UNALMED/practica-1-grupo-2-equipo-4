@@ -151,7 +151,7 @@ public class Main {
 
 
         //Pedidos
-        ArrayList<Pedido> listaPedido = new ArrayList<>();
+        /* ArrayList<Pedido> listaPedido = new ArrayList<>();
         Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
@@ -169,7 +169,7 @@ public class Main {
         listaPedido.add(pedido4);
         listaPedido.add(pedido3);
         listaPedido.add(pedido5);
-        Serializador.serializarPedido(listaPedido);// Seriliza Pedido
+        Serializador.serializarPedido(listaPedido);// Seriliza Pedido */
 
 
 

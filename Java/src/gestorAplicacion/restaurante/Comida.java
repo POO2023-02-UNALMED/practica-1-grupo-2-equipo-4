@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Comida {
-    static ArrayList<Comida> listaComida = new ArrayList<>();
+    public static ArrayList<Comida> listaComida = new ArrayList<>();
     private String nombre;
 
     private HashMap<Ingredientes, Integer> ingredientesDeComida;

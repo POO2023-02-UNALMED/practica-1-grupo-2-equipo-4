@@ -82,15 +82,18 @@ public class TestEmpleados implements Serializable {
         Mesas mesa15 = new Mesas(15, 10);
 
 
-        Cocinero cocinero = new Cocinero("Raúl",2,200000);
+
+
+        Cocinero cocinero = new Cocinero("Raúl",2,30000, "calvas");
+
         System.out.println("El Empleado "+ cocinero.getNombre() +" Es un "+cocinero.getOcupacion());
-        Mesero mesero1 = new Mesero("Pablo",20000);
-        Mesero mesero2 = new Mesero("Sofia",20000);
-        Mesero mesero3 = new Mesero("Andres",20000);
-        Mesero mesero4 = new Mesero("Monica",20000);
-        Mesero mesero5 = new Mesero("Horacio",20000);
-        Empleado mesero6 = new Mesero("Jacinto",20000);
-        Empleado cocinero1 = new Cocinero("Juan",9,"Carnes");
+        Mesero mesero1 = new Mesero("Pablo",100,20000);
+        Mesero mesero2 = new Mesero("Sofia",102,20000);
+        Mesero mesero3 = new Mesero("Andres",103,20000);
+        Mesero mesero4 = new Mesero("Monica",104,20000);
+        Mesero mesero5 = new Mesero("Horacio",105,20000);
+        Empleado mesero6 = new Mesero("Jacinto",106,20000);
+        Empleado cocinero1 = new Cocinero("Juan",109,30000, "carnes");
         mesero1.agregarMesas(mesa1);
         mesero1.agregarMesas(mesa2);
         mesero1.agregarMesas(mesa3);

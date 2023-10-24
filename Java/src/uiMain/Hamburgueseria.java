@@ -2,11 +2,9 @@ package uiMain;
 
 import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Empleado;
-import gestorAplicacion.restaurante.Ingredientes;
-import gestorAplicacion.restaurante.MenuMethods;
-import gestorAplicacion.restaurante.Mesas;
-import gestorAplicacion.restaurante.Pedido;
+import gestorAplicacion.restaurante.*;
 
+import java.util.*;
 import java.util.Scanner;
 
 public class Hamburgueseria {
@@ -130,7 +128,7 @@ public class Hamburgueseria {
             int opcion2 = scanner.nextInt();
             switch (opcion2) {
                 case 1:
-                    int opcionF,opcionF1,opcionF2;
+                    int opcionF, opcionF1, opcionF2;
                     ;
                     do { // Opciones de Funcionalidad Contabilidad
                         System.out.println(queHacer);
@@ -143,9 +141,7 @@ public class Hamburgueseria {
                         opcionF = scanner.nextInt();
                         switch (opcionF) {
                             case 1:
-                                float servicios =Contabilidad.pagarServicios();
-
-
+                                float servicios = Contabilidad.pagarServicios();
 
 
                             case 2:
@@ -176,8 +172,8 @@ public class Hamburgueseria {
                             case 1://Ver empleado
                                 System.out.println("Ingrese el nombre del empleado que quiere ver: ");
                                 String verNombre = readln();
-                                for (Empleado empleado: Empleado.empleados){
-                                    if (verNombre == empleado.getNombre()){
+                                for (Empleado empleado : Empleado.empleados) {
+                                    if (verNombre == empleado.getNombre()) {
                                         System.out.println(empleado.toString());
                                     }
                                 }
@@ -185,7 +181,7 @@ public class Hamburgueseria {
                             case 2://AgregarEmpleado
                                 System.out.println("Ingrese la ocupacion del empleado (1 en caso de ser mesero, 2 en caso de ser Cocinero): ");
                                 int ocup = (int) readLong();
-                                if (ocup == 1){
+                                if (ocup == 1) {
                                     System.out.println("Ingrese el nombre del empleado: ");
                                     System.out.println("Ingrese el id del empleado: ");
                                     System.out.println("Ingrese el salario del empleado: ");
@@ -236,8 +232,8 @@ public class Hamburgueseria {
                                 System.out.println("Ingrese el id del cliente al que le corresponde la reserva: ");
                                 int clienteReserva = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que desea reservar con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
-                                String fechaReserva =  readln();
-                                Mesas.crearReserva(clienteReserva,reservaMesa,fechaReserva);
+                                String fechaReserva = readln();
+                                Mesas.crearReserva(clienteReserva, reservaMesa, fechaReserva);
                                 System.out.println("Su reserva ha sido creada ");
                                 System.out.println(" ");
                                 break;
@@ -288,15 +284,15 @@ public class Hamburgueseria {
                                     System.out.println("Ingrese el nombre del mesero que va a atender el pedido:  ");
                                     String nombreEmpleado = readln();
                                     Empleado mesero1 = null;
-                                    for(Empleado mesero: Empleado.empleados){
-                                        if(mesero.getNombre().equals(nombreEmpleado)){
+                                    for (Empleado mesero : Empleado.empleados) {
+                                        if (mesero.getNombre().equals(nombreEmpleado)) {
                                             mesero1 = mesero;
                                             break;
                                         }
                                     }
                                     Mesas mesaDeReserva = null;
-                                    for(Mesas mesa : Mesas.mesas){
-                                        if (mesa.getReservaPorCliente().containsKey(idCliente) && mesa.getOcupadoEnFecha().containsKey(fecha)){
+                                    for (Mesas mesa : Mesas.mesas) {
+                                        if (mesa.getReservaPorCliente().containsKey(idCliente) && mesa.getOcupadoEnFecha().containsKey(fecha)) {
                                             mesaDeReserva = mesa;
                                             break;
                                         }
@@ -304,12 +300,55 @@ public class Hamburgueseria {
                                     System.out.println(MenuMethods.mostrarMenuComidas());
                                     System.out.println(MenuMethods.mostrarMenuGaseosas());
                                     Pedido pedido = new Pedido(mesaDeReserva, fecha, idCliente, mesero1);
-                                    System.out.println("Ingrese el pedido de comidas: ");
-                                    // ArrayList<String> pedidoComidas = readln();  // Esta Generando Error
-                                    break;
-                                }
-                                else {
+                                    System.out.println("Ingrese el pedido de comidas:(termine el pedido con" + " SALIR ");
+                                    Scanner entrada = new Scanner(System.in);
 
+                                    List<String> pedidoComidas = new ArrayList<>();
+                                    Map<String, Comida> mapComida = new HashMap<>();
+                                    while (true) {
+                                        String input = entrada.nextLine();
+                                        if (input.equalsIgnoreCase("salir")) {
+                                            break;
+                                        }
+                                        pedidoComidas.add(input);
+
+                                    }
+                                    for (String nombreComida : pedidoComidas) {
+                                        for (Comida comida : Comida.listaComida) {
+                                            if (comida.getNombre().equals(nombreComida)) {
+                                                mapComida.put(nombreComida, comida);
+                                                break;
+                                            }
+                                        }
+                                    }
+
+                                    System.out.println("Ingrese el pedido de gaseosas:(termine el pedido con" + " SALIR ");
+                                    Scanner entrada2 = new Scanner(System.in);
+                                    List<String> pedidoGaseosas = new ArrayList<>();
+                                    Map<String, Gaseosas> mapGaseosa = new HashMap<>();
+                                    while (true) {
+                                        String input = entrada.nextLine();
+                                        if (input.equalsIgnoreCase("salir")) {
+                                            break;
+                                        }
+                                        pedidoGaseosas.add(input);
+                                    }
+
+                                    for (String nombreGaseosa : pedidoGaseosas) {
+                                        for (Gaseosas gaseosa : Gaseosas.listaGaseosas) {
+                                            if (gaseosa.getNombre().equals(nombreGaseosa)) {
+                                                mapGaseosa.put(nombreGaseosa, gaseosa);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    System.out.println("el pedido de comidas es: ");
+                                    System.out.println(mapComida.values());
+                                    System.out.println(" El pedido de bebidad es: ");
+                                    System.out.println(mapGaseosa.values());
+
+
+                                } else {
                                 }
 
 
@@ -347,19 +386,19 @@ public class Hamburgueseria {
                                             String ingredienteNombre = readln();
                                             System.out.println("Ingrese la cantidad que quiere comprar");
                                             int cantidad = scan.nextInt();
-                                            for(Ingredientes ingrediente: Ingredientes.listaIngredientes){
-                                                if (ingrediente.getNombre() == ingredienteNombre){
+                                            for (Ingredientes ingrediente : Ingredientes.listaIngredientes) {
+                                                if (ingrediente.getNombre() == ingredienteNombre) {
                                                     ingrediente.comprar(cantidad, ingrediente);
-                                                    System.out.println("Te costo: $"+ingrediente.getPrecio()*cantidad);
+                                                    System.out.println("Te costo: $" + ingrediente.getPrecio() * cantidad);
                                                 }
                                             }
-                                            System.out.println("Compraste "+cantidad+" de "+ingredienteNombre);
+                                            System.out.println("Compraste " + cantidad + " de " + ingredienteNombre);
                                             break;
                                         case 2:
                                             System.out.println("Ingresa el ingrediente que quieres ver: ");
                                             String ingredienteVer = readln();
-                                            for(Ingredientes ingrediente: Ingredientes.listaIngredientes){
-                                                if (ingrediente.getNombre() == ingredienteVer){
+                                            for (Ingredientes ingrediente : Ingredientes.listaIngredientes) {
+                                                if (ingrediente.getNombre() == ingredienteVer) {
                                                     System.out.println(ingrediente.toString());
                                                 }
                                             }
