@@ -1,7 +1,9 @@
 package uiMain;
 
+import gestorAplicacion.administracion.Cocinero;
 import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Empleado;
+import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.*;
 
 import java.util.*;
@@ -183,14 +185,24 @@ public class Hamburgueseria {
                                 int ocup = (int) readLong();
                                 if (ocup == 1) {
                                     System.out.println("Ingrese el nombre del empleado: ");
+                                    String nombreMesero = readln();
                                     System.out.println("Ingrese el id del empleado: ");
+                                    int idMesero = (int) readLong();
                                     System.out.println("Ingrese el salario del empleado: ");
+                                    float salarioMesero = (float) readLong();
+                                    new Mesero(nombreMesero,idMesero,salarioMesero);
+                                    break;
                                 } else if (ocup == 2) {
                                     System.out.println("Ingrese el nombre del empleado: ");
+                                    String nombreCocinero = readln();
                                     System.out.println("Ingrese el id del empleado: ");
+                                    int idCocinero = (int) readLong();
                                     System.out.println("Ingrese el salario del empleado: ");
+                                    float salarioCocinero = (float) readLong();
                                     System.out.println("Ingrese la especialidad del empleado: ");
-
+                                    String especialidad = readln();
+                                    new Cocinero(nombreCocinero, idCocinero,salarioCocinero,especialidad);
+                                    break;
                                 }
                             case 3://Eliminar empleado
 
