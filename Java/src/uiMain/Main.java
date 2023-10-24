@@ -152,17 +152,17 @@ public class Main {
 
         //Pedidos
         ArrayList<Pedido> listaPedido = new ArrayList<>();
-        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
+        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", Linguini);
         pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
         pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
         pedido3.confirmarOrden();
 
-        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", remi);
+        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", Remi);
         pedido5.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido5.agregarComidaAlPedido(vegetariana);
         pedido5.confirmarOrden();
 
-        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", linguini);
+        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", Linguini);
         pedido4.agregarGaseosaAlPedido(quatro, sprite);
         pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
         pedido4.confirmarOrden();
