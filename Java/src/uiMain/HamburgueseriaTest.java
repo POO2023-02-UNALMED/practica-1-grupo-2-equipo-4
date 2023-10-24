@@ -1,7 +1,6 @@
 package uiMain;
 
 import gestorAplicacion.administracion.Empleado;
-import gestorAplicacion.restaurante.Menu;
 import gestorAplicacion.restaurante.MenuMethods;
 import gestorAplicacion.restaurante.Mesas;
 

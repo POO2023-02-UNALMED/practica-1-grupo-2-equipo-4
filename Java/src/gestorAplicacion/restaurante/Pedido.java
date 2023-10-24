@@ -13,7 +13,6 @@ public class Pedido implements Serializable {
     private static int idPedido = 10000000;
     private Mesas mesa;
     private Empleado empleado;
-    private Menu menu;
     private List<Comida> pedidoComidas;
     private List<Gaseosas> pedidoGaseosas;
     private String fecha;
