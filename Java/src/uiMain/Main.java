@@ -78,6 +78,7 @@ public class Main {
         Ingredientes[] ingredientesCarnivora = {pan, carneDeRes, carneDePollo, tocineta, queso};
         int[] cantidadesCarnivora = {2, 1, 1, 4, 2};
         Comida carnivora = new Comida("Carnivora", ingredientesCarnivora, cantidadesCarnivora);
+
         listaComida.add(clasicaDeCarne);
         listaComida.add(especialQuesoYTocineta);
         listaComida.add(clasicaDePollo);
@@ -198,8 +199,11 @@ public class Main {
             }
         }
 
-        Mesas.crearReserva(345,1,"10-12-2023 13:00:00");
-        Mesas.crearReserva(576, 2,"22-11-2023 13:00:00");
+        Mesas.crearReserva(345,1,"10-12-2023 22:00:00");
+        Mesas.crearReserva(576, 2,"31-11-2023 14:00:00");
+        Mesas.crearReserva(489, 6,"25-11-2023 20:00:00");
+        Mesas.crearReserva(127, 10,"26-11-2023 17:00:00");
+        Mesas.crearReserva(322, 2,"30-11-2023 13:00:00");
         }
 
     }
