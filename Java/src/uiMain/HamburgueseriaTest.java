@@ -150,6 +150,10 @@ public class HamburgueseriaTest {
                         System.out.println("3. Eliminar empleado");
                         System.out.println("4. Volver al menú de las calvas");
                         System.out.print("Escribe el número de la opción que necesitas: ");
+                        if (opcion <0 || opcion>4 ) {
+                            System.out.println(opcion);
+                            System.out.println("DEBES ELEGIR ALGUNA DE LAS OPCIONES DISPONIBLES");
+                        }
 
                         opcion = (int) readLong();
 

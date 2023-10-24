@@ -194,13 +194,17 @@ public class Hamburgueseria {
 
                             case 1://Efectuar Reserva
                                 System.out.println("reserva efectuada");
+                                break;
 
 
-                            case 2://Hacer Recerva
+                            case 2://Hacer Reserva
+                                break;
 
-                            case 3://Cancelar Recerva
+                            case 3://Cancelar Reserva
+                                break;
 
                             case 4: // Volver al menú principal
+                                break;
 
                             case 5:
                                 System.out.println(salirsistematxt);
@@ -221,7 +225,9 @@ public class Hamburgueseria {
                         switch (opcion) {
 
                             case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
+                                break;
                             case 2://Hacer Recerva
+                                break;
                             case 3:
                                 System.out.println(salirsistematxt);
                                 salirDelSistema();
@@ -241,7 +247,9 @@ public class Hamburgueseria {
                         switch (opcion2) {
 
                             case 1:// Mostrar inventario
+                                break;
                             case 2: // Volver al menú principal
+                                break;
                             case 3:
                                 System.out.println(salirsistematxt);
                                 salirDelSistema();
