@@ -3,7 +3,6 @@ package gestorAplicacion.restaurante;
 
 import java.util.*;
 import java.io.Serializable;
-import java.util.stream.Stream;
 
 public class Mesas implements Serializable {
     public static java.util.ArrayList<Mesas> mesas = new ArrayList<>();
@@ -19,7 +18,7 @@ public class Mesas implements Serializable {
         mesas.add(this);
     }
 
-    public void crearReserva(int idCliente, int idMesa, String fecha) {
+    public static void crearReserva(int idCliente, int idMesa, String fecha) {
         for (Mesas mesa : mesas) {
             if (mesa.getIdMesa() == idMesa && !mesa.reservaPorCliente.containsValue(fecha)) {
                 mesa.reservaPorCliente.put(idCliente, fecha);
@@ -29,7 +28,7 @@ public class Mesas implements Serializable {
         }
     }
 
-    public void efectuarReserva(int idCliente, String fecha) { // efectua una reserva, lo que hace que la reserva se borre, pero el estado de la mesa siga ocupada
+    public static void efectuarReserva(int idCliente, String fecha) { // efectua una reserva, lo que hace que la reserva se borre, pero el estado de la mesa siga ocupada
         for (Mesas mesa : mesas) {
             if (mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)) {
                 mesa.reservaPorCliente.remove(idCliente, fecha);
@@ -38,7 +37,7 @@ public class Mesas implements Serializable {
         }
     }
 
-    public void cancelarReserva(int idCliente, String fecha) {// Este método libera la mesa dejandola sin ningún cliente
+    public static void cancelarReserva(int idCliente, String fecha) {// Este método libera la mesa dejandola sin ningún cliente
         for (Mesas mesa : mesas) {
             if (mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)) {
                 mesa.reservaPorCliente.remove(idCliente, fecha);
@@ -48,6 +47,18 @@ public class Mesas implements Serializable {
 
     }
 
+    public static String mostrarReserva (int mesaid,int idcliente,String fecha){
+        StringBuilder string = new StringBuilder();
+        for (Mesas mesa: mesas){
+            if (mesa.getIdMesa() == mesaid){
+                string.append("Mesa número: ").append(mesaid).append("\n");
+                string.append("Número de sillas: ").append(mesa.getNumeroDeSillas()).append("\n");
+                string.append("Propietario de la Reserva: ").append(idcliente).append("\n");
+                string.append("Fecha de la reserva: ").append(mesa.reservaPorCliente.get(idcliente));
+            }
+        }
+        return string.toString();
+    }
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Mesa número: ").append(idMesa).append("\n");
@@ -61,10 +72,11 @@ public class Mesas implements Serializable {
         }
         return stringBuilder.toString();
     }
-     //Getters y Setters
-     public static ArrayList<Mesas> getMesas() {
-         return mesas;
-     }
+
+    //Getters y Setters
+    public static ArrayList<Mesas> getMesas() {
+        return mesas;
+    }
 
 
     public void setIdMesa(int idMesa) {

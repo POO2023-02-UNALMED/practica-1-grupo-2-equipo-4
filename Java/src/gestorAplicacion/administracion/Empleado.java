@@ -16,7 +16,7 @@ public class Empleado implements Serializable {
         this.nombre = nombre;
         this.idEmpleado = idEmpleado;
         this.salario = salario;
-        empleados.add(this);
+        this.empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
 
