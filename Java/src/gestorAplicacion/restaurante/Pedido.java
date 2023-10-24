@@ -28,7 +28,7 @@ public class Pedido implements Serializable {
         this.pedidoComidas = new ArrayList<>();
         this.pedidoGaseosas = new ArrayList<>();
         this.empleado = empleado;
-        mesa.efectuarReserva(idCliente, mesa.getIdMesa(), fecha);
+        mesa.efectuarReserva(idCliente, fecha);
     }
 
     public Pedido( Mesas mesa, String fecha, Empleado empleado) { // crea un pedido que a la vez crea una reserva en esa mesa para que no se vea disponible
@@ -49,7 +49,9 @@ public class Pedido implements Serializable {
 
     }
     public String confirmarOrden() {
+        System.out.println("confirmarOrden called for Pedido " + this.getIdPedido());
         StringBuilder insufficientItems = new StringBuilder();
+        String ordenConfirmada = null;
 
 
         for (Comida comida : pedidoComidas) {
@@ -70,9 +72,11 @@ public class Pedido implements Serializable {
         if (insufficientItems.length() > 0) {
             return insufficientItems.toString();
         }
-
-        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this.getIdPedido());
-        return "Orden confirmada y factura creada";
+        ordenConfirmada = "Orden confirmada y factura creada";
+        if(ordenConfirmada.equals("Orden confirmada y factura creada")){
+        Factura factura = new Factura(this.getEmpleado(),this.getMesa(),this,this.getIdPedido(),this.fecha);
+        Factura.facturas.add(factura);}
+        return ordenConfirmada;
     }
 
     public int getIdPedido() {

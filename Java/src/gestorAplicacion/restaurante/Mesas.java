@@ -29,7 +29,7 @@ public class Mesas implements Serializable {
         }
     }
 
-    public void efectuarReserva(int idCliente, int idMesa, String fecha) { // efectua una reserva, lo que hace que la reserva se borre, pero el estado de la mesa siga ocupada
+    public void efectuarReserva(int idCliente, String fecha) { // efectua una reserva, lo que hace que la reserva se borre, pero el estado de la mesa siga ocupada
         for (Mesas mesa : mesas) {
             if (mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)) {
                 mesa.reservaPorCliente.remove(idCliente, fecha);
@@ -38,7 +38,7 @@ public class Mesas implements Serializable {
         }
     }
 
-    public void cancelarReserva(int idCliente, int idMesa, String fecha) {// Este método libera la mesa dejandola sin ningún cliente
+    public void cancelarReserva(int idCliente, String fecha) {// Este método libera la mesa dejandola sin ningún cliente
         for (Mesas mesa : mesas) {
             if (mesa.reservaPorCliente.containsKey(idCliente) && mesa.ocupadoEnFecha.containsKey(fecha)) {
                 mesa.reservaPorCliente.remove(idCliente, fecha);

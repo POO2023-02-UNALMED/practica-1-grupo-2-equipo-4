@@ -82,7 +82,7 @@ public class Main {
 
         Cocinero linguini = new Cocinero("linguini", 1001, 80000, "Calvas");
 
-        Pedido pedido1 = new Pedido(mesa2, "23-10-2023 1:40:00", linguini);
+        /* Pedido pedido1 = new Pedido(mesa2, "23-10-2023 1:40:00", linguini);
         pedido1.agregarComidaAlPedido(vegetariana, carnibora);
         pedido1.agregarGaseosaAlPedido(coca_cola, sprite);
         pedido1.confirmarOrden();
@@ -92,9 +92,9 @@ public class Main {
         System.out.println(carneDeRes.toString());
         System.out.println(coca_cola.toString());
         System.out.println(sprite.toString());
-        System.out.println("");
+        System.out.println(""); */
 
-        Pedido pedido2 = new Pedido(mesa3, "23-10-2023 1:50:00", 456, linguini);
+        /* Pedido pedido2 = new Pedido(mesa3, "23-10-2023 1:50:00", 456, linguini);
         pedido2.agregarComidaAlPedido(clasicaDeCarne, clasicaDePollo, polloconQueso, vegetariana);
         pedido2.imprimirComidas();
         pedido2.agregarGaseosaAlPedido(coca_cola, sprite, quatro, premio);
@@ -107,14 +107,27 @@ public class Main {
         System.out.println(queso.toString());
         System.out.println(coca_cola.toString());
         System.out.println(sprite.toString());
-        System.out.println(premio.toString());
+        System.out.println(premio.toString()); */
 
-        Pedido pedido3= new Pedido(mesa4, "23-10-2023 2:50:00", linguini);
-        pedido3.agregarGaseosaAlPedido(coca_cola,coca_cola,coca_cola,coca_cola,coca_cola,coca_cola,coca_cola,coca_cola);
-        pedido3.agregarComidaAlPedido(dobleCarneTocineta,dobleCarneTocineta,polloconQueso,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta,dobleCarneTocineta);
-        System.out.println(pedido3.confirmarOrden());
+        Pedido pedido3 = new Pedido(mesa4, "23-10-2023 8:50:00", linguini);
+        pedido3.agregarGaseosaAlPedido(coca_cola, coca_cola);
+        pedido3.agregarComidaAlPedido(clasicaDeCarne, dobleCarneTocineta);
+        pedido3.confirmarOrden();
 
-        System.out.println(Ingredientes.listaIngredientes.toString());
+        Pedido pedido5 = new Pedido(mesa2, "23-10-2023 5:50:00", linguini);
+        pedido5.agregarGaseosaAlPedido(coca_cola, sprite);
+        pedido5.agregarComidaAlPedido(vegetariana);
+        pedido5.confirmarOrden();
+
+        Pedido pedido4 = new Pedido(mesa1, "23-10-2023 3:50:00", linguini);
+        pedido4.agregarGaseosaAlPedido(quatro, sprite);
+        pedido4.agregarComidaAlPedido(clasicaDePollo, especialQuesoYTocineta);
+        pedido4.confirmarOrden();
+
+
+
+        System.out.println(Factura.facturas.toString());
+
 
 
 
