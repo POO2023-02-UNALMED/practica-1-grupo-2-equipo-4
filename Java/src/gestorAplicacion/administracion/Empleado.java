@@ -7,18 +7,18 @@ import java.util.List;
 public abstract class Empleado implements Serializable {
     public static ArrayList<Empleado> empleados = new ArrayList<>();
     private String nombre;
-    private static int idEmpleado = 00100;
+    private  int idEmpleado = 00100;
     private float salario;
     private static int cantidadEmpleados = 0;
 
     public Empleado() { // Constructor sin argumentos necesario para deserialización
     }
-    public Empleado(String nombre, float salario) {
+    public Empleado(String nombre, int idEmpleado ,float salario) {
         cantidadEmpleados++;
         this.nombre = nombre;
-        idEmpleado++;
+        this.idEmpleado = idEmpleado;
         this.salario = salario;
-        this.empleados.add(this);
+        empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
     public abstract String getOcupacion();
@@ -67,7 +67,7 @@ public abstract class Empleado implements Serializable {
     }
 
     public int getIdEmpleado() {
-        return idEmpleado;
+        return this.idEmpleado;
     }
 
     public void setIdEmpleado(int idEmpleado) {

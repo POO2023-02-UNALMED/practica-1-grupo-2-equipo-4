@@ -179,7 +179,19 @@ public class HamburgueseriaTest {
                                 }
 
                             case 2://AgregarEmpleado
+                                System.out.println("Ingrese la ocupacion del empleado (1 en caso de ser mesero, 2 en caso de ser Cocinero): ");
+                                int ocup = (int) readLong();
+                                if (ocup == 1){
+                                    System.out.println("Ingrese el nombre del empleado: ");
+                                    System.out.println("Ingrese el id del empleado: ");
+                                    System.out.println("Ingrese el salario del empleado: ");
+                                } else if (ocup == 2) {
+                                    System.out.println("Ingrese el nombre del empleado: ");
+                                    System.out.println("Ingrese el id del empleado: ");
+                                    System.out.println("Ingrese el salario del empleado: ");
+                                    System.out.println("Ingrese la especialidad del empleado: ");
 
+                                }
                             case 3://Eliminar empleado
 
                             case 4: // Volver al menú principal

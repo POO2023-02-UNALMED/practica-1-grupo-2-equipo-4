@@ -10,8 +10,8 @@ public class Cocinero extends Empleado {
     private String especialidad;
     private static final String ocupacion = "Cocinero";
 
-    public Cocinero(String nombre, float salario, String especialidad) {
-        super(nombre, salario);
+    public Cocinero(String nombre, int idEmpleado, float salario, String especialidad) {
+        super(nombre, idEmpleado, salario);
         this.especialidad = especialidad;
     }
     @Override
