@@ -80,18 +80,15 @@ public class TestEmpleados implements Serializable {
         Mesas mesa14 = new Mesas(14, 10);
         Mesas mesa15 = new Mesas(15, 10);
 
-
+        Cocinero cocinero = new Cocinero("Raúl",2,"Calvas");
+        System.out.println("El Empleado "+ cocinero.getNombre() +" Es un "+cocinero.getOcupacion());
         Mesero mesero1 = new Mesero("Pablo",20000);
         Mesero mesero2 = new Mesero("Sofia",20000);
         Mesero mesero3 = new Mesero("Andres",20000);
         Mesero mesero4 = new Mesero("Monica",20000);
         Mesero mesero5 = new Mesero("Horacio",20000);
         Empleado mesero6 = new Mesero("Jacinto",20000);
-        System.out.println(mesero6.accion());
-        System.out.println(mesero6.getOcupacion());
-        Empleado cocinero1 = new Cocinero("Juan",20000,"Carnes");
-        System.out.println(cocinero1.accion());
-        System.out.println(cocinero1.getOcupacion());
+        Empleado cocinero1 = new Cocinero("Juan",9,"Carnes");
         mesero1.agregarMesas(mesa1);
         mesero1.agregarMesas(mesa2);
         mesero1.agregarMesas(mesa3);
@@ -118,6 +115,15 @@ public class TestEmpleados implements Serializable {
         System.out.println(mesero3.toString());
         System.out.println(mesero4.toString());
         System.out.println(mesero6.toString());
+
+        System.out.println(mesero6.accion());
+        System.out.println(mesero6.getOcupacion());
+        System.out.println(cocinero1.accion());
+        System.out.println(cocinero1.getOcupacion());
+        System.out.println(mesero2.accion());
+        System.out.println(mesero2.getOcupacion());
+        System.out.println(mesero3.accion());
+        System.out.println(mesero3.getOcupacion());
 
         ArrayList<Mesas> mesas = new ArrayList<>();
         mesas.add(mesa1);

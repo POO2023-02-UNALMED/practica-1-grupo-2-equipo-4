@@ -1,5 +1,6 @@
 package uiMain;
 
+import gestorAplicacion.administracion.Contabilidad;
 import gestorAplicacion.administracion.Empleado;
 import gestorAplicacion.administracion.Mesero;
 import gestorAplicacion.restaurante.MenuMethods;
@@ -124,19 +125,25 @@ public class HamburgueseriaTest {
             int opcion2 = scanner.nextInt();
             switch (opcion2) {
                 case 1:
-                    int opcion3;
+                    int opcionF,opcionF1,opcionF2;
+                    ;
                     do { // Opciones de Funcionalidad Contabilidad
                         System.out.println(queHacer);
-                        System.out.println("");
-                        System.out.println("");
-                        System.out.println("");
-                        System.out.println("");
-                        System.out.println("");
+                        System.out.println("1. Pagar Servicios");
+                        System.out.println("2. Calcular Utilidades");
+                        System.out.println("3. Pagar los Sueldos de los Empleados");
+                        System.out.println("4. Calcular Gastos");
                         System.out.println("6. Volver al menú de funcionalidades");
                         System.out.print("Escribe el número de la opción que necesitas: ");
-                        opcion3 = scanner.nextInt();
-                        switch (opcion3) {
+                        opcionF = scanner.nextInt();
+                        switch (opcionF) {
                             case 1:
+                                float servicios =Contabilidad.pagarServicios();
+                                System.out.println("Ingrese el nombre del empleado que quiere ver: ");
+
+
+
+
                             case 2:
                             case 3:
                             case 4:
@@ -146,7 +153,7 @@ public class HamburgueseriaTest {
                             default:
                                 System.out.println("DEBES ESCRIBIR UN NUMERO ENTERO ENTRE LAS OPCIONES DADAS");
                         }
-                    } while (opcion3 < 1 || opcion3 > 6);
+                    } while (opcionF < 1 || opcionF > 6);
                     break;
                 case 2:
                     do { // Funcionalidad Gestion Empleados
@@ -282,7 +289,7 @@ public class HamburgueseriaTest {
                                     MenuMethods.mostrarMenuGaseosas();
                                     Pedido pedido = new Pedido(mesaDeReserva, fecha, idCliente, mesero1);
                                     System.out.println("Ingrese el pedido de comidas: ");
-                                    ArrayList<String> pedidoComidas = readln();
+                                   // ArrayList<String> pedidoComidas = readln();  // Esta Generando Error
                                     break;
                                 }
                                 else {

@@ -1,5 +1,6 @@
 package uiMain;
 
+import gestorAplicacion.restaurante.MenuMethods;
 import gestorAplicacion.restaurante.Mesas;
 
 import java.util.Scanner;
@@ -227,23 +228,35 @@ public class Hamburgueseria {
                         }
                     } while (opcion2 != 4);
                     break;
-                case 4:
+                case 4: int optionPed, optionPed2;
                     do {// Funcionalidad Tomar Pedidos
                         System.out.println(queHacer);
                         System.out.println("1. Consultar Reserva");
                         System.out.println("2. Volver al menú de las calvas");
                         System.out.print("Escribe el número de la opción que necesitas: ");
-                        opcion = (int) readLong();
+                        optionPed = (int) readLong();
 
-                        switch (opcion) {
-
-                            case 1:// Muestra si tiene recerva o no, en caso de que si tenga recerva mostrar Menu.
-                            case 2://Hacer Recerva
+                        switch (optionPed) {
+                            case 1:// Muestra si tiene reserva o no, en caso de que si tenga reserva mostrar Menu.
+                                System.out.println("Ingresaste a Consultar Reserva");
+                                System.out.println("El cliente tiene una reserva? (responda 'si' o 'no')");
+                                String tieneReserva = readln();
+                                if (tieneReserva.equals("si")) {
+                                    System.out.println("Ingrese el id del cliente que hizo la reserva: ");
+                                    int idCliente = scanner.nextInt();
+                                    System.out.println("Ingrese la fecha para la que reservaste con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:00\": ");
+                                    String fecha = readln();
+                                    Mesas.efectuarReserva(idCliente, fecha);
+                                    MenuMethods.mostrarMenuComidas();
+                                    MenuMethods.mostrarMenuGaseosas();
+                                    System.out.println(MenuMethods.mostrarMenuGaseosas());
+                                    break;
+                            case 2:
                                 break;
                         }
-                    } while (opcion != 2);
+                    } while (optionPed != 2);
                     break;
-                case 5:
+                case 5: int optionGes, optionGes2;
                     do {// Funcionalidad Gestion Inventario
                         System.out.println(queHacer);
                         System.out.println("1. Consultar Inventario");
@@ -252,8 +265,8 @@ public class Hamburgueseria {
                         opcion = (int) readLong();
 
                         switch (opcion) {
-
-                            case 1:// Mostrar inventario
+                            case 1:
+                            }
                             case 2:// Volver al menú principal
                                 break;
                         }

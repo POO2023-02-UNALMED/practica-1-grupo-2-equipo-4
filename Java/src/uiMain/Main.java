@@ -179,6 +179,9 @@ public class Main {
 
         System.out.println(Contabilidad.calcularGastos());
 
+        MenuMethods.mostrarMenuGaseosas();
+        MenuMethods.mostrarMenuComidas();
+
 
 
         /* MenuMethods.mostrarMenuGaseosas();
