@@ -1,5 +1,6 @@
-/*package baseDatos;
+package baseDatos;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -288,4 +289,4 @@ public class Deserializador {
             return new ArrayList<Mesero>();
         }
       }
-    } */
+    }

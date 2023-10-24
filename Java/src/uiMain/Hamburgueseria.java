@@ -274,6 +274,7 @@ public class Hamburgueseria {
                     } while (opcion2 < 1 || opcion2 > 4);
                     break;
                 case 4:
+
                     do {// Funcionalidad Tomar Pedidos
                         System.out.println(queHacer);
                         System.out.println("1. Hacer pedido");
