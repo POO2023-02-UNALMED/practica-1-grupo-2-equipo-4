@@ -121,6 +121,7 @@ public class HamburgueseriaTest {
             int opcion2 = scanner.nextInt();
             switch (opcion2) {
                 case 1:
+                    int opcion3;
                     do { // Opciones de Funcionalidad Contabilidad
                         System.out.println(queHacer);
                         System.out.println("");
@@ -130,7 +131,7 @@ public class HamburgueseriaTest {
                         System.out.println("");
                         System.out.println("6. Volver al menú de funcionalidades");
                         System.out.print("Escribe el número de la opción que necesitas: ");
-                        int opcion3 = scanner.nextInt();
+                        opcion3 = scanner.nextInt();
                         switch (opcion3) {
                             case 1:
                             case 2:
@@ -140,7 +141,7 @@ public class HamburgueseriaTest {
                             case 6:
                                 break;
                         }
-                    } while (opcion2 != 6);
+                    } while (opcion3 != 6);
                     break;
                 case 2:
                     do { // Funcionalidad Gestion Empleados
@@ -150,7 +151,7 @@ public class HamburgueseriaTest {
                         System.out.println("3. Eliminar empleado");
                         System.out.println("4. Volver al menú de las calvas");
                         System.out.print("Escribe el número de la opción que necesitas: ");
-                        if (opcion <0 || opcion>4 ) {
+                        if (opcion < 0 || opcion > 4) {
                             System.out.println(opcion);
                             System.out.println("DEBES ELEGIR ALGUNA DE LAS OPCIONES DISPONIBLES");
                         }
@@ -189,9 +190,9 @@ public class HamburgueseriaTest {
                                 System.out.println("Ingrese el id del cliente que hizo la reserva: ");
                                 int idCliente = scanner.nextInt();
                                 System.out.println("Ingrese la fecha para la que se reservo con el formato dado a continuación \"DIA-MES-AÑO HORA:MINUTOS:SEGUNDOS\": ");
-                                 String fechaReserva =  readln();
-                                for (Mesas mesa: Mesas.mesas){
-                                    if (mesa.getIdMesa() == numeroMesa){
+                                String fechaReserva = readln();
+                                for (Mesas mesa : Mesas.mesas) {
+                                    if (mesa.getIdMesa() == numeroMesa) {
                                         mesa.efectuarReserva(idCliente, fechaReserva);
                                     }
                                 }
