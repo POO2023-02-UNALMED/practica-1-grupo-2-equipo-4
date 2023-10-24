@@ -131,6 +131,7 @@ public class Main {
 
         System.out.println(Factura.facturasSinPagar.toString());
         Factura.facturasSinPagar.get(0).pagarFactura();
+        Factura.facturasSinPagar.get(1).pagarFactura();
         System.out.println(Factura.facturasPagadas.toString());
         System.out.println(Contabilidad.saldo);
 

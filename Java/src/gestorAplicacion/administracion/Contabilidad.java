@@ -39,9 +39,10 @@ public class Contabilidad implements Serializable {
         return facturas;
     }
     // Método para pagar servicios No terminado
-    public static void sumarAlSaldo(float ingreso){
-        saldo += ingreso;
-    }
+    public static void sumarIngresosPedidoAlSaldo(float ingreso){
+                saldo = saldo+ingreso;
+            }
+
     public void pagarServicios(float serviciosPublicos) {
         if (serviciosPublicos > 0 && saldo >= serviciosPublicos) {
             saldo -= serviciosPublicos;

@@ -19,6 +19,7 @@ public class Factura implements Serializable {
 
     private String fecha;
     private boolean facturaPagada; //false es no pagada
+
     private float precioTotal;
 
     private Calificacion calificacionFinal;
@@ -56,19 +57,20 @@ public class Factura implements Serializable {
     }
 
 
-
     public void pagarFactura() {
-        for(Factura factura : facturasSinPagar) {
-            if(facturasSinPagar.contains(factura)){
-            this.facturaPagada = true;
-            this.precioTotal = pedido.precioTotal();
-            Contabilidad.sumarAlSaldo(this.precioTotal);
+        for (Factura factura : facturasSinPagar) {
+            if (facturasSinPagar.contains(factura)) {
+                this.facturaPagada = true;
+                this.precioTotal = pedido.precioTotal();
             }
         }
 
-        if (this.facturaPagada) {
+        for (Factura factura : facturasPagadas) {
+            if (factura.facturaPagada == true){
             Factura.facturasPagadas.add(this);
             Factura.facturasSinPagar.remove(this);
+            Contabilidad.sumarIngresosPedidoAlSaldo(factura.getPrecioTotal());
+            }
         }
     }
 
@@ -77,8 +79,8 @@ public class Factura implements Serializable {
         this.calificacionFinal.setCalificacion(calificacion);
     }
 
-    //Getter y setters
 
+    //Getter y setters
     public Empleado getIdEmpleado() {
         return empleado;
     }
@@ -132,6 +134,14 @@ public class Factura implements Serializable {
         this.fecha = fecha;
     }
 
+    public float getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(float precioTotal) {
+        this.precioTotal = precioTotal;
+    }
+
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
@@ -139,8 +149,7 @@ public class Factura implements Serializable {
         sb.append("fecha: ").append(getFecha()).append("\n");
         if (facturaPagada == true) {
             sb.append("  La factura está pagada").append("\n");
-        }
-        else {
+        } else {
             sb.append("  La factura no está pagada").append("\n");
         }
         sb.append("  tu pedido fue: \n").append(pedido.imprimirComidas()).append("\n");
