@@ -1,9 +1,11 @@
 package gestorAplicacion.administracion;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 
 public class Calificacion implements Serializable {
+    public static ArrayList<Calificacion> Calificaciones;
     private int idFactura;
     private Empleado empleado;
     private double calificacion;

@@ -11,6 +11,8 @@ public abstract class Empleado implements Serializable {
     private float salario;
     private static int cantidadEmpleados = 0;
 
+    public Empleado() { // Constructor sin argumentos necesario para deserialización
+    }
     public Empleado(String nombre, int idEmpleado, float salario) {
         cantidadEmpleados++;
         this.nombre = nombre;
@@ -19,12 +21,13 @@ public abstract class Empleado implements Serializable {
         this.empleados.add(this);
         /** En este constructor se asignan las características de cada empleado y se agrega cada empleado creado a una lista estática*/
     }
+
     public String accion() { // Ligadura Dinamica
         return "El Empleado esta Trabajando";
     }
 
-
     // Calcular el promedio de las calificaciones y determinar si califica para el bono
+
     public boolean BONO() {
 
         double suma = 0.0;
@@ -39,9 +42,6 @@ public abstract class Empleado implements Serializable {
         } else {
             return false;
         }
-    }
-
-    public Empleado() { // Constructor sin argumentos necesario para deserialización
     }
 
     //Getter y Setters
